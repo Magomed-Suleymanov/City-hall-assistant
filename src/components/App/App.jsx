@@ -4,8 +4,9 @@ import Registration from "../registration";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="app">
+    <div>
       <Switch>
         <Route>
           <HomePage />

@@ -7,7 +7,9 @@ function Dashboard(props) {
         box: {
             width: "24vw",
             height: "100vh",
+            background: 'white',
             boxShadow: "7px 0px 4px 0px rgba(34, 60, 80, 0.2)",
+            zIndex: '100',
         },
 
         inputBlock: {
