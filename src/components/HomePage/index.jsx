@@ -1,11 +1,15 @@
 import React from 'react';
 import Dashboard from './Dashboard';
-import ButtonForAuth from './ButtonForAuth';
+import ButtonForAuth from '../Login/ButtonForAuth';
+import MyMap from './Map/MyMap';
+import ToggleDashboard from './Dashboard/ToggleDashboard';
 
 function HomePage(props) {
   return (
-    <div className="wrapHomePage">
+    <div style={{ display: 'flex' }}>
       <Dashboard />
+      <ToggleDashboard />
+      <MyMap />
       <ButtonForAuth />
     </div>
   );
