@@ -1,10 +1,12 @@
-import React from "react";
-import Dashboard from "./Dashboard";
+import React from 'react';
+import Dashboard from './Dashboard';
+import ButtonForAuth from './ButtonForAuth';
 
 function HomePage(props) {
   return (
-    <div>
+    <div className="wrapHomePage">
       <Dashboard />
+      <ButtonForAuth />
     </div>
   );
 }
