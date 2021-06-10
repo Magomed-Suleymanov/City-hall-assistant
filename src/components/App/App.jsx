@@ -3,19 +3,15 @@ import Login from '../Login';
 import Registration from '../registration';
 import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Authorization from '../Login/Authorization';
 
 function App() {
-  const modalAuth = useSelector((state) => state.application.modalAuth);
+  const modalAuth = useSelector((state) => state.auth.modalAuth);
   return (
     <div>
       <Switch>
         <Route>
-          {modalAuth && <Authorization />}
+          {modalAuth &&  <Login />}
           <HomePage />
-        </Route>
-        <Route>
-          <Login />
         </Route>
         <Route>
           <Registration />

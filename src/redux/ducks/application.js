@@ -1,6 +1,7 @@
 const initialState = {
-  modalAuth: false,
+  items: [],
   toggleBlockDashBoard: false,
+  loading: false,
 };
 
 export default function application(state = initialState, action) {
@@ -9,16 +10,6 @@ export default function application(state = initialState, action) {
       return {
         ...state,
         toggleBlockDashBoard: !state.toggleBlockDashBoard,
-      };
-    case 'active/modalAuth':
-      return {
-        ...state,
-        modalAuth: true,
-      };
-    case 'delete/modalAuth':
-      return {
-        ...state,
-        modalAuth: false,
       };
 
     default:
@@ -30,10 +21,3 @@ export function toggleDashboard() {
   return { type: 'toggle/Dashboard' };
 }
 
-export function AuthActive() {
-  return { type: 'active/modalAuth' };
-}
-
-export function deleteModalAuth() {
-  return { type: 'delete/modalAuth' };
-}
