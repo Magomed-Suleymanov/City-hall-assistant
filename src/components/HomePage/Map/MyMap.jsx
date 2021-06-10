@@ -7,7 +7,9 @@ function MyMap(props) {
 
   return (
     <YMaps>
-      <Map className="map" state={mapState}></Map>
+      <Map className="map" state={mapState}>
+
+      </Map>
     </YMaps>
   );
 }

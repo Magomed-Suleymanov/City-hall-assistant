@@ -38,7 +38,9 @@ function Authorization(props) {
 
   return (
     <Box className="wrapModalAuth">
-      <Box className="windowDeact"></Box>
+      <Box className="windowDeact">
+
+      </Box>
       <Container component="main" className="modalAuth" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>

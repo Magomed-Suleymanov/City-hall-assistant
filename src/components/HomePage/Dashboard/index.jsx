@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Box, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {loadUsers} from "../../../redux/ducks/users";
 
 function Dashboard(props) {
   const toggleDashBoard = useSelector(
     (state) => state.application.toggleBlockDashBoard,
   );
+
+  const users = useSelector(state => state.users.items)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loadUsers())
+  }, [dispatch])
 
   const useStyle = makeStyles({
     boxOpen: {
@@ -32,7 +40,6 @@ function Dashboard(props) {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      background: '#299400',
       height: '100px',
     },
 
@@ -54,6 +61,11 @@ function Dashboard(props) {
           label="Поиск"
           variant="outlined"
         />
+        {users.map((item) => {
+          return (
+              <div>{item.login}</div>
+          )
+        })}
       </Box>
     </Box>
   );
