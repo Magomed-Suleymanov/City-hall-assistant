@@ -1,6 +1,5 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
@@ -40,7 +39,6 @@ function Authorization(props) {
     <Box className="wrapModalAuth">
       <Box className="windowDeact"></Box>
       <Container component="main" className="modalAuth" maxWidth="xs">
-        <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />

@@ -1,23 +1,54 @@
 const initialState = {
   items: [],
+  modalListItems: [],
+  mapVisibility: true,
+  listVisibility: false,
+  listModalVisibility: false,
   toggleBlockDashBoard: false,
   loading: false,
 };
 
 export default function application(state = initialState, action) {
   switch (action.type) {
-    case 'loading/img/start':
+    case 'loading/street/start':
       return {
         ...state,
-        loading: true,
-      }
+        listVisibility: false,
+      };
 
-    case 'loading/img/success':
+    case 'loading/street/success':
       return {
         ...state,
         items: action.payload,
-        loading: true,
-      }
+        listVisibility: true,
+        mapVisibility: false,
+      };
+
+    case 'loading/modalStreets/start':
+      return {
+        ...state,
+        listModalVisibility: false,
+      };
+
+    case 'loading/modalStreets/success':
+      return {
+        ...state,
+        modalListItems: action.payload,
+        listModalVisibility: true,
+      };
+
+    case 'deact/ModalListItems':
+      return {
+        ...state,
+        listModalVisibility: false,
+      };
+
+    case 'add/Map':
+      return {
+        ...state,
+        listVisibility: false,
+        mapVisibility: true,
+      };
 
     case 'toggle/Dashboard':
       return {
@@ -30,21 +61,42 @@ export default function application(state = initialState, action) {
   }
 }
 
-export const openList= () => {
-  return (dispatch) => {
-    dispatch({ type: 'loading/img/start' });
-    fetch('http://localhost:8000/streets')
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch({
-          type: 'loading/img/success',
-          payload: json,
-        });
-      });
-  };
-}
-
 export function toggleDashboard() {
   return { type: 'toggle/Dashboard' };
 }
 
+export function addMap() {
+  return { type: 'add/Map' };
+}
+
+export function deactModalList() {
+  return { type: 'deact/ModalListItems' };
+}
+
+export const loadList = () => {
+  return (dispatch) => {
+    dispatch({ type: 'loading/street/start' });
+    fetch('http://localhost:8000/streets')
+      .then((response) => response.json())
+      .then((json) => {
+        dispatch({
+          type: 'loading/street/success',
+          payload: json,
+        });
+      });
+  };
+};
+
+export const LoadModalList = (id) => {
+  return (dispatch) => {
+    dispatch({ type: 'loading/modalStreets/start' });
+    fetch(`http://localhost:8000/streets/${id}`)
+      .then((response) => response.json())
+      .then((json) =>
+        dispatch({
+          type: 'loading/modalStreets/success',
+          payload: json,
+        }),
+      );
+  };
+};

@@ -1,19 +1,27 @@
-import React  from 'react'
+import React from 'react';
 import Dashboard from './Dashboard';
 import ButtonForAuth from '../Login/ButtonForAuth';
 import MyMap from './Map/MyMap';
 import ToggleDashboard from './Dashboard/ToggleDashboard';
-import ListFromMap from './List/ListFromMap'
+import ListOfStreets from './List/ListOfStreets';
+import { useSelector } from 'react-redux';
+import ModalItemsList from './List/ModalItemsList';
 
-function HomePage(props) {
-
-
+function HomePage() {
+  const listVisibility = useSelector(
+    (state) => state.application.listVisibility,
+  );
+  const listModalVisibility = useSelector(
+    (state) => state.application.listModalVisibility,
+  );
+  const mapVisibility = useSelector((state) => state.application.mapVisibility);
   return (
     <div style={{ display: 'flex' }}>
+      {listModalVisibility && <ModalItemsList />}
       <Dashboard />
       <ToggleDashboard />
-      <ListFromMap />
-      {/*<MyMap />*/}
+      {listVisibility && <ListOfStreets />}
+      {mapVisibility && <MyMap />}
       <ButtonForAuth />
     </div>
   );

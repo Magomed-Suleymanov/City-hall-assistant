@@ -6,51 +6,62 @@ import ReorderIcon from '@material-ui/icons/Reorder';
 import MapIcon from '@material-ui/icons/Map';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { useDispatch } from 'react-redux'
-import { openList } from '../../../redux/ducks/application'
-import Box from '@material-ui/core/Box'
+import { useDispatch } from 'react-redux';
+import { addMap, loadList } from '../../../redux/ducks/application';
+import Box from '@material-ui/core/Box';
 
-function Navigation (props) {
-  const dispatch =useDispatch();
+function Navigation() {
+  const dispatch = useDispatch();
   const useStyles = makeStyles({
     wrapButtons: {
       justifyContent: 'space-between',
       margin: '10px 10px',
     },
+    wrapNav: {
+      width: '150px',
+      margin: 'auto',
+    },
+    Nav: {
+      margin: 'auto',
+      fontSize: '18px',
+      textAlign: 'center',
+    },
   });
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   return (
-   <Box>
+    <Box>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
+          className={classes.wrapNav}
         >
-          <Typography>Навигация</Typography>
+          <Typography className={classes.Nav}>Навигация</Typography>
         </AccordionSummary>
-          <BottomNavigation
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-            showLabels
-            className={classes.wrapButtons}
-          >
-            <BottomNavigationAction label="Map" icon={<MapIcon />} />
-            <BottomNavigationAction
-              label="Список"
-              icon={<ReorderIcon />}
-            onClick={() => dispatch(openList())}
-            />
-          </BottomNavigation>
+        <BottomNavigation
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+          showLabels
+          className={classes.wrapButtons}
+        >
+          <BottomNavigationAction
+            label="Map"
+            icon={<MapIcon />}
+            onClick={() => dispatch(addMap())}
+          />
+          <BottomNavigationAction
+            label="Список"
+            icon={<ReorderIcon />}
+            onClick={() => dispatch(loadList())}
+          />
+        </BottomNavigation>
       </Accordion>
-   </Box>
-  )
+    </Box>
+  );
 }
 
-export default Navigation
+export default Navigation;
