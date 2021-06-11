@@ -1,18 +1,19 @@
-import React, { useEffect } from 'react'
+import React  from 'react'
 import Dashboard from './Dashboard';
 import ButtonForAuth from '../Login/ButtonForAuth';
 import MyMap from './Map/MyMap';
 import ToggleDashboard from './Dashboard/ToggleDashboard';
-import { useDispatch } from 'react-redux'
+import ListFromMap from './List/ListFromMap'
 
 function HomePage(props) {
-  const dispatch = useDispatch()
+
 
   return (
     <div style={{ display: 'flex' }}>
       <Dashboard />
       <ToggleDashboard />
-      <MyMap />
+      <ListFromMap />
+      {/*<MyMap />*/}
       <ButtonForAuth />
     </div>
   );

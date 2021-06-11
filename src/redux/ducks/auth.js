@@ -1,6 +1,5 @@
 const initialState = {
-  modalAuth: false,
-
+  modalAuthVisible: false,
 };
 
 export default function auth(state = initialState, action) {
@@ -9,12 +8,12 @@ export default function auth(state = initialState, action) {
     case 'active/modalAuth':
       return {
         ...state,
-        modalAuth: true,
+        modalAuthVisible: true,
       };
     case 'delete/modalAuth':
       return {
         ...state,
-        modalAuth: false,
+        modalAuthVisible: false,
       };
 
     default:

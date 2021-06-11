@@ -1,17 +1,12 @@
 const jsonServer = require("json-server");
 const server = jsonServer.create();
-const PORT = 3010;
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
+const PORT = 8000;
 const users = router.db.get("users");
 const streets = router.db.get("streets");
 const wishes = router.db.get("wishes");
 
-server.use(middlewares);
-server.use(router);
-server.listen(PORT, () => {
-  console.log("Сервер запустился на 3010 порте");
-});
 
 //Авторизация
 server.route("/auth").post((req, res) => {
@@ -26,3 +21,10 @@ server.route("/auth").post((req, res) => {
 });
 
 server.route("checkIn").post((req, res) => {});
+
+
+server.use(middlewares);
+server.use(router);
+server.listen(PORT, () => {
+  console.log(`JSON Server is running on ${PORT}`);
+});

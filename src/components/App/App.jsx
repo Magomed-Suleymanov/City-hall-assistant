@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const modalAuth = useSelector((state) => state.auth.modalAuth);
+  const modalAuth = useSelector((state) => state.auth.modalAuthVisible);
   return (
     <div>
       <Switch>
