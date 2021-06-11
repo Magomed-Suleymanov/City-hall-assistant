@@ -48,11 +48,12 @@ function Authorization(props) {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Вход
           </Typography>
           <FormInput />
         </div>
-        <Box mt={8}></Box>
+        <Box mt={8}>
+          Don't have an account? Sign Up</Box>
         <Box className="exitAuth" onClick={() => dispatch(deleteModalAuth())}>
           <ClearOutlinedIcon fontSize={'large'} />
         </Box>

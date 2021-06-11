@@ -61,11 +61,6 @@ function Dashboard(props) {
           label="Поиск"
           variant="outlined"
         />
-        {users.map((item) => {
-          return (
-              <div>{item.login}</div>
-          )
-        })}
       </Box>
     </Box>
   );
