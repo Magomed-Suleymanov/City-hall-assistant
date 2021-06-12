@@ -6,6 +6,7 @@ import ToggleDashboard from './Dashboard/ToggleDashboard';
 import ListOfStreets from './List/ListOfStreets';
 import { useSelector } from 'react-redux';
 import ModalItemsList from './List/ModalItemsList';
+import Box from '@material-ui/core/Box';
 
 function HomePage() {
   const listVisibility = useSelector(
@@ -16,14 +17,14 @@ function HomePage() {
   );
   const mapVisibility = useSelector((state) => state.application.mapVisibility);
   return (
-    <div style={{ display: 'flex' }}>
+    <Box style={{ display: 'flex' }}>
       {listModalVisibility && <ModalItemsList />}
       <Dashboard />
       <ToggleDashboard />
       {listVisibility && <ListOfStreets />}
       {mapVisibility && <MyMap />}
       <ButtonForAuth />
-    </div>
+    </Box>
   );
 }
 
