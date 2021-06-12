@@ -5,12 +5,14 @@ import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const modalAuth = useSelector((state) => state.auth.modalAuthVisible);
+  const modalAuthVisibility = useSelector(
+    (state) => state.auth.modalAuthVisibility,
+  );
   return (
     <div>
       <Switch>
         <Route>
-          {modalAuth &&  <Login />}
+          {modalAuthVisibility && <Login />}
           <HomePage />
         </Route>
         <Route>

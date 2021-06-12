@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import application from './ducks/application';
 import clients from './ducks/clients';
 import users from './ducks/users';
-import auth from './ducks/auth'
+import auth from './ducks/auth';
 
 const logger = createLogger({
   diff: true,
