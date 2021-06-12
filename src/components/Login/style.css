@@ -1,3 +1,6 @@
+.wrapModalAuth {
+  width: 500px;
+}
 .windowDeact {
   position: absolute;
   width: 100%;
@@ -25,4 +28,31 @@
 }
 .exitAuth:active {
   color: red;
+}
+.wrapList {
+  border-radius: 5px;
+  width: 900px;
+  min-width: 100px;
+  background-color: whitesmoke;
+  display: flex;
+  margin: 20px 25px 0px 25px;
+  box-shadow: 0px 0px 8px rgb(217, 217, 217);
+
+}
+.alfa {
+  margin-right: 20px;
+}
+.alfa img {
+  width: 160px;
+  height: 140px;
+  border-radius: 5px;
+}
+.alfa img:hover {
+
+}
+.wrapList:hover {
+  transform: scale(1.05);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: .1s;
 }

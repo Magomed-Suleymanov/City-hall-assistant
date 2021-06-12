@@ -1,20 +1,13 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Box, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import {useDispatch, useSelector} from 'react-redux';
-import {loadUsers} from "../../../redux/ducks/users";
+import { useSelector} from 'react-redux';
+import Navigation from './Navigation'
 
 function Dashboard(props) {
   const toggleDashBoard = useSelector(
     (state) => state.application.toggleBlockDashBoard,
   );
-
-  const users = useSelector(state => state.users.items)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(loadUsers())
-  }, [dispatch])
 
   const useStyle = makeStyles({
     boxOpen: {
@@ -23,8 +16,8 @@ function Dashboard(props) {
       height: '100vh',
       background: 'white',
       boxShadow: '4px 0px 8px 0px rgba(34, 60, 80, 0.2)',
-      zIndex: '100',
       transform: 'translateX(0%) ',
+      zIndex: 100,
       transition: '.4s',
       transformOrigin: 'left',
     },
@@ -37,6 +30,7 @@ function Dashboard(props) {
     },
 
     inputBlock: {
+      background: 'green',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -62,6 +56,7 @@ function Dashboard(props) {
           variant="outlined"
         />
       </Box>
+      <Navigation />
     </Box>
   );
 }

@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useDispatch } from 'react-redux';
-import { AuthActive } from '../../redux/ducks/application';
+import { AuthActive } from '../../redux/ducks/auth';
 
 function ButtonForAuth(props) {
   const dispatch = useDispatch();

@@ -14,6 +14,7 @@ function FormInput(props) {
     },
   }));
   const classes = useStyles();
+
   return (
     <div>
       <form className={classes.form} noValidate>
@@ -47,7 +48,7 @@ function FormInput(props) {
           color="primary"
           className={classes.submit}
         >
-          Sign In
+          Войти
         </Button>
       </form>
     </div>
