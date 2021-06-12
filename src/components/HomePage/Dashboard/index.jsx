@@ -29,22 +29,13 @@ function Dashboard(props) {
       transition: '0.4s',
       opacity: '0',
     },
-
     inputBlock: {
       backgroundImage:
-        'url(' +
-        'https://sdelanounas.ru/i/y/2/h/f_Y2hlY2' +
-        'hueWF0b2RheS5jb20vaW1hZ2VzL3VwbG9hZHMvM' +
-        'jAxOC8wNS8wNC8lRDAlQkIlRDAlQkUlRDAlQkEl' +
-        'RDAlQjAlRDAlQkIlRDElODElRDAlQjUlRDElODI' +
-        'lRDElOEMuanBnP19faWQ9MTA2NzUy.jpeg)',
-      alignItems: 'center',
+        'url(https://sdelanounas.ru/i/y/2/h/f_Y2hlY2hueWF0b2RheS5jb20vaW1hZ2VzL3VwbG9hZHMvM' +
+        'jAxOC8wNS8wNC8lRDAlQkIlRDAlQkUlRDAlQkElRDAlQjAlRDAlQkIlRDElODElRDAlQjUlRDElODIlRDE' +
+        'lOEMuanBnP19faWQ9MTA2NzUy.jpeg)',
       backgroundSize: 'cover',
-      display: 'flex',
-      justifyContent: 'center',
-      height: '190px',
     },
-
     input: {
       width: '90%',
       background: 'white',
@@ -57,7 +48,13 @@ function Dashboard(props) {
 
   return (
     <Box className={!toggleDashBoard ? classes.boxOpen : classes.boxClose}>
-      <Box className={classes.inputBlock}>
+      <Box
+        alignItems="center"
+        display="flex"
+        justifyContent="center"
+        height="190px"
+        className={classes.inputBlock}
+      >
         <TextField
           className={classes.input}
           id="outlined-basic"

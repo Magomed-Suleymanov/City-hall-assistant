@@ -3,13 +3,14 @@ import Login from '../Login';
 import Registration from '../registration';
 import { Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Box from '@material-ui/core/Box';
 
 function App() {
   const modalAuthVisibility = useSelector(
     (state) => state.auth.modalAuthVisibility,
   );
   return (
-    <div>
+    <Box>
       <Switch>
         <Route>
           {modalAuthVisibility && <Login />}
@@ -19,7 +20,7 @@ function App() {
           <Registration />
         </Route>
       </Switch>
-    </div>
+    </Box>
   );
 }
 

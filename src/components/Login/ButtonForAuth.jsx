@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useDispatch } from 'react-redux';
 import { AuthActive } from '../../redux/ducks/auth';
+import Box from '@material-ui/core/Box';
 
 function ButtonForAuth() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function ButtonForAuth() {
   const classes = useStyle();
 
   return (
-    <div>
+    <Box>
       <Button
         variant="outlined"
         color="primary"
@@ -30,7 +31,7 @@ function ButtonForAuth() {
       >
         Войти
       </Button>
-    </div>
+    </Box>
   );
 }
 
