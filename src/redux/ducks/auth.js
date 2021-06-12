@@ -1,26 +1,25 @@
 const initialState = {
-  modalAuthVisible: false,
+  modalAuthVisibility: false,
 };
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
-
     case 'active/modalAuth':
       return {
         ...state,
-        modalAuthVisible: true,
+        modalAuthVisibility: true,
       };
+
     case 'delete/modalAuth':
       return {
         ...state,
-        modalAuthVisible: false,
+        modalAuthVisibility: false,
       };
 
     default:
       return state;
   }
 }
-
 
 export function AuthActive() {
   return { type: 'active/modalAuth' };
@@ -29,4 +28,3 @@ export function AuthActive() {
 export function deleteModalAuth() {
   return { type: 'delete/modalAuth' };
 }
-

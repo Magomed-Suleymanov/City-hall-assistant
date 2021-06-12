@@ -18,7 +18,7 @@ function ToggleDashboard(props) {
     iconDashboardOpen: {
       transition: '.3s',
       position: 'absolute',
-      zIndex: 101,
+      zIndex: 150,
       top: 22,
       left: '8px',
       background: 'white',
@@ -32,7 +32,7 @@ function ToggleDashboard(props) {
       position: 'absolute',
       top: 22,
       left: '4px',
-      zIndex: 101,
+      zIndex: 150,
       background: 'white',
       border: '1px solid lightgrey',
       borderRadius: '3px',
