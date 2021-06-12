@@ -53,7 +53,7 @@ function Authorization(props) {
           <Link to={'/signUp'}>У вас еще нет акаунта? Зарегистрируйтесь.</Link>
         </Box>
         <Box className="exitAuth" onClick={() => dispatch(deleteModalAuth())}>
-          <ClearOutlinedIcon fontSize={'large'} />
+          <Link to="/home"><ClearOutlinedIcon fontSize={'large'} /></Link>
         </Box>
       </Container>
     </Box>

@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useDispatch } from 'react-redux';
 import { AuthActive } from '../../redux/ducks/auth';
+import {Link} from "react-router-dom";
 
 function ButtonForAuth() {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ function ButtonForAuth() {
         className={classes.button}
         onClick={() => dispatch(AuthActive())}
       >
-        Войти
+        <Link to='/login'>Войти</Link>
       </Button>
     </div>
   );
