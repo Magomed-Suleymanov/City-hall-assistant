@@ -11,10 +11,8 @@ function ToggleDashboard(props) {
   const toggleDashBoard = useSelector(
     (state) => state.application.toggleBlockDashBoard,
   );
+
   const useStyle = makeStyles({
-    box: {
-      position: 'relative',
-    },
     iconDashboardOpen: {
       transition: '.3s',
       position: 'absolute',
@@ -40,6 +38,7 @@ function ToggleDashboard(props) {
     },
   });
   const classes = useStyle();
+
   const handleToggleDashboard = () => {
     dispatch(toggleDashboard());
   };
@@ -49,7 +48,7 @@ function ToggleDashboard(props) {
   });
 
   return (
-    <Box className={classes.box}>
+    <Box position="relative">
       <MenuOpenIcon
         fontSize="large"
         className={

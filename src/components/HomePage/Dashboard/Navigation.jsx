@@ -11,17 +11,13 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { useDispatch } from 'react-redux';
 import { addMap, loadList } from '../../../redux/ducks/application';
 import Box from '@material-ui/core/Box';
+import { Grid } from '@material-ui/core';
 
 function Navigation() {
   const dispatch = useDispatch();
   const useStyles = makeStyles({
-    wrapButtons: {
-      justifyContent: 'space-between',
-      margin: '10px 10px',
-    },
-    wrapNav: {
-      width: '150px',
-      margin: 'auto',
+    root: {
+      width: '100%',
     },
     Nav: {
       margin: 'auto',
@@ -33,33 +29,36 @@ function Navigation() {
   const [value, setValue] = React.useState(0);
   return (
     <Box>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          className={classes.wrapNav}
-        >
-          <Typography className={classes.Nav}>Навигация</Typography>
-        </AccordionSummary>
-        <BottomNavigation
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-          showLabels
-          className={classes.wrapButtons}
-        >
-          <BottomNavigationAction
-            label="Map"
-            icon={<MapIcon />}
-            onClick={() => dispatch(addMap())}
-          />
-          <BottomNavigationAction
-            label="Список"
-            icon={<ReorderIcon />}
-            onClick={() => dispatch(loadList())}
-          />
-        </BottomNavigation>
-      </Accordion>
+      <Grid
+        container
+        direction="row"
+        justify="space-between"
+        alignItems="center"
+      >
+        <Accordion className={classes.root}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography className={classes.Nav}>Навигация</Typography>
+          </AccordionSummary>
+          <BottomNavigation
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            showLabels
+          >
+            <BottomNavigationAction
+              label="Map"
+              icon={<MapIcon />}
+              onClick={() => dispatch(addMap())}
+            />
+            <BottomNavigationAction
+              label="Список"
+              icon={<ReorderIcon />}
+              onClick={() => dispatch(loadList())}
+            />
+          </BottomNavigation>
+        </Accordion>
+      </Grid>
     </Box>
   );
 }
