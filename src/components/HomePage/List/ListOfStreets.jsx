@@ -4,8 +4,10 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { LoadModalList } from '../../../redux/ducks/application';
 import { Grid } from '@material-ui/core';
+import SubstrWishes from './SubstrWishes'
 
-function ListOfStreets(props) {
+
+function ListOfStreets() {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.application.items);
   const useStyle = makeStyles(() => ({
@@ -39,18 +41,19 @@ function ListOfStreets(props) {
               justify="flex-start"
               alignItems="flex-start"
             >
-              <Box marginRight="20px">
+              <Box marginRight="20px" alignItems='center'>
                 <img
                   alt="Img"
-                  width="140px"
-                  height="125px"
+                  width="130px"
+                  height="110px"
                   style={{ borderRadius: '5px' }}
                   src={item.url}
                 />
               </Box>
-              <Box fontSize="22px" padding="5px 0">
-                {item.address}
-              </Box>
+                <Box fontSize="20px" padding="5px 0" >
+                  {item.address}
+                  <SubstrWishes item={item}/>
+                </Box>
             </Grid>
           </Box>
         );
