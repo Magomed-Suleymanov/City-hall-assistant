@@ -28,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettify": "prettier --write ./src"
+    "prettify": "prettier --write ./src",
+    "dev": "concurrently \"npm start --port 8000 \" \" nodemon server.js  \"\n --kill-others"
   },
   "eslintConfig": {
     "extends": [

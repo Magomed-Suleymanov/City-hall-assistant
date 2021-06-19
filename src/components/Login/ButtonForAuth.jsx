@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useDispatch } from 'react-redux';
 import { AuthActive } from '../../redux/ducks/auth';
+import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 
 function ButtonForAuth() {
@@ -13,6 +14,7 @@ function ButtonForAuth() {
       background: 'white',
       borderRadius: '8px',
       position: 'absolute',
+      zIndex: '2',
       right: '20px',
       top: '22px',
     },
@@ -29,7 +31,7 @@ function ButtonForAuth() {
         className={classes.button}
         onClick={() => dispatch(AuthActive())}
       >
-        Войти
+        <Link to="/login">Войти</Link>
       </Button>
     </Box>
   );

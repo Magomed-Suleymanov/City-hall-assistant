@@ -5,24 +5,22 @@ const middlewares = jsonServer.defaults();
 const PORT = 8000;
 const users = router.db.get("users");
 const streets = router.db.get("streets");
-const wishes = router.db.get("wishes");
 
 
-//Авторизация
-server.route("/auth").post((req, res) => {
+server.post("/auth", (req, res) => {
   const { login, password } = req.body;
-  const authUser = users.find(
-    (user) => user.login === login && user.password === password
-  );
-  if (authUser.toJSON() === undefined) {
-    res.status(404).json("Ошибка авторизации");
+  const authUser = users
+    .toJSON()
+    .find(
+      (user) =>
+        user.login === login && user.password === password
+    );
+  if (authUser === undefined) {
+    res.status(404).json({ message: "Ошибка авторизации" });
+  } else {
+    res.json({ ...authUser, password: null });
   }
-  res.json(authUser);
 });
-
-server.route("checkIn").post((req, res) => {});
-
-
 server.use(middlewares);
 server.use(router);
 server.listen(PORT, () => {
