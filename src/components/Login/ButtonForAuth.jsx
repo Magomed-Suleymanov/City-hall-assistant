@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { useDispatch } from 'react-redux';
-import { AuthActive } from '../../redux/ducks/auth';
-import { Link } from 'react-router-dom';
+import { AuthActive } from '../../redux/actions/auth';
+import {Link} from "react-router-dom";
 import Box from '@material-ui/core/Box';
+import { useDispatch } from 'react-redux'
+import { makeStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 
 function ButtonForAuth() {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ function ButtonForAuth() {
         variant="outlined"
         color="primary"
         size="medium"
-        startIcon={<ExitToAppIcon />}
+        startIcon={<ExitToAppIcon/>}
         className={classes.button}
         onClick={() => dispatch(AuthActive())}
       >

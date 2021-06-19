@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import { deactModalList } from '../../../redux/ducks/application';
+import { deactModalList } from '../../../redux/actions/application';
 import Wishes from './Wishes';
 import ButtonForWishes from './ButtonForWishes';
 

@@ -1,18 +1,16 @@
 import HomePage from '../HomePage';
 import Login from '../Login';
-import Registration from '../registration';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
-import { useEffect } from 'react';
-import { loadUsers } from '../../redux/ducks/users';
+import { loadUsers } from '../../redux/actions/users'
+import { useEffect } from 'react'
+
 
 function App() {
-  const modalAuthVisibility = useSelector(
-    (state) => state.auth.modalAuthVisibility,
-  );
+  const token = useSelector(state => state.users.token);
+  const auth = useSelector(state => state.users.authorizing)
 
-  const token = useSelector((state) => state.users.token);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadUsers());
@@ -23,15 +21,15 @@ function App() {
   if (token) {
     routes = (
       <Switch>
-        <Route path={'/home'} component={HomePage} />
-        <Redirect to={'/home'} />
+        <Route path={'/home'} component={HomePage}/>
+        <Redirect to={'/home'}/>
       </Switch>
     );
   } else {
     routes = (
       <Switch>
-        <Route path={'/auth'} component={Login} />
-        <Redirect to={'/auth'} />
+        <Route path={'/auth'} component={Login}/>
+        <Redirect to={'/auth'}/>
       </Switch>
     );
   }

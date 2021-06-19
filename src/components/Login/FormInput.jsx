@@ -3,8 +3,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginStart } from '../../redux/ducks/users';
 import Box from '@material-ui/core/Box';
+import { loginStart } from '../../redux/actions/auth'
+
 
 function FormInput(props) {
   const useStyles = makeStyles((theme) => ({
@@ -19,14 +20,16 @@ function FormInput(props) {
   const classes = useStyles();
 
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.users.errorMessage);
+  const error = useSelector(state => state.users.errorMessage)
+  const users = useSelector(state => state.users.items)
 
-  const [login, setLogin] = useState('');
-  const [pass, setPass] = useState('');
+
+  const [login, setLogin] = useState(users.login)
+  const [pass, setPass] = useState(users.password)
 
   const handleClick = () => {
-    dispatch(loginStart(login, pass));
-  };
+    dispatch(loginStart(pass, login))
+  }
 
   return (
     <div>

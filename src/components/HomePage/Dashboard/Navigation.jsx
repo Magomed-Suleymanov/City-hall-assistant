@@ -9,7 +9,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { useDispatch } from 'react-redux';
-import { addMap, loadList } from '../../../redux/ducks/application';
+import { addMap, loadList } from '../../../redux/actions/application';
 import Box from '@material-ui/core/Box';
 import { Grid } from '@material-ui/core';
 
