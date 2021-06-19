@@ -1,9 +1,32 @@
 const initialState = {
+  users: [],
   modalAuthVisibility: false,
+  loginLoading: false,
+  error: false,
 };
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
+    case 'login/start':
+      return {
+        ...state,
+        loginLoading: true,
+        error: false,
+      }
+
+    case 'login/success':
+      return {
+        ...state,
+        users: action.payload,
+        loginLoading: false,
+      }
+
+    case 'login/error':
+      return {
+        ...state,
+        error: true,
+      }
+
     case 'active/modalAuth':
       return {
         ...state,
@@ -21,10 +44,3 @@ export default function auth(state = initialState, action) {
   }
 }
 
-export function AuthActive() {
-  return { type: 'active/modalAuth' };
-}
-
-export function deleteModalAuth() {
-  return { type: 'delete/modalAuth' };
-}

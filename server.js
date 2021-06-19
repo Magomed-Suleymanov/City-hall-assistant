@@ -8,6 +8,17 @@ const streets = router.db.get("streets");
 const wishes = router.db.get("wishes");
 
 
+const randomToken = () => {
+  let randomString = ''
+  const characters = '1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'
+  for (let i = 0; i < characters.length; i++) {
+    randomString += characters[getRandom(0, characters.length - 1)]
+  }
+}
+const getRandom = (min, max) => {
+  return Math.floor(Math.random() * max - min + 1) + min
+}
+
 //Авторизация
 server.route("/auth").post((req, res) => {
   const { login, password } = req.body;

@@ -3,7 +3,7 @@ import { Box } from '@material-ui/core';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import { makeStyles } from '@material-ui/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleDashboard } from '../../../redux/ducks/application';
+import { toggleDashboard } from '../../../redux/actions/application';
 import { useHotkeys } from 'react-hotkeys-hook';
 
 function ToggleDashboard(props) {

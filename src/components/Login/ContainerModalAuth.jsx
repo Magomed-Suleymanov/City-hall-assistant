@@ -4,7 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import FormInput from './FormInput';
-import { deleteModalAuth } from '../../redux/ducks/auth';
+import { deleteModalAuth } from '../../redux/actions/auth';
 import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';

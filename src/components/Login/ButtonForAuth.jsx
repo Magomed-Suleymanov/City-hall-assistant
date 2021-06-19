@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useDispatch } from 'react-redux';
-import { AuthActive } from '../../redux/ducks/auth';
+import { AuthActive } from '../../redux/actions/auth';
 import {Link} from "react-router-dom";
 import Box from '@material-ui/core/Box';
 

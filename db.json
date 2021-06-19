@@ -2,14 +2,10 @@
   "users": [
     {
       "id": 1,
-      "login": "admin",
-      "password": "qwerty",
       "token": "alfa123bravo123"
     },
     {
       "id": 2,
-      "login": "registeredUser",
-      "password": "qwerty123",
       "token": "bravo123alfa123"
     }
   ],
