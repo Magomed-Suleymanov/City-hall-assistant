@@ -1,11 +1,10 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { useDispatch } from 'react-redux';
 import { AuthActive } from '../../redux/actions/auth';
 import {Link} from "react-router-dom";
 import Box from '@material-ui/core/Box';
+import { useDispatch } from 'react-redux'
+import { makeStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
 function ButtonForAuth() {
@@ -15,6 +14,7 @@ function ButtonForAuth() {
       background: 'white',
       borderRadius: '8px',
       position: 'absolute',
+      zIndex: '2',
       right: '20px',
       top: '22px',
     },
@@ -27,11 +27,11 @@ function ButtonForAuth() {
         variant="outlined"
         color="primary"
         size="medium"
-        startIcon={<ExitToAppIcon />}
+        startIcon={<ExitToAppIcon/>}
         className={classes.button}
         onClick={() => dispatch(AuthActive())}
       >
-        <Link to='/login'>Войти</Link>
+        <Link to="/login">Войти</Link>
       </Button>
     </Box>
   );

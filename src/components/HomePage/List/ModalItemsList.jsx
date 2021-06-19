@@ -14,7 +14,7 @@ function ModalItemsList() {
   const useStyle = makeStyles(() => ({
     wrapModalList: {
       width: '600px',
-      padding: '20px',
+      padding: '2px',
       background: 'white',
       boxShadow: '0px 0px 15px rgb(0, 0, 0)',
       position: 'absolute',
@@ -36,8 +36,8 @@ function ModalItemsList() {
         onClick={() => dispatch(deactModalList())}
       ></Box>
       <Box className={classes.wrapModalList}>
-        <Box>
-          <img width="100%" alt="" src={modalListItems.url} />
+        <Box >
+          <img style={{borderRadius:'3px'}} width="100%" alt="" src={modalListItems.url} />
         </Box>
         <Wishes />
         <ButtonForWishes />

@@ -10,6 +10,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "json-server": "^0.16.3",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hotkeys-hook": "^3.3.1",
@@ -27,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettify": "prettier --write ./src"
+    "prettify": "prettier --write ./src",
+    "dev": "concurrently \"npm start --port 8000 \" \" nodemon server.js  \"\n --kill-others"
   },
   "eslintConfig": {
     "extends": [

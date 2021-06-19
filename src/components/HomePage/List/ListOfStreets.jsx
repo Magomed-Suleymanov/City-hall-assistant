@@ -4,8 +4,9 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { LoadModalList } from '../../../redux/actions/application';
 import { Grid } from '@material-ui/core';
+import SubstrWishes from './SubstrWishes';
 
-function ListOfStreets(props) {
+function ListOfStreets() {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.application.items);
   const useStyle = makeStyles(() => ({
@@ -26,7 +27,7 @@ function ListOfStreets(props) {
   }));
   const classes = useStyle();
   return (
-    <Box>
+    <Box height='100vh'>
       {list.map((item) => {
         return (
           <Box
@@ -39,17 +40,18 @@ function ListOfStreets(props) {
               justify="flex-start"
               alignItems="flex-start"
             >
-              <Box marginRight="20px">
+              <Box display='flex' marginRight="15px" alignItems="center">
                 <img
                   alt="Img"
-                  width="140px"
-                  height="125px"
+                  width="120px"
+                  height="100px"
                   style={{ borderRadius: '5px' }}
                   src={item.url}
                 />
               </Box>
-              <Box fontSize="22px" padding="5px 0">
+              <Box fontSize="16px" padding="5px 0" color='black'>
                 {item.address}
+                <SubstrWishes item={item} />
               </Box>
             </Grid>
           </Box>

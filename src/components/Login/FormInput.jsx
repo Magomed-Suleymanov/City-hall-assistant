@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import {useDispatch, useSelector} from "react-redux";
-import Box from "@material-ui/core/Box";
+import { useDispatch, useSelector } from 'react-redux';
+import Box from '@material-ui/core/Box';
+import { loginStart } from '../../redux/actions/auth'
+
 
 function FormInput(props) {
   const useStyles = makeStyles((theme) => ({
@@ -26,6 +28,7 @@ function FormInput(props) {
   const [pass, setPass] = useState(users.password)
 
   const handleClick = () => {
+    dispatch(loginStart(pass, login))
   }
 
   return (
@@ -42,7 +45,7 @@ function FormInput(props) {
           autoComplete="email"
           autoFocus
           value={login}
-          onChange={e => setLogin(e.target.value)}
+          onChange={(e) => setLogin(e.target.value)}
         />
         <TextField
           variant="outlined"
@@ -55,13 +58,9 @@ function FormInput(props) {
           id="password"
           autoComplete="current-password"
           value={pass}
-          onChange={e => setPass(e.target.value)}
+          onChange={(e) => setPass(e.target.value)}
         />
-        {error && (
-            <Box color="error.main">
-              Неверный логин или пароль
-            </Box>
-        )}
+        {error && <Box color="error.main">Неверный логин или пароль</Box>}
         <Button
           type="submit"
           fullWidth

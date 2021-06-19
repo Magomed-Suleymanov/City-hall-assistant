@@ -9,24 +9,32 @@ function Wishes(props) {
   );
   const useStyle = makeStyles(() => ({
     inputModal: {
-      width: '99.3%',
-      padding: '10px 0',
-      margin: '20px 0',
+      width: '96.3%',
+      padding: '10px',
       fontSize: '14px',
       color: 'gray',
-      border: '1px solid gray',
+      border: '1px solid lightgray',
       borderRadius: '3px',
       outline: 'none',
       cursor: 'pointer',
     },
+    blockWishes: {
+      padding: '15px 10px',
+      fontSize: '16px',
+      marginBottom: '15px',
+      color: 'black',
+      background: '#f3f3f3',
+      borderRadius: '2px',
+      boxShadow: '0px 0px 5px inset rgb(193, 193, 193)'
+    }
   }));
   const classes = useStyle();
   return (
-    <Box>
-      <Box padding="10px 0" fontSize="20px" textAlign="center">
+    <Box padding='0px 2px 8px 2px'>
+      <Box padding="10px 0 5px" fontSize="18px" color='black' textAlign="center">
         Пожелания или замечания:
       </Box>
-      <Box padding="6px 0" fontSize="18px">
+      <Box className={classes.blockWishes}>
         {modalListItems.wish}
       </Box>
       <Box>

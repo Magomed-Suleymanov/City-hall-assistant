@@ -5,6 +5,7 @@ body {
 }
 
 .app {
+  color: #908b8b;
   overflow-y: hidden;
   overflow-x: hidden;
 }

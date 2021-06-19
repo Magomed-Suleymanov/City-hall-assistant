@@ -1,12 +1,41 @@
 {
   "users": [
     {
+      "login": "admin",
+      "password": "qwerty",
+      "token": "alfa123bravo123",
+      "role": "admin"
+    },
+    {
       "id": 1,
-      "token": "alfa123bravo123"
+      "login": "alfa",
+      "password": "qwerty"
     },
     {
       "id": 2,
+      "login": "bravo",
+      "password": "qwerty",
       "token": "bravo123alfa123"
+    },
+    {
+      "login": "qw",
+      "password": "admin",
+      "id": 3
+    },
+    {
+      "login": "qwe",
+      "password": "qweqwe",
+      "id": 4
+    },
+    {
+      "login": "проверка",
+      "password": "раз раз проверка",
+      "id": 5
+    },
+    {
+      "login": "фыв",
+      "password": "фывфыв",
+      "id": 6
     }
   ],
   "streets": [
@@ -14,7 +43,7 @@
       "id": 1,
       "url": "https://www.varlamov.me/2016/grozniy_hor/29.jpg",
       "address": "Проспект Ахмат-Хаджи Кадырова",
-      "wish": "Очень много машин, пожалуйста уменьшите трафик на дороге."
+      "wish": "Много машин, пожалуйста уменьшите трафик на дороге."
     },
     {
       "id": 2,
@@ -39,35 +68,12 @@
       "url": "https://www.culture.ru/storage/images/e6aba7c47c2d76ec25933d9d69df5c98/71eab3a5354ac0ef5d63d9341920604c.jpeg",
       "address": "ул.Муслима Гайрбекова",
       "wish": "Шикарные качели, но очень мало. Срочно добавьте."
-
     },
     {
       "id": 6,
       "url": "https://apogei-tour.ru/images/CHECHNY/107382696.jpg",
       "address": "ул.им.Г.А.Угрюмова",
       "wish": "Всё очень красиво."
-    }
-  ],
-  "wishes": [
-    {
-      "streetId": 1
-
-    },
-    {
-      "streetId": 2
-
-    },
-    {
-      "streetId": 3
-
-    },
-    {
-      "streetId": 4
-
-    },
-    {
-      "streetId": 5
-
     }
   ]
 }
