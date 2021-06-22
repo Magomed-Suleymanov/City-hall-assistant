@@ -60,5 +60,3 @@ export default function application(state = initialState, action) {
       return state;
   }
 }
-
-

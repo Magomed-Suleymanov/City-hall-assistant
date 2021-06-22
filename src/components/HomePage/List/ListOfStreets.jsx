@@ -27,10 +27,11 @@ function ListOfStreets() {
   }));
   const classes = useStyle();
   return (
-    <Box height='100vh'>
+    <Box height="100vh">
       {list.map((item) => {
         return (
           <Box
+            key={item.id}
             className={classes.wrapList}
             onClick={() => dispatch(LoadModalList(item.id))}
           >
@@ -40,7 +41,7 @@ function ListOfStreets() {
               justify="flex-start"
               alignItems="flex-start"
             >
-              <Box display='flex' marginRight="15px" alignItems="center">
+              <Box display="flex" marginRight="15px" alignItems="center">
                 <img
                   alt="Img"
                   width="120px"
@@ -49,7 +50,7 @@ function ListOfStreets() {
                   src={item.url}
                 />
               </Box>
-              <Box fontSize="16px" padding="5px 0" color='black'>
+              <Box fontSize="16px" padding="5px 0" color="black">
                 {item.address}
                 <SubstrWishes item={item} />
               </Box>

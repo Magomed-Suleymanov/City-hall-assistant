@@ -4,14 +4,13 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
-import { loginStart } from '../../redux/actions/auth'
-
+import { loginStart } from '../../redux/actions/auth';
+import { NavLink } from 'react-router-dom';
 
 function FormInput(props) {
   const useStyles = makeStyles((theme) => ({
     form: {
       width: '100%',
-      marginTop: theme.spacing(1),
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
@@ -20,19 +19,18 @@ function FormInput(props) {
   const classes = useStyles();
 
   const dispatch = useDispatch();
-  const error = useSelector(state => state.users.errorMessage)
-  const users = useSelector(state => state.users.items)
+  const error = useSelector((state) => state.users.errorMessage);
+  const users = useSelector((state) => state.users.items);
 
-
-  const [login, setLogin] = useState(users.login)
-  const [pass, setPass] = useState(users.password)
+  const [login, setLogin] = useState(users.login);
+  const [pass, setPass] = useState(users.password);
 
   const handleClick = () => {
-    dispatch(loginStart(pass, login))
-  }
+    dispatch(loginStart(login, pass));
+  };
 
   return (
-    <div>
+    <Box>
       <form className={classes.form} noValidate>
         <TextField
           variant="outlined"
@@ -40,7 +38,7 @@ function FormInput(props) {
           required
           fullWidth
           id="email"
-          label="Email Address"
+          label="Login"
           name="email"
           autoComplete="email"
           autoFocus
@@ -71,8 +69,9 @@ function FormInput(props) {
         >
           Войти
         </Button>
+        <NavLink to="/registration">Вы не зарегистрированы?</NavLink>
       </form>
-    </div>
+    </Box>
   );
 }
 

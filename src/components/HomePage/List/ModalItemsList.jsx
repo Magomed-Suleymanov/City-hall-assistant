@@ -36,8 +36,13 @@ function ModalItemsList() {
         onClick={() => dispatch(deactModalList())}
       ></Box>
       <Box className={classes.wrapModalList}>
-        <Box >
-          <img style={{borderRadius:'3px'}} width="100%" alt="" src={modalListItems.url} />
+        <Box>
+          <img
+            style={{ borderRadius: '3px' }}
+            width="100%"
+            alt=""
+            src={modalListItems.url}
+          />
         </Box>
         <Wishes />
         <ButtonForWishes />

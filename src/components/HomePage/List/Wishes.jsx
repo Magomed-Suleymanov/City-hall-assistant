@@ -25,18 +25,21 @@ function Wishes(props) {
       color: 'black',
       background: '#f3f3f3',
       borderRadius: '2px',
-      boxShadow: '0px 0px 5px inset rgb(193, 193, 193)'
-    }
+      boxShadow: '0px 0px 5px inset rgb(193, 193, 193)',
+    },
   }));
   const classes = useStyle();
   return (
-    <Box padding='0px 2px 8px 2px'>
-      <Box padding="10px 0 5px" fontSize="18px" color='black' textAlign="center">
+    <Box padding="0px 2px 8px 2px">
+      <Box
+        padding="10px 0 5px"
+        fontSize="18px"
+        color="black"
+        textAlign="center"
+      >
         Пожелания или замечания:
       </Box>
-      <Box className={classes.blockWishes}>
-        {modalListItems.wish}
-      </Box>
+      <Box className={classes.blockWishes}>{modalListItems.wish}</Box>
       <Box>
         <input
           className={classes.inputModal}
