@@ -20,10 +20,10 @@ const getRandom = (min, max) => {
 //Авторизация
 server.post("/auth", (req, res) => {
   const { login, password } = req.body;
-  const authUser = user
+  const authUser = users
     .toJSON()
     .find(
-      (recruiter) =>
+      (user) =>
         user.login === login && user.password === password
     );
   if (authUser === undefined) {

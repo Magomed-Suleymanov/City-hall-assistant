@@ -1,6 +1,5 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
-import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
@@ -9,10 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import FormInput from './FormInput';
 import { Link } from 'react-router-dom';
 import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
-import { deleteModalAuth } from '../../redux/actions/auth'
 
 function Login() {
-  const dispatch = useDispatch();
   const useStyles = makeStyles((theme) => ({
     modalAuth: {
       position: 'absolute',
@@ -42,7 +39,6 @@ function Login() {
       alignItems: 'center',
     },
     avatar: {
-      margin: theme.spacing(0),
       backgroundColor: theme.palette.secondary.main,
     },
   }));
@@ -55,15 +51,12 @@ function Login() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Войти
         </Typography>
         <FormInput />
       </Box>
-      <Box mt={5}></Box>
-      <Box
-        className={classes.exitAuth}
-        onClick={() => dispatch(deleteModalAuth())}
-      >
+      <Box mt={3}></Box>
+      <Box className={classes.exitAuth}>
         <Link to="/home">
           <ClearOutlinedIcon fontSize="large" />
         </Link>

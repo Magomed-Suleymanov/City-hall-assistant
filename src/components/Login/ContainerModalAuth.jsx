@@ -9,7 +9,7 @@ import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function ContainerModalAuth() {
   const dispatch = useDispatch();
@@ -59,9 +59,7 @@ function ContainerModalAuth() {
         </Typography>
         <FormInput />
       </Box>
-      <Box mt={5}>
-
-      </Box>
+      <Box mt={5}></Box>
       <Box
         className={classes.exitAuth}
         onClick={() => dispatch(deleteModalAuth())}
