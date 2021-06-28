@@ -1,30 +1,32 @@
 const initialState = {
   users: [],
-  loginLoading: false,
-  error: false,
+  authorizing: false,
+  errorMessage: false,
+  token: localStorage.getItem('token-auth'),
 };
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
-    case 'login/start':
+    case 'auth/started':
       return {
         ...state,
-        loginLoading: true,
-        error: false,
+        authorizing: true,
+        errorMessage: false,
+      };
+    case 'auth/succeed':
+      return {
+        ...state,
+        authorizing: true,
+        token: action.payload.token,
       };
 
-    case 'login/success':
+    case 'auth/failed': {
       return {
         ...state,
-        users: action.payload,
-        loginLoading: false,
+        authorizing: false,
+        errorMessage: true,
       };
-
-    case 'login/error':
-      return {
-        ...state,
-        error: true,
-      };
+    }
 
     default:
       return state;

@@ -7,13 +7,13 @@ import ListOfStreets from './List/ListOfStreets';
 import { useSelector } from 'react-redux';
 import ModalItemsList from './List/ModalItemsList';
 import Box from '@material-ui/core/Box';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Login from '../Login';
 import Registration from '../registration';
 
 function HomePage() {
-  const token = useSelector((state) => state.users.token);
-  const auth = useSelector((state) => state.users.authorizing);
+  const token = useSelector((state) => state.auth.token);
+  const auth = useSelector((state) => state.auth.authorizing);
 
   const listVisibility = useSelector(
     (state) => state.application.listVisibility,
@@ -22,19 +22,13 @@ function HomePage() {
     (state) => state.application.listModalVisibility,
   );
 
-  let routes;
-
-  if (!token) {
-    routes = <Route path={'/auth'} component={Login} />;
-  }
-
   const mapVisibility = useSelector((state) => state.application.mapVisibility);
   return (
     <Box style={{ display: 'flex' }}>
-      {routes}
-      <Route path="/registration">
-        <Registration />
-      </Route>
+      <Switch>
+        <Route path="/auth" component={Login} />
+        <Route path="/registration" component={Registration} />
+      </Switch>
       {listModalVisibility && <ModalItemsList />}
       <Dashboard />
       <ToggleDashboard />
