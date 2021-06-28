@@ -1,4 +1,4 @@
-export function loginStart(login, password) {
+export function Registration(login, password) {
   return (dispatch) => {
     dispatch({
       type: 'login/start',
@@ -29,3 +29,4 @@ export function loginStart(login, password) {
       });
   };
 }
+

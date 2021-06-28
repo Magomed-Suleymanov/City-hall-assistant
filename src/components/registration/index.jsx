@@ -4,7 +4,6 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import RegistButton from './RegistButton';
 import GridItem from './GridItem';
 
 export default function Registration() {
@@ -49,17 +48,25 @@ export default function Registration() {
   const classes = useStyles();
 
   return (
-    <Box className={classes.paper}>
-      <Avatar className={classes.avatar}>
-        <LockOutlinedIcon />
-      </Avatar>
-      <Typography component="h1" variant="h5">
-        Регистрация
-      </Typography>
-      <form className={classes.form} noValidate>
-        <GridItem />
-        <RegistButton />
-      </form>
+    <Box>
+      <Box
+        position="absolute"
+        zIndex="201"
+        width="100%"
+        height="100%"
+        style={{ opacity: 0.2, backgroundColor: 'whitesmoke' }}
+      ></Box>
+      <Box className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Регистрация
+        </Typography>
+        <form className={classes.form} noValidate>
+          <GridItem />
+        </form>
+      </Box>
     </Box>
   );
 }

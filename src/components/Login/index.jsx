@@ -45,23 +45,32 @@ function Login() {
   const classes = useStyles();
 
   return (
-    <Container component="main" className={classes.modalAuth} maxWidth="xs">
-      <Box className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Войти
-        </Typography>
-        <FormInput />
-      </Box>
-      <Box mt={3}></Box>
-      <Box className={classes.exitAuth}>
-        <Link to="/home">
-          <ClearOutlinedIcon fontSize="large" />
-        </Link>
-      </Box>
-    </Container>
+    <Box>
+      <Box
+        position="absolute"
+        zIndex="201"
+        width="100%"
+        height="100%"
+        style={{ opacity: 0.2, backgroundColor: 'whitesmoke' }}
+      ></Box>
+      <Container component="main" className={classes.modalAuth} maxWidth="xs">
+        <Box className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Войти
+          </Typography>
+          <FormInput />
+        </Box>
+        <Box mt={3}></Box>
+        <Box className={classes.exitAuth}>
+          <Link to="/home">
+            <ClearOutlinedIcon fontSize="large" />
+          </Link>
+        </Box>
+      </Container>
+    </Box>
   );
 }
 
