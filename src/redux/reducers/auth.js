@@ -1,32 +1,74 @@
 const initialState = {
   users: [],
-  authorizing: false,
-  errorMessage: false,
-  token: localStorage.getItem('token-auth'),
+  loadingRegistration: false,
+  recruiter: JSON.parse(localStorage.getItem("user")) || {},
+
+  // authorizing: false,
+  // errorMessage: false,
+  // token: JSON.parse(localStorage.getItem("user")) || {},
 };
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
-    case 'auth/started':
+
+    case "auth/registration/start":
       return {
         ...state,
-        authorizing: true,
-        errorMessage: false,
+        error: false,
+        loadingRegistration: true,
       };
-    case 'auth/succeed':
+    case "auth/registration/success":
+      if (action.payload.error !== undefined) {
+        return {
+          ...state,
+          loadingRegistration: false,
+          error: true,
+        };
+      }
+      if (action.checkbox) {
+        localStorage.setItem("user", JSON.stringify(action.payload));
+      }
       return {
         ...state,
-        authorizing: true,
-        token: action.payload.token,
+        loadingRegistration: false,
+        recruiter: action.payload,
       };
 
-    case 'auth/failed': {
-      return {
-        ...state,
-        authorizing: false,
-        errorMessage: true,
-      };
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // case 'auth/started':
+    //   return {
+    //     ...state,
+    //     authorizing: true,
+    //     errorMessage: false,
+    //   };
+    // case 'auth/succeed':
+    //   return {
+    //     ...state,
+    //     authorizing: true,
+    //   };
+    //
+    // case 'auth/failed': {
+    //   return {
+    //     ...state,
+    //     authorizing: false,
+    //     errorMessage: true,
+    //   };
+    // }
 
     default:
       return state;

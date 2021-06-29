@@ -1,5 +1,5 @@
 const initialState = {
-  items: [],
+  Items: [],
   modalListItems: [],
   mapVisibility: true,
   listVisibility: false,

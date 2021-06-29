@@ -46,8 +46,7 @@ server.post("/users", (req, res, next) => {
   );
   if (
     req.body.login === undefined ||
-    req.body.password === undefined ||
-    req.body.email === undefined
+    req.body.password === undefined
   ) {
     res.status(400);
     res.send();
