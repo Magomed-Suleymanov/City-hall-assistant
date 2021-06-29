@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import { NavLink } from 'react-router-dom';
+import {useDispatch} from "react-redux"
+import {loginStart} from "../../redux/actions/auth";
 
 function FormInput(props) {
   const useStyles = makeStyles((theme) => ({
@@ -15,7 +17,17 @@ function FormInput(props) {
     },
   }));
   const classes = useStyles();
+  const dispatch = useDispatch()
+  const [values, setValues] = useState({
+    login: "",
+    password: "",
+    showPassword: false,
+    checkbox: false,
+  });
 
+  const handleLogin = () => {
+    dispatch(loginStart(values.login, values.password))
+  }
   return (
     <Box>
       <form className={classes.form} noValidate>
@@ -29,6 +41,8 @@ function FormInput(props) {
           name="email"
           autoComplete="email"
           autoFocus
+          value={values.login}
+          onChange={(e) => setValues(e.target.value)}
         />
         <TextField
           variant="outlined"
@@ -40,6 +54,7 @@ function FormInput(props) {
           type="password"
           id="password"
           autoComplete="current-password"
+          onChange={(e) => setValues(e.target.value)}
         />
 
         <Button
@@ -48,6 +63,7 @@ function FormInput(props) {
           variant="contained"
           color="primary"
           className={classes.submit}
+          onClick={handleLogin}
         >
           Войти
         </Button>

@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import GridItem from './GridItem';
 
-export default function Registration() {
+function Registration() {
   const useStyles = makeStyles((theme) => ({
     paper: {
       display: 'flex',
@@ -70,3 +70,5 @@ export default function Registration() {
     </Box>
   );
 }
+
+export default Registration
