@@ -10,7 +10,7 @@ function AuthRoutes(props) {
             <Route exact path={"/auth/login"}>
                 <Login />
             </Route>
-            <Route exact path={"/auth/Registration"}>
+            <Route exact path={"/auth/registration"}>
                 <Registration />
             </Route>
             <Redirect to={"/auth/login"} />

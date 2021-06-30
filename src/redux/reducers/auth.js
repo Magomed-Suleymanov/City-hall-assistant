@@ -3,6 +3,7 @@ const initialState = {
   loginLoad: false,
   registerLoad: false,
   error: false,
+  authorizing: false,
 };
 
 export default function auth(state = initialState, action) {
@@ -18,6 +19,7 @@ export default function auth(state = initialState, action) {
         ...state,
         loginLoad: false,
         user: action.payload,
+        authorizing: true,
       };
 
     case 'login/error': {
@@ -25,6 +27,7 @@ export default function auth(state = initialState, action) {
         ...state,
         error: true,
         loginLoad: false,
+        authorizing: false,
       };
     }
 

@@ -49,13 +49,6 @@ function Registration() {
 
   return (
     <Box>
-      <Box
-        position="absolute"
-        zIndex="201"
-        width="100%"
-        height="100%"
-        style={{ opacity: 0.2, backgroundColor: 'whitesmoke' }}
-      ></Box>
       <Box className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />

@@ -12,13 +12,7 @@ import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 function Login() {
   const useStyles = makeStyles((theme) => ({
     modalAuth: {
-      position: 'absolute',
-      top: '70px',
-      boxShadow: '0px 0px 10px 0px rgb(0 0 0)',
-      borderRadius: '5px',
-      left: 'calc(50% - (444px / 2))',
-      zIndex: 210,
-      backgroundColor: 'white',
+
     },
     exitAuth: {
       position: 'absolute',
@@ -45,14 +39,6 @@ function Login() {
   const classes = useStyles();
 
   return (
-    <Box>
-      <Box
-        position="absolute"
-        zIndex="201"
-        width="100%"
-        height="100%"
-        style={{ opacity: 0.2, backgroundColor: 'whitesmoke' }}
-      ></Box>
       <Container component="main" className={classes.modalAuth} maxWidth="xs">
         <Box className={classes.paper}>
           <Avatar className={classes.avatar}>
@@ -64,13 +50,7 @@ function Login() {
           <FormInput />
         </Box>
         <Box mt={3}></Box>
-        <Box className={classes.exitAuth}>
-          <Link to="/home">
-            <ClearOutlinedIcon fontSize="large" />
-          </Link>
-        </Box>
       </Container>
-    </Box>
   );
 }
 

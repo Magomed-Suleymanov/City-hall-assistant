@@ -1,16 +1,11 @@
 import HomePage from '../HomePage';
 import {useDispatch, useSelector} from 'react-redux';
 import Box from '@material-ui/core/Box';
-import { loadUsers } from '../../redux/actions/users';
-import { useEffect } from 'react';
 import {Switch, Route, Redirect} from "react-router-dom"
 import AuthRoutes from "./AuthRoutes";
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadUsers());
-  }, [dispatch]);
 
   const user = useSelector(state => state.auth.user)
 
