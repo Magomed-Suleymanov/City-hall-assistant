@@ -1,74 +1,54 @@
 const initialState = {
-  users: [],
-  loadingRegistration: false,
-  recruiter: JSON.parse(localStorage.getItem("user")) || {},
-
-  // authorizing: false,
-  // errorMessage: false,
-  // token: JSON.parse(localStorage.getItem("user")) || {},
+  // user: [],
+  // loginLoad: false,
+  // registerLoad: false,
+  // error: false,
+  // token: localStorage.getItem('user')
+  loading: false,
+  token: localStorage.getItem('token'),
+  authorizing: false,
+  error: false,
 };
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
-
-    case "auth/registration/start":
+    case 'auth/started':
       return {
         ...state,
+        authorizing: true,
         error: false,
-        loadingRegistration: true,
       };
-    case "auth/registration/success":
-      if (action.payload.error !== undefined) {
-        return {
-          ...state,
-          loadingRegistration: false,
-          error: true,
-        };
-      }
-      if (action.checkbox) {
-        localStorage.setItem("user", JSON.stringify(action.payload));
-      }
+    case 'login/succeed':
       return {
         ...state,
-        loadingRegistration: false,
-        recruiter: action.payload,
+        token: action.payload.token,
+        authorizing: false,
+        error: false,
+      };
+    case 'auth/reset':
+      return {
+        ...state,
+        token: null,
       };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // case 'auth/started':
+    // case "auth/login/start":
     //   return {
     //     ...state,
-    //     authorizing: true,
-    //     errorMessage: false,
+    //     loginLoad: true,
+    //     error: false,
     //   };
-    // case 'auth/succeed':
+    // case "auth/login/success":
     //   return {
     //     ...state,
-    //     authorizing: true,
+    //     token: action.payload,
+    //     loginLoad: false,
     //   };
-    //
-    // case 'auth/failed': {
+    // case "auth/login/error":
     //   return {
     //     ...state,
-    //     authorizing: false,
-    //     errorMessage: true,
+    //     error: true,
+    //     loadingLogin: false,
     //   };
-    // }
 
     default:
       return state;

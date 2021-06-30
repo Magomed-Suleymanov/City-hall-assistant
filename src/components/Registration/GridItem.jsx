@@ -7,16 +7,16 @@ import ButtonRegistration from './ButtonRegistration';
 
 function GridItem(props) {
   const users = useSelector((state) => state.users.items);
-  // const [login, setLogin] = useState(users.login);
-  // const [password, setPassword] = useState(users.password);
+  const [login, setLogin] = useState(users.login);
+  const [password, setPassword] = useState(users.password);
 
   return (
     <Box>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField
-            // value={login}
-            // onChange={(e) => setLogin(e.target.value)}
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
             variant="outlined"
             required
             fullWidth
@@ -28,8 +28,8 @@ function GridItem(props) {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            // value={password}
-            // onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             variant="outlined"
             required
             fullWidth
@@ -41,7 +41,7 @@ function GridItem(props) {
           />
         </Grid>
       </Grid>
-      <ButtonRegistration />
+      <ButtonRegistration login={login} password={password} />
     </Box>
   );
 }

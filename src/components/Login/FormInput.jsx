@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginStart } from '../../redux/actions/auth';
 
 function FormInput(props) {
   const useStyles = makeStyles((theme) => ({
@@ -15,7 +17,13 @@ function FormInput(props) {
     },
   }));
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
 
+  const handleLogin = () => {
+    dispatch(loginStart(login, password));
+  };
   return (
     <Box>
       <form className={classes.form} noValidate>
@@ -29,6 +37,8 @@ function FormInput(props) {
           name="email"
           autoComplete="email"
           autoFocus
+          value={login}
+          onChange={(e) => setLogin(e.target.value)}
         />
         <TextField
           variant="outlined"
@@ -40,6 +50,8 @@ function FormInput(props) {
           type="password"
           id="password"
           autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
         <Button
@@ -48,10 +60,11 @@ function FormInput(props) {
           variant="contained"
           color="primary"
           className={classes.submit}
+          onClick={handleLogin}
         >
           Войти
         </Button>
-        <NavLink to="/registration">Вы не зарегистрированы?</NavLink>
+        <NavLink to="/auth/Registration">Вы не зарегистрированы?</NavLink>
       </form>
     </Box>
   );

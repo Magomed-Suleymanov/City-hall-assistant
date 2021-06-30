@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import GridItem from './GridItem';
 
-export default function Registration() {
+function Registration() {
   const useStyles = makeStyles((theme) => ({
     paper: {
       display: 'flex',
@@ -18,7 +18,7 @@ export default function Registration() {
       position: 'absolute',
       zIndex: '220',
       top: '70px',
-      boxShadow: '0px 0px 10px 0px rgb(0 0 0)',
+      boxShadow: '0px 0px 4px 0px rgb(0 0 0)',
       borderRadius: '5px',
     },
     avatar: {
@@ -70,3 +70,5 @@ export default function Registration() {
     </Box>
   );
 }
+
+export default Registration;

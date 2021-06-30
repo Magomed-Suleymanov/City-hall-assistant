@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom';
 import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 import { makeStyles } from '@material-ui/core/styles';
-import { Registration } from '../../redux/actions/auth'
+import { Registration } from '../../redux/actions/auth';
 import { useDispatch } from 'react-redux';
 
 function ButtonRegistration({ login, password }) {
@@ -29,9 +29,9 @@ function ButtonRegistration({ login, password }) {
 
   const classes = useStyles();
 
-  // const handleClick = () => {
-  //   dispatch(Registration(login, password));
-  // };
+  const handleClick = () => {
+    dispatch(Registration(login, password));
+  };
 
   return (
     <Box>
@@ -41,7 +41,7 @@ function ButtonRegistration({ login, password }) {
         variant="contained"
         color="primary"
         className={classes.submit}
-        // onClick={handleClick}
+        onClick={handleClick}
       >
         Зарегистрироваться
       </Button>

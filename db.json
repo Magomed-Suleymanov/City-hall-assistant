@@ -2,9 +2,13 @@
   "users": [
     {
       "login": "admin",
-      "password": "qwerty",
+      "firstName": "Ismail",
+      "password": "admin",
+      "lastName": "Timurkaev",
+      "email": "ismtim095@gmail.com",
+      "address": "Grozny",
       "token": "alfa123bravo123",
-      "role": "admin"
+      "avatar": null
     },
     {
       "id": 1,
@@ -12,10 +16,9 @@
       "password": "qwerty"
     },
     {
-      "id": 2,
-      "login": "bravo",
-      "password": "qwerty",
-      "token": "bravo123alfa123"
+      "login": "qwewqeqwe",
+      "password": "qweqweqwe",
+      "id": 2
     }
   ],
   "streets": [
