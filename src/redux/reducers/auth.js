@@ -1,32 +1,54 @@
 const initialState = {
-  user: JSON.parse(localStorage.getItem("user")) || {},
-  loginLoad: false,
-  registerLoad: false,
+  // user: [],
+  // loginLoad: false,
+  // registerLoad: false,
+  // error: false,
+  // token: localStorage.getItem('user')
+  loading: false,
+  token: localStorage.getItem('token'),
+  authorizing: false,
   error: false,
 };
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
-    case 'login/start':
+    case 'auth/started':
       return {
         ...state,
-        loginLoad: true,
+        authorizing: true,
         error: false,
       };
-    case 'login/success':
+    case 'login/succeed':
       return {
         ...state,
-        loginLoad: false,
-        user: action.payload,
+        token: action.payload.token,
+        authorizing: false,
+        error: false,
+      };
+    case 'auth/reset':
+      return {
+        ...state,
+        token: null,
       };
 
-    case 'login/error': {
-      return {
-        ...state,
-        error: true,
-        loginLoad: false,
-      };
-    }
+    // case "auth/login/start":
+    //   return {
+    //     ...state,
+    //     loginLoad: true,
+    //     error: false,
+    //   };
+    // case "auth/login/success":
+    //   return {
+    //     ...state,
+    //     token: action.payload,
+    //     loginLoad: false,
+    //   };
+    // case "auth/login/error":
+    //   return {
+    //     ...state,
+    //     error: true,
+    //     loadingLogin: false,
+    //   };
 
     default:
       return state;

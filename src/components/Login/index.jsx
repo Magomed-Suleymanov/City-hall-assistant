@@ -14,7 +14,7 @@ function Login() {
     modalAuth: {
       position: 'absolute',
       top: '70px',
-      boxShadow: '0px 0px 10px 0px rgb(0 0 0)',
+      boxShadow: '0px 0px 4px 0px rgb(0 0 0)',
       borderRadius: '5px',
       left: 'calc(50% - (444px / 2))',
       zIndex: 210,

@@ -1,7 +1,7 @@
 export function Registration(login, password) {
   return (dispatch) => {
     dispatch({
-      type: 'login/start',
+      type: 'registration/start',
     });
 
     fetch('http://localhost:8000/users', {
@@ -17,12 +17,10 @@ export function Registration(login, password) {
       .then((response) => response.json())
       .then((json) => {
         if (json.login === undefined) {
-          dispatch({ type: 'login/error' });
+          dispatch({ type: 'registration/error' });
         } else {
-          localStorage.setItem('token-auth', json.token);
-
           dispatch({
-            type: 'login/success',
+            type: 'registration/success',
             payload: json,
           });
         }
@@ -30,30 +28,61 @@ export function Registration(login, password) {
   };
 }
 
+// export const loginStart = (login, password) => {
+//   return (dispatch) => {
+//     dispatch({
+//       type: "auth/login/start",
+//     });
+//
+//     fetch("http://localhost:8000/users/auth", )
+//       .then((res) => res.json())
+//       .then((json) => {
+//         if (json.login === undefined) {
+//           dispatch({
+//             type: "auth/login/error",
+//           });
+//         } else {
+//           localStorage.setItem('user', json);
+//           dispatch({
+//             type: "auth/login/success",
+//             payload: json,
+//           });
+//         }
+//       })
+//       .catch(() => {
+//         dispatch({
+//           type: "auth/login/error",
+//         });
+//       });
+//   };
+// };
+
 export const loginStart = (login, password) => {
   return (dispatch) => {
-    dispatch({ type: 'login/start' });
-
-    fetch(`http://localhost:8000/auth`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify({
-        login: login,
-        password: password
+    dispatch({
+      type: 'auth/started',
+    });
+    fetch(
+      `http://localhost:8000/users/authorization/login=${login}/password=${password}`,
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        localStorage.setItem('token', json);
+        dispatch({
+          type: 'login/succeed',
+          payload: json,
+        });
       })
-    })
-        .then((res) => res.json())
-        .then((json) => {
-          if (json.login === undefined) {
-            dispatch({type: 'login/error'})
-          } else {
-            dispatch ({
-              type: 'login/success',
-              payload: json
-            })
-          }
-        }) .catch(() => {
-          dispatch({type: 'login/error'})
-    })
+      .catch((error) => {
+        console.log(error);
+        return dispatch({ type: 'login/error' });
+      });
+  };
+};
+
+export const authReset = () => {
+  localStorage.removeItem('token');
+  return {
+    type: 'auth/reset',
   };
 };

@@ -16,16 +16,9 @@
       "password": "qwerty"
     },
     {
-      "id": 2,
-      "login": "bravo",
-      "password": "qwerty",
-      "token": "bravo123alfa123"
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
+      "login": "qwewqeqwe",
+      "password": "qweqweqwe",
+      "id": 2
     }
   ],
   "streets": [

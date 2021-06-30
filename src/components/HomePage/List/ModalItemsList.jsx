@@ -32,7 +32,7 @@ function ModalItemsList() {
         width="100%"
         height="100%"
         zIndex={165}
-        style={{ background: 'black', opacity: 0.1 }}
+        style={{ background: 'whitesmoke', opacity: 0.2 }}
         onClick={() => dispatch(deactModalList())}
       ></Box>
       <Box className={classes.wrapModalList}>

@@ -18,7 +18,7 @@ function Registration() {
       position: 'absolute',
       zIndex: '220',
       top: '70px',
-      boxShadow: '0px 0px 10px 0px rgb(0 0 0)',
+      boxShadow: '0px 0px 4px 0px rgb(0 0 0)',
       borderRadius: '5px',
     },
     avatar: {
@@ -71,4 +71,4 @@ function Registration() {
   );
 }
 
-export default Registration
+export default Registration;

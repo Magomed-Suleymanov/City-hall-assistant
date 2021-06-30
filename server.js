@@ -27,16 +27,26 @@ const getRandomToken = (length) => {
 };
 
 // //Авторизация
-server.post('/auth', (req, res) => {
-  const { login, password } = req.body;
-  const authUser = users
-    .toJSON()
-    .find((user) => user.login === login && user.password === password);
-  if (authUser === undefined) {
-    res.status(404).json({ message: 'Ошибка авторизации' });
-  } else {
-    res.json({ ...authUser, password: null });
-  }
+// server.get('/auth', (req, res) => {
+//   const { login, password } = req.body;
+//   const authUser = users
+//     .toJSON()
+//     .find((user) => user.login === login && user.password === password);
+//   if (authUser === undefined) {
+//     res.status(404).json({ message: 'Ошибка авторизации' });
+//   } else {
+//     res.json({ ...authUser, password: null });
+//   }
+// });
+
+//Авторизация
+server.get('/authorization/login=:login/password=:password', (req, res) => {
+  const user = users.find((item) => item.login === req.params.login);
+  const password = user.toJSON().password;
+  const login = user.toJSON().login;
+  return password === req.params.password && login === req.params.login
+    ? res.json(user.toJSON().token)
+    : res.json();
 });
 
 //Регистрация
