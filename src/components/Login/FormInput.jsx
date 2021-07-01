@@ -4,13 +4,12 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
 import { loginStart } from '../../redux/actions/auth';
 
 function FormInput(props) {
   const useStyles = makeStyles((theme) => ({
     form: {
-      width: '100%',
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
@@ -18,6 +17,9 @@ function FormInput(props) {
   }));
   const classes = useStyles();
   const dispatch = useDispatch();
+  const error = useSelector((state) => state.auth.error);
+
+
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
@@ -54,6 +56,11 @@ function FormInput(props) {
           onChange={(e) => setPassword(e.target.value)}
         />
 
+        {error && (
+          <Box>
+            Данные введены неверно. Попробуйте еще раз
+          </Box>
+        )}
         <Button
           type="submit"
           fullWidth

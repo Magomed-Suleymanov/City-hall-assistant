@@ -5,14 +5,14 @@ const initialState = {
   // error: false,
   // token: localStorage.getItem('user')
   loading: false,
-  token: localStorage.getItem('token'),
+  token: JSON.parse(localStorage.getItem('token')) || {},
   authorizing: false,
   error: false,
 };
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
-    case 'auth/started':
+    case 'login/started':
       return {
         ...state,
         authorizing: true,
@@ -21,11 +21,17 @@ export default function auth(state = initialState, action) {
     case 'login/succeed':
       return {
         ...state,
-        token: action.payload.token,
+        token: localStorage.setItem('token', JSON.stringify(action.payload)),
         authorizing: false,
         error: false,
       };
-    case 'auth/reset':
+    case 'login/error':
+      return {
+        ...state,
+        authorizing: false,
+        error: true,
+      };
+    case 'login/reset':
       return {
         ...state,
         token: null,
