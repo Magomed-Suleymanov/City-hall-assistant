@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import { NavLink } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux"
 import {loginStart} from "../../redux/actions/auth";
+
 
 function FormInput(props) {
   const useStyles = makeStyles((theme) => ({
@@ -25,6 +26,7 @@ function FormInput(props) {
   const handleLogin = () => {
     dispatch(loginStart(login, password))
   }
+
   return (
     <Box>
       <form className={classes.form} noValidate>
@@ -65,7 +67,7 @@ function FormInput(props) {
         >
           Войти
         </Button>
-        <NavLink to="/registration">Вы не зарегистрированы?</NavLink>
+        <NavLink to="/auth/Registration">Вы не зарегистрированы?</NavLink>
       </form>
     </Box>
   );

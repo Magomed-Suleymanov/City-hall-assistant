@@ -11,9 +11,7 @@ import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 
 function Login() {
   const useStyles = makeStyles((theme) => ({
-    modalAuth: {
 
-    },
     exitAuth: {
       position: 'absolute',
       padding: '8px 12px',

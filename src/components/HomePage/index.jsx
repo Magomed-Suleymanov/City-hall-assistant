@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 import ModalItemsList from './List/ModalItemsList';
 import Box from '@material-ui/core/Box';
 
-
 function HomePage() {
   const token = useSelector((state) => state.auth.token);
   const auth = useSelector((state) => state.auth.authorizing);

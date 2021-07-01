@@ -3,8 +3,12 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { useDispatch, useSelector } from 'react-redux';
 
 function ButtonForAuth() {
+  const dispatch = useDispatch();
+
+  const token = useSelector((state) => state.auth.token);
   const useStyle = makeStyles({
     button: {
       background: 'white',
@@ -17,9 +21,24 @@ function ButtonForAuth() {
   });
   const classes = useStyle();
 
+
   return (
-    <NavLink to="/auth">
-      <Box>
+    <Box>
+      {!token ? (
+        <Box>
+          <NavLink to="/auth">
+            <Button
+              variant="outlined"
+              color="primary"
+              size="medium"
+              startIcon={<ExitToAppIcon />}
+              className={classes.button}
+            >
+              Войти
+            </Button>
+          </NavLink>
+        </Box>
+      ) : (
         <Button
           variant="outlined"
           color="primary"
@@ -27,10 +46,10 @@ function ButtonForAuth() {
           startIcon={<ExitToAppIcon />}
           className={classes.button}
         >
-          Войти
+          Выйти
         </Button>
-      </Box>
-    </NavLink>
+      )}{' '}
+    </Box>
   );
 }
 
