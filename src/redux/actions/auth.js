@@ -60,14 +60,14 @@ export function Registration(login, password) {
 export const loginStart = (login, password) => {
   return (dispatch) => {
     dispatch({
-      type: 'auth/started',
+      type: 'login/started',
     });
     fetch(
-      `http://localhost:8000/users/authorization/login=${login}/password=${password}`,
+      `/users/authorization/login=${login}/password=${password}`,
     )
       .then((response) => response.json())
       .then((json) => {
-        localStorage.setItem('token', json);
+
         dispatch({
           type: 'login/succeed',
           payload: json,
@@ -83,6 +83,6 @@ export const loginStart = (login, password) => {
 export const authReset = () => {
   localStorage.removeItem('token');
   return {
-    type: 'auth/reset',
+    type: 'login/reset',
   };
 };
