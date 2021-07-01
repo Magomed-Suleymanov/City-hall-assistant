@@ -7,7 +7,7 @@ function App() {
         const token = useSelector((state) => state.auth.token);
         let routes;
 
-        if (token) {
+        if (!token) {
             routes = (
                 <Switch>
                     <Route path={'/home'} component={HomePage}/>;

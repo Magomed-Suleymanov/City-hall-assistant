@@ -13,12 +13,11 @@ function Registration() {
       flexDirection: 'column',
       alignItems: 'center',
       backgroundColor: 'white',
-      maxWidth: '500px',
-      left: 'calc(50% - 250px)',
+      maxWidth: '444px',
+      left: 'calc(50% - 444px / 2)',
       position: 'absolute',
       zIndex: '220',
       top: '70px',
-      boxShadow: '0px 0px 4px 0px rgb(0 0 0)',
       borderRadius: '5px',
     },
     avatar: {
@@ -51,7 +50,6 @@ function Registration() {
     <Box>
       <Box className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Регистрация

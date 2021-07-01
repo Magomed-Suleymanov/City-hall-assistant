@@ -12,18 +12,6 @@ function ButtonRegistration({ login, password }) {
     submit: {
       margin: theme.spacing(3, 0, 2),
     },
-    exitAuth: {
-      position: 'absolute',
-      padding: '8px 12px',
-      color: 'black',
-      top: '6px',
-      right: '6px',
-      cursor: 'pointer',
-
-      '&:active': {
-        color: 'red',
-      },
-    },
   }));
 
   const classes = useStyles();
@@ -43,11 +31,6 @@ function ButtonRegistration({ login, password }) {
       <NavLink to="/auth" variant="body2">
         У вас уже есть аккаунт? Войдите в него
       </NavLink>
-      <Box className={classes.exitAuth}>
-        <NavLink to="/home">
-          <ClearOutlinedIcon fontSize="large" />
-        </NavLink>
-      </Box>
     </Box>
   );
 }

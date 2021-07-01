@@ -1,10 +1,10 @@
-const jsonServer = require('json-server');
+const jsonServer = require("json-server");
 const server = jsonServer.create();
-const router = jsonServer.router('db.json');
+const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const PORT = 8000;
-const users = router.db.get('users');
-const streets = router.db.get('streets');
+const users = router.db.get("users");
+const streets = router.db.get("streets");
 
 const getRandomToken = (length) => {
   if (length === undefined || length <= 0) {
@@ -40,7 +40,7 @@ const getRandomToken = (length) => {
 // });
 
 //Авторизация
-server.get('/authorization/login=:login/password=:password', (req, res) => {
+server.get("/authorization/login=:login/password=:password", (req, res) => {
   const user = users.find((item) => item.login === req.params.login);
   const password = user.toJSON().password;
   const login = user.toJSON().login;
@@ -48,29 +48,30 @@ server.get('/authorization/login=:login/password=:password', (req, res) => {
     ? res.json(user.toJSON().token)
     : res.json();
 });
+console.log(users)
 
 //Регистрация
-server.post('/users', (req, res, next) => {
-  const defaultDate = {
-    phone: null,
-    address: null,
-    token: getRandomToken(100),
-  };
-  const loginCheck = users.some((user) => user.login === req.body.login);
-  if (
-    req.body.login === undefined ||
-    req.body.password === undefined ||
-    req.body.email === undefined
-  ) {
-    res.status(400);
-    res.send();
-  } else if (loginCheck.toJSON()) {
-    res.status(400).json({ error: 'Такой логин уже существует' });
-    res.send();
-  }
-  req.body = { ...req.body, ...defaultDate };
-  next();
-});
+// server.post('/users', (req, res, next) => {
+//   const defaultDate = {
+//     phone: null,
+//     address: null,
+//     token: getRandomToken(100),
+//   };
+//   const loginCheck = users.some((user) => user.login === req.body.login);
+//   if (
+//     req.body.login === undefined ||
+//     req.body.password === undefined ||
+//     req.body.email === undefined
+//   ) {
+//     res.status(400);
+//     res.send();
+//   } else if (loginCheck.toJSON()) {
+//     res.status(400).json({ error: 'Такой логин уже существует' });
+//     res.send();
+//   }
+//   req.body = { ...req.body, ...defaultDate };
+//   next();
+// });
 
 server.use(middlewares);
 server.use(router);

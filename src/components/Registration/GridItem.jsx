@@ -41,6 +41,8 @@ function GridItem(props) {
           />
         </Grid>
       </Grid>
+      <Box mt={1}></Box>
+
       <ButtonRegistration login={login} password={password} />
     </Box>
   );

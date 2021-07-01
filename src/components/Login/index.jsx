@@ -12,6 +12,11 @@ import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 function Login() {
   const useStyles = makeStyles((theme) => ({
 
+    modalAuth: {
+      display: "flex",
+      alignItems: "center"
+    },
+
     exitAuth: {
       position: 'absolute',
       padding: '8px 12px',
@@ -25,7 +30,7 @@ function Login() {
       },
     },
     paper: {
-      marginTop: theme.spacing(12),
+      marginTop: theme.spacing(21),
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',

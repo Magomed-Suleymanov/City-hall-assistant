@@ -14,11 +14,6 @@
       "id": 1,
       "login": "alfa",
       "password": "qwerty"
-    },
-    {
-      "login": "qwewqeqwe",
-      "password": "qweqweqwe",
-      "id": 2
     }
   ],
   "streets": [
