@@ -1,6 +1,6 @@
 {
   "users": [
-    {
+    { "id": 1,
       "login": "admin",
       "firstName": "Ismail",
       "password": "admin",
@@ -11,7 +11,7 @@
       "avatar": null
     },
     {
-      "id": 1,
+      "id": 2,
       "login": "alfa",
       "password": "qwerty"
     }

@@ -2,7 +2,7 @@ const jsonServer = require("json-server");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
-const PORT = 8000;
+const PORT = 5000;
 const users = router.db.get("users");
 const streets = router.db.get("streets");
 

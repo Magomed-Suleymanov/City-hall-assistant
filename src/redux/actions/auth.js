@@ -4,7 +4,7 @@ export function Registration(login, password) {
       type: 'registration/start',
     });
 
-    fetch('http://localhost:8000/users', {
+    fetch('http://localhost:5000/users', {
       method: 'POST',
       body: JSON.stringify({
         login: login,

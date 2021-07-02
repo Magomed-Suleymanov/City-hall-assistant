@@ -13,7 +13,7 @@ export function deactModalList() {
 export const loadList = () => {
   return (dispatch) => {
     dispatch({ type: 'loading/street/start' });
-    fetch('http://localhost:8000/streets')
+    fetch('http://localhost:5000/streets')
       .then((response) => response.json())
       .then((json) => {
         dispatch({
@@ -27,7 +27,7 @@ export const loadList = () => {
 export const LoadModalList = (id) => {
   return (dispatch) => {
     dispatch({ type: 'loading/modalStreets/start' });
-    fetch(`http://localhost:8000/streets/${id}`)
+    fetch(`http://localhost:5000/streets/${id}`)
       .then((response) => response.json())
       .then((json) =>
         dispatch({

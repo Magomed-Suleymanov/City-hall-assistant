@@ -29,9 +29,9 @@ function ButtonRegistration({ login, password }) {
 
   const classes = useStyles();
 
-  const handleClick = () => {
-    dispatch(Registration(login, password));
-  };
+  // const handleClick = () => {
+  //   dispatch(Registration(login, password));
+  // };
 
   return (
     <Box>
@@ -41,7 +41,7 @@ function ButtonRegistration({ login, password }) {
         variant="contained"
         color="primary"
         className={classes.submit}
-        onClick={handleClick}
+        // onClick={handleClick}
       >
         Зарегистрироваться
       </Button>
