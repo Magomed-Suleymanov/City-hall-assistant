@@ -3,11 +3,8 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import FormInput from './FormInput';
-import { Link } from 'react-router-dom';
-import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 
 function Login() {
   const useStyles = makeStyles((theme) => ({
@@ -45,7 +42,6 @@ function Login() {
       <Container component="main" className={classes.modalAuth} maxWidth="xs">
         <Box className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Войти

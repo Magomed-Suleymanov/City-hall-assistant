@@ -23,18 +23,7 @@ function ContainerModalAuth() {
       zIndex: 210,
       backgroundColor: 'white',
     },
-    exitAuth: {
-      position: 'absolute',
-      padding: '8px 12px',
-      color: 'black',
-      top: '6px',
-      right: '6px',
-      cursor: 'pointer',
 
-      '&:active': {
-        color: 'red',
-      },
-    },
     paper: {
       marginTop: theme.spacing(12),
       display: 'flex',
@@ -49,26 +38,20 @@ function ContainerModalAuth() {
   const classes = useStyles();
 
   return (
-    <Container component="main" className={classes.modalAuth} maxWidth="xs">
-      <Box className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <FormInput />
-      </Box>
-      <Box mt={5}></Box>
-      <Box
-        className={classes.exitAuth}
-        onClick={() => dispatch(deleteModalAuth())}
-      >
-        <Link to="/home">
-          <ClearOutlinedIcon fontSize={'large'} />
-        </Link>
-      </Box>
-    </Container>
+      <Container component="main" className={classes.modalAuth} maxWidth="xs">
+        <Box className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <FormInput />
+        </Box>
+          <Link to="/home">
+            <ClearOutlinedIcon fontSize={'large'} />
+          </Link>
+      </Container>
   );
 }
 

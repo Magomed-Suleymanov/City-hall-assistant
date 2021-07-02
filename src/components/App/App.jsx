@@ -1,29 +1,31 @@
-import HomePage from '../HomePage';
-import { useDispatch, useSelector } from 'react-redux';
-import {Switch, Route, Redirect} from "react-router-dom"
-import AuthRoutes from "./AuthRoutes";
+import { Switch, Route, Redirect } from "react-router-dom";
+import React from "react";
+import { useSelector } from "react-redux";
+import HomePage from '../HomePage'
+import AuthRoutes from './AuthRoutes'
 
 function App() {
-        const token = useSelector((state) => state.auth.token);
-        let routes;
+    const user = useSelector(state => state.authReducer.user);
 
-        if (!token) {
-            routes = (
+    return (
+        <div className="app">
+            {user.login !== undefined ? (
                 <Switch>
-                    <Route path={'/home'} component={HomePage}/>;
-                    <Redirect to={'/home'}/>
+                    <Route exact path={"/home/:path_?/:path2_?"}>
+                        <HomePage />
+                    </Route>
+                    <Redirect to={"/home"} />
                 </Switch>
-            );
-        } else {
-            routes = (
+            ) : (
                 <Switch>
-                    <Route path="/auth" component={AuthRoutes}/>
-                    <Redirect to="/auth"/>
+                    <Route exact path={"/auth/:auth_?"}>
+                        <AuthRoutes />
+                    </Route>
+                    <Redirect to={"/auth"} />
                 </Switch>
-            );
-        }
-
-        return <div className="App">{routes}</div>;
-    }
+            )}
+        </div>
+    );
+}
 
 export default App;

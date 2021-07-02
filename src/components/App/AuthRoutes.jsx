@@ -1,20 +1,22 @@
-import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import Login from '../Login/index';
-import Registration from '../Registration/index';
+import React from 'react'
+import { Redirect, Route, Switch } from 'react-router-dom'
+import Login from '../Login'
+import Registration from '../Registration'
 
-function AuthRoutes(props) {
+function AuthRoutes (props) {
     return (
-        <Switch>
-            <Route exact path={"/auth/login"}>
-                <Login/>
-            </Route>
-            <Route exact path={"/auth/registration"}>
-                <Registration/>
-            </Route>
-            <Redirect to={"/auth/login"}/>
-        </Switch>
-    );
+        <div className="auth">
+            <Switch>
+                <Route exact path={"/auth/login"}>
+                    <Login />
+                </Route>
+                <Route exact path={"/auth/registration"}>
+                    <Registration />
+                </Route>
+                <Redirect to={"/auth/login"} />
+            </Switch>
+        </div>
+    )
 }
 
-export default AuthRoutes;
+export default AuthRoutes
