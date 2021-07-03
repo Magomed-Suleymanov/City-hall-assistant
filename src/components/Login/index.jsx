@@ -1,24 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import FormInput from './FormInput';
+import TextField from "@material-ui/core/TextField";
+import {Alert} from "@material-ui/lab";
+import Button from "@material-ui/core/Button";
+import {NavLink} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {startLogin} from "../../redux/actions/authReducer";
 
 const useStyles = makeStyles((theme) => ({
   modalAuth: {
-    position: 'absolute',
-    top: '70px',
-    boxShadow: '0px 0px 10px 0px rgb(0 0 0)',
-    borderRadius: '5px',
-    left: 'calc(50% - (444px / 2))',
-    zIndex: 210,
-    backgroundColor: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    margin: 'auto',
   },
 
   paper: {
-    marginTop: theme.spacing(12),
+    marginTop: theme.spacing(21),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -27,21 +28,78 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(0),
     backgroundColor: theme.palette.secondary.main,
   },
+  form: {
+    width: '100%',
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
 }));
 
 function Login() {
   const classes = useStyles();
 
+  const dispatch = useDispatch();
+  const error = useSelector((state) => state.authReducer.error);
+  const loading = useSelector((state) => state.authReducer.loadingLogin);
+
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(startLogin(login, password));
+  };
+
   return (
     <Container component="main" className={classes.modalAuth} maxWidth="xs">
       <Box className={classes.paper}>
-        <Avatar className={classes.avatar}></Avatar>
+        <Avatar className={classes.avatar} />
         <Typography component="h1" variant="h5">
           Войти
         </Typography>
-        <FormInput />
+        <form className={classes.form} noValidate>
+          <TextField
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              id="email"
+              label="Login"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+          />
+          <TextField
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+          />
+
+          {error && <Alert severity="error">Неверный логин или пароль</Alert>}
+
+          <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              onClick={handleLogin}
+              disabled={loading}
+          >
+            Войти
+          </Button>
+          <NavLink to="/auth/registration">Вы не зарегистрированы?</NavLink>
+        </form>
       </Box>
-      <Box mt={3}></Box>
     </Container>
   );
 }
