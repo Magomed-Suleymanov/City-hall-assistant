@@ -2,39 +2,45 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import { deactModalList } from '../../../redux/actions/application';
 import Wishes from './Wishes';
 import ButtonForWishes from './ButtonForWishes';
+import { deactivationModalList } from '../../../redux/actions/application';
+
+const useStyle = makeStyles(() => ({
+  wrapModalList: {
+    width: '600px',
+    padding: '2px',
+    background: 'white',
+    boxShadow: '0px 0px 10px rgb(0, 0, 0)',
+    position: 'absolute',
+    left: 'calc(50% - 300px)',
+    top: '8%',
+    zIndex: 170,
+    borderRadius: '5px',
+  },
+}));
 
 function ModalItemsList() {
   const dispatch = useDispatch();
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
-  const useStyle = makeStyles(() => ({
-    wrapModalList: {
-      width: '600px',
-      padding: '2px',
-      background: 'white',
-      boxShadow: '0px 0px 15px rgb(0, 0, 0)',
-      position: 'absolute',
-      left: 'calc(50% - 300px)',
-      top: '8%',
-      zIndex: 170,
-      borderRadius: '5px',
-    },
-  }));
+
+  const handleClickDeactivate = () => {
+    dispatch(deactivationModalList());
+  };
+
   const classes = useStyle();
   return (
     <Box>
       <Box
+        onClick={handleClickDeactivate}
         position="absolute"
         width="100%"
+        zIndex="170"
         height="100%"
-        zIndex={165}
-        style={{ background: 'whitesmoke', opacity: 0.2 }}
-        onClick={() => dispatch(deactModalList())}
-      ></Box>
+        style={{ opacity: 0.2, background: 'whitesmoke' }}
+      />
       <Box className={classes.wrapModalList}>
         <Box>
           <img

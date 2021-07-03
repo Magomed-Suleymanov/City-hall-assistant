@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import ButtonRegistration from './ButtonRegistration';
 
-function GridItem(props) {
+function GridItem() {
   const users = useSelector((state) => state.users.items);
   const [login, setLogin] = useState(users.login);
   const [password, setPassword] = useState(users.password);

@@ -4,28 +4,33 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'
-import { loginStart } from '../../redux/actions/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { startLogin } from '../../redux/actions/authReducer';
+import { Alert } from '@material-ui/lab';
 
-function FormInput(props) {
-  const useStyles = makeStyles((theme) => ({
-    form: {
-    },
-    submit: {
-      margin: theme.spacing(3, 0, 2),
-    },
-  }));
-  const classes = useStyles();
+const useStyles = makeStyles((theme) => ({
+  form: {
+    width: '100%',
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
+
+function FormInput() {
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.auth.error);
-
+  const error = useSelector((state) => state.authReducer.error);
+  const loading = useSelector((state) => state.authReducer.loadingLogin);
+  const classes = useStyles();
 
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    dispatch(loginStart(login, password));
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(startLogin(login, password));
   };
+
   return (
     <Box>
       <form className={classes.form} noValidate>
@@ -56,11 +61,8 @@ function FormInput(props) {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {error && (
-          <Box>
-            Данные введены неверно. Попробуйте еще раз
-          </Box>
-        )}
+        {error && <Alert severity="error">Неверный логин или пароль</Alert>}
+
         <Button
           type="submit"
           fullWidth
@@ -68,10 +70,11 @@ function FormInput(props) {
           color="primary"
           className={classes.submit}
           onClick={handleLogin}
+          disabled={loading}
         >
           Войти
         </Button>
-        <NavLink to="/auth/Registration">Вы не зарегистрированы?</NavLink>
+        <NavLink to="/auth/registration">Вы не зарегистрированы?</NavLink>
       </form>
     </Box>
   );
