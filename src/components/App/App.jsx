@@ -3,6 +3,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import HomePage from '../HomePage'
 import AuthRoutes from './AuthRoutes'
+import Login from "../Login";
+import Registration from "../Registration";
 
 function App() {
     const user = useSelector(state => state.authReducer.user);
@@ -18,10 +20,13 @@ function App() {
                 </Switch>
             ) : (
                 <Switch>
-                    <Route exact path={"/auth/:auth_?"}>
-                        <AuthRoutes />
+                    <Route exact path={"/auth/login"}>
+                        <Login />
                     </Route>
-                    <Redirect to={"/auth"} />
+                    <Route exact path={"/auth/registration"}>
+                        <Registration />
+                    </Route>
+                    <Redirect to={"/auth/login"} />
                 </Switch>
             )}
         </div>

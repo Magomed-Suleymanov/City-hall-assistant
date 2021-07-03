@@ -33,15 +33,13 @@ const getRandomToken = (length) => {
 //Авторизация
 server.post("/auth", (req, res) => {
   const { login, password } = req.params;
-  const authUser = users
-      .toJSON().map(
-          (user) =>
-              user.login === login && user.password === password
+  const authUser = users.toJSON().find(
+          (user) => user.login === login && user.password === password
       );
-  if (authUser === undefined) {
-    res.status(404).json({ message: "Ошибка авторизации" });
-  } else {
+  if (authUser) {
     res.json({ ...authUser});
+  } else {
+    res.status(404).json({ message: "Ошибка авторизации" });
   }
 });
 
