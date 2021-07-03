@@ -5,6 +5,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import GridItem from './GridItem';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -13,12 +14,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     margin: 'auto',
     backgroundColor: 'white',
-    maxWidth: '500px',
-    left: 'calc(50% - 250px)',
+    maxWidth: '444px',
+    left: 'calc(50% - 222px)',
     zIndex: '220',
+    position: 'absolute',
+    top: '70px',
+    borderRadius: '5px',
+    boxShadow: '0px 0px 5px 0px rgb(0 0 0)',
   },
   avatar: {
-    marginTop: theme.spacing(21),
+    marginTop: theme.spacing(12),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
@@ -47,6 +52,15 @@ export default function Registration() {
 
   return (
     <Box>
+      <Link to="/home">
+        <Box
+          position="absolute"
+          width="100%"
+          zIndex="170"
+          height="100%"
+          style={{ opacity: 0.1, background: 'black' }}
+        />
+      </Link>
       <Box className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />

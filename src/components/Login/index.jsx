@@ -1,25 +1,33 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import TextField from "@material-ui/core/TextField";
-import {Alert} from "@material-ui/lab";
-import Button from "@material-ui/core/Button";
-import {NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {startLogin} from "../../redux/actions/authReducer";
+import TextField from '@material-ui/core/TextField';
+import { Alert } from '@material-ui/lab';
+import Button from '@material-ui/core/Button';
+import { NavLink, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { startLogin } from '../../redux/actions/authReducer';
 
 const useStyles = makeStyles((theme) => ({
   modalAuth: {
     display: 'flex',
     alignItems: 'center',
     margin: 'auto',
+    position: 'absolute',
+    top: '70px',
+    maxWidth: '444px',
+    left: 'calc(50% - 222px)',
+    zIndex: '220',
+    background: 'white',
+    borderRadius: '5px',
+    boxShadow: '0px 0px 5px 0px rgb(0 0 0)',
   },
 
   paper: {
-    marginTop: theme.spacing(21),
+    marginTop: theme.spacing(12),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -30,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%',
+    margin: theme.spacing(0, 0, 2),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -52,14 +61,24 @@ function Login() {
   };
 
   return (
-    <Container component="main" className={classes.modalAuth} maxWidth="xs">
-      <Box className={classes.paper}>
-        <Avatar className={classes.avatar} />
-        <Typography component="h1" variant="h5">
-          Войти
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
+    <Box>
+      <Link to="/home">
+        <Box
+          position="absolute"
+          width="100%"
+          zIndex="170"
+          height="100%"
+          style={{ opacity: 0.1, background: 'black' }}
+        />
+      </Link>
+      <Container component="main" className={classes.modalAuth} maxWidth="xs">
+        <Box className={classes.paper}>
+          <Avatar className={classes.avatar} />
+          <Typography component="h1" variant="h5">
+            Войти
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
               variant="outlined"
               margin="normal"
               fullWidth
@@ -70,8 +89,8 @@ function Login() {
               autoFocus
               value={login}
               onChange={(e) => setLogin(e.target.value)}
-          />
-          <TextField
+            />
+            <TextField
               variant="outlined"
               margin="normal"
               fullWidth
@@ -82,11 +101,9 @@ function Login() {
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-          />
-
-          {error && <Alert severity="error">Неверный логин или пароль</Alert>}
-
-          <Button
+            />
+            {error && <Alert severity="error">Неверный логин или пароль</Alert>}
+            <Button
               type="submit"
               fullWidth
               variant="contained"
@@ -94,13 +111,14 @@ function Login() {
               className={classes.submit}
               onClick={handleLogin}
               disabled={loading}
-          >
-            Войти
-          </Button>
-          <NavLink to="/auth/registration">Вы не зарегистрированы?</NavLink>
-        </form>
-      </Box>
-    </Container>
+            >
+              Войти
+            </Button>
+            <NavLink to="/registration">Вы не зарегистрированы?</NavLink>
+          </form>
+        </Box>
+      </Container>
+    </Box>
   );
 }
 

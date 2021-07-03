@@ -39,7 +39,7 @@ function ModalItemsList() {
         width="100%"
         zIndex="170"
         height="100%"
-        style={{ opacity: 0.2, background: 'whitesmoke' }}
+        style={{ opacity: 0.1, background: 'black' }}
       />
       <Box className={classes.wrapModalList}>
         <Box>

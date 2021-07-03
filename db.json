@@ -2,7 +2,7 @@
   "users": [
     { "id": 1,
       "login": "admin",
-      "password": "qwert",
+      "password": "admin",
       "token": "alfa123bravo123"
     },
     { "id": 2,
