@@ -3,34 +3,60 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { useDispatch, useSelector } from 'react-redux';
+import { authReset } from '../../redux/actions/authReducer';
+
+const useStyle = makeStyles({
+  button: {
+    background: 'white',
+    borderRadius: '8px',
+    position: 'absolute',
+    zIndex: '2',
+    right: '20px',
+    top: '22px',
+  },
+});
 
 function ButtonForAuth() {
-  const useStyle = makeStyles({
-    button: {
-      background: 'white',
-      borderRadius: '8px',
-      position: 'absolute',
-      zIndex: '2',
-      right: '20px',
-      top: '22px',
-    },
-  });
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.authReducer.user);
   const classes = useStyle();
 
+  const handleClick = () => {
+    dispatch(authReset());
+  };
+
   return (
-      <NavLink to="/auth">
+    <Box>
+      {!user.token ? (
         <Box>
-          <Button
+          <NavLink to="/auth">
+            <Button
               variant="outlined"
               color="primary"
               size="medium"
               startIcon={<ExitToAppIcon />}
               className={classes.button}
+            >
+              Войти
+            </Button>
+          </NavLink>
+        </Box>
+      ) : (
+        <Box>
+          <Button
+            variant="outlined"
+            color="primary"
+            size="medium"
+            startIcon={<ExitToAppIcon />}
+            className={classes.button}
+            onClick={handleClick}
           >
-            Войти
+            Выйти
           </Button>
         </Box>
-      </NavLink>
+      )}
+    </Box>
   );
 }
 

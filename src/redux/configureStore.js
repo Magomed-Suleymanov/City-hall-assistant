@@ -3,7 +3,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import application from './reducers/application';
 import users from './reducers/users';
-import {authReducer} from './reducers/auth';
+import { authReducer } from './reducers/auth';
 
 const logger = createLogger({
   diff: true,

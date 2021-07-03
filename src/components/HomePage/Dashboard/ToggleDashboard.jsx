@@ -6,37 +6,38 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleDashboard } from '../../../redux/actions/application';
 import { useHotkeys } from 'react-hotkeys-hook';
 
-function ToggleDashboard(props) {
+const useStyle = makeStyles({
+  iconDashboardOpen: {
+    transition: '.3s',
+    position: 'absolute',
+    zIndex: 150,
+    top: 22,
+    left: '8px',
+    background: 'white',
+    border: '1px solid lightgrey',
+    borderRadius: '3px',
+    cursor: 'pointer',
+  },
+  iconDashboardClose: {
+    transform: 'rotate(180deg)',
+    transition: '.3s',
+    position: 'absolute',
+    top: 22,
+    left: '4px',
+    zIndex: 150,
+    background: 'white',
+    border: '1px solid lightgrey',
+    borderRadius: '3px',
+    cursor: 'pointer',
+  },
+});
+
+function ToggleDashboard() {
   const dispatch = useDispatch();
   const toggleDashBoard = useSelector(
     (state) => state.application.toggleBlockDashBoard,
   );
 
-  const useStyle = makeStyles({
-    iconDashboardOpen: {
-      transition: '.3s',
-      position: 'absolute',
-      zIndex: 150,
-      top: 22,
-      left: '8px',
-      background: 'white',
-      border: '1px solid lightgrey',
-      borderRadius: '3px',
-      cursor: 'pointer',
-    },
-    iconDashboardClose: {
-      transform: 'rotate(180deg)',
-      transition: '.3s',
-      position: 'absolute',
-      top: 22,
-      left: '4px',
-      zIndex: 150,
-      background: 'white',
-      border: '1px solid lightgrey',
-      borderRadius: '3px',
-      cursor: 'pointer',
-    },
-  });
   const classes = useStyle();
 
   const handleToggleDashboard = () => {

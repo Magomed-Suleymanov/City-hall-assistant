@@ -9,7 +9,6 @@ import ModalItemsList from './List/ModalItemsList';
 import Box from '@material-ui/core/Box';
 
 function HomePage() {
-
   const listVisibility = useSelector(
     (state) => state.application.listVisibility,
   );

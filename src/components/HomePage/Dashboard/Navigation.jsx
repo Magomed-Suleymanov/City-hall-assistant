@@ -13,18 +13,20 @@ import { addMap, loadList } from '../../../redux/actions/application';
 import Box from '@material-ui/core/Box';
 import { Grid } from '@material-ui/core';
 
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+  },
+  Nav: {
+    margin: 'auto',
+    fontSize: '18px',
+    textAlign: 'center',
+  },
+});
+
 function Navigation() {
   const dispatch = useDispatch();
-  const useStyles = makeStyles({
-    root: {
-      width: '100%',
-    },
-    Nav: {
-      margin: 'auto',
-      fontSize: '18px',
-      textAlign: 'center',
-    },
-  });
+
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   return (
