@@ -32,6 +32,7 @@ function ButtonForAuth() {
         <Box>
           <NavLink to="/auth">
             <Button
+
               variant="outlined"
               color="primary"
               size="medium"

@@ -25,7 +25,7 @@ const useStyle = makeStyles(() => ({
   },
 }));
 
-function Wishes(props) {
+function Appeals() {
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
@@ -41,7 +41,7 @@ function Wishes(props) {
       >
         Пожелания или замечания:
       </Box>
-      <Box className={classes.blockWishes}>{modalListItems.wish}</Box>
+      <Box className={classes.blockWishes}>{}</Box>
       <Box>
         <input
           className={classes.inputModal}
@@ -52,4 +52,4 @@ function Wishes(props) {
   );
 }
 
-export default Wishes;
+export default Appeals;

@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import Wishes from './Wishes';
+import Appeals from './Appeals';
 import ButtonForWishes from './ButtonForWishes';
 import { deactivationModalList } from '../../../redux/actions/application';
 
@@ -50,7 +50,7 @@ function ModalItemsList() {
             src={modalListItems.url}
           />
         </Box>
-        <Wishes />
+        <Appeals />
         <ButtonForWishes />
       </Box>
     </Box>

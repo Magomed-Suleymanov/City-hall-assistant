@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 0px 5px 0px rgb(0 0 0)',
   },
   avatar: {
-    marginTop: theme.spacing(12),
+    marginTop: theme.spacing(7),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
@@ -58,7 +58,7 @@ export default function Registration() {
           width="100%"
           zIndex="170"
           height="100%"
-          style={{ opacity: 0.1, background: 'black' }}
+          style={{ opacity: 0.9, background: 'black' }}
         />
       </Link>
       <Box className={classes.paper}>

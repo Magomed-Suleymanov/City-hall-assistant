@@ -4,8 +4,8 @@ import Box from '@material-ui/core/Box';
 
 function ButtonForWishes() {
   return (
-    <Box padding="0px 2px 3px 2px ">
-      <Button variant="outlined" color="primary">
+    <Box padding="0px 2px 3px 2px " >
+      <Button variant="outlined" color="primary" >
         Добавить
       </Button>
     </Box>
@@ -13,3 +13,6 @@ function ButtonForWishes() {
 }
 
 export default ButtonForWishes;
+
+
+// title='Чтобы добавить комментарий вам нужно авторизоваться'

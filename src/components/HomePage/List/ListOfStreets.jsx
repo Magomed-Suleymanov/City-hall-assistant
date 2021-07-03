@@ -54,7 +54,7 @@ function ListOfStreets() {
               </Box>
               <Box fontSize="16px" padding="5px 0" color="black">
                 {item.address}
-                <SubstrWishes item={item} />
+                <SubstrWishes />
               </Box>
             </Grid>
           </Box>
