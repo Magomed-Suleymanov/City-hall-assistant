@@ -37,7 +37,7 @@ export default function application(state = initialState, action) {
         listModalVisibility: true,
       };
 
-    case 'deact/ModalListItems':
+    case 'deactivation/ModalListItems':
       return {
         ...state,
         listModalVisibility: false,

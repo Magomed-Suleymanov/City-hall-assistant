@@ -6,50 +6,43 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import FormInput from './FormInput';
 
+const useStyles = makeStyles((theme) => ({
+  modalAuth: {
+    position: 'absolute',
+    top: '70px',
+    boxShadow: '0px 0px 10px 0px rgb(0 0 0)',
+    borderRadius: '5px',
+    left: 'calc(50% - (444px / 2))',
+    zIndex: 210,
+    backgroundColor: 'white',
+  },
+
+  paper: {
+    marginTop: theme.spacing(12),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(0),
+    backgroundColor: theme.palette.secondary.main,
+  },
+}));
+
 function Login() {
-  const useStyles = makeStyles((theme) => ({
-
-    modalAuth: {
-      display: "flex",
-      alignItems: "center"
-    },
-
-    exitAuth: {
-      position: 'absolute',
-      padding: '8px 12px',
-      color: 'black',
-      top: '6px',
-      right: '6px',
-      cursor: 'pointer',
-
-      '&:active': {
-        color: 'red',
-      },
-    },
-    paper: {
-      marginTop: theme.spacing(21),
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    avatar: {
-      backgroundColor: theme.palette.secondary.main,
-    },
-  }));
   const classes = useStyles();
 
   return (
-      <Container component="main" className={classes.modalAuth} maxWidth="xs">
-        <Box className={classes.paper}>
-          <Avatar className={classes.avatar}>
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Войти
-          </Typography>
-          <FormInput />
-        </Box>
-        <Box mt={3}></Box>
-      </Container>
+    <Container component="main" className={classes.modalAuth} maxWidth="xs">
+      <Box className={classes.paper}>
+        <Avatar className={classes.avatar}></Avatar>
+        <Typography component="h1" variant="h5">
+          Войти
+        </Typography>
+        <FormInput />
+      </Box>
+      <Box mt={3}></Box>
+    </Container>
   );
 }
 
