@@ -52,7 +52,7 @@ function ButtonForAuth() {
             className={classes.button}
             onClick={handleClick}
           >
-            Выйти
+            {user.login}
           </Button>
         </Box>
       )}

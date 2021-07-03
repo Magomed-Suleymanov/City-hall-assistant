@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import FormInput from './FormInput';
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   modalAuth: {
@@ -33,6 +34,15 @@ function Login() {
   const classes = useStyles();
 
   return (
+    <Box>
+      <Link to='/home'>
+      <Box
+        position="absolute"
+        width="100%"
+        zIndex="170"
+        height="100%"
+        style={{ opacity: 0.2, background: 'whitesmoke' }} />
+      </Link>
     <Container component="main" className={classes.modalAuth} maxWidth="xs">
       <Box className={classes.paper}>
         <Avatar className={classes.avatar}></Avatar>
@@ -43,6 +53,7 @@ function Login() {
       </Box>
       <Box mt={3}></Box>
     </Container>
+    </Box>
   );
 }
 

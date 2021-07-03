@@ -74,7 +74,7 @@ function FormInput() {
         >
           Войти
         </Button>
-        <NavLink to="/auth/registration">Вы не зарегистрированы?</NavLink>
+        <NavLink to="/registration">Вы не зарегистрированы?</NavLink>
       </form>
     </Box>
   );
