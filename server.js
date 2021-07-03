@@ -31,6 +31,7 @@ const getRandomToken = (length) => {
   return result;
 };
 
+
 //Авторизация
 server.post("/auth", (req, res) => {
   const { login, password } = req.body;
@@ -39,7 +40,7 @@ server.post("/auth", (req, res) => {
     );
   if (authUser) {
     const {id, login, token} = authUser;
-    res.json({id, login, token});
+    res.json({id, login, token, password: null});
   } else {
     res.status(401).json({ message: "Ошибка авторизации" });
   }
@@ -49,17 +50,18 @@ server.post("/auth", (req, res) => {
 //Регистрация
 server.post("/registration", (req, res, next) => {
   const defaultDate = {
-    phone: null,
     address: null,
     avatar: null,
     token: getRandomToken(100),
   };
-  const loginCheck = users.some(
+  const loginCheck = users.toJSON().find(
     (user) => user.login === req.body.login
   );
   if (
     req.body.login === undefined ||
     req.body.password === undefined ||
+    req.body.firstName === undefined ||
+    req.body.lastName === undefined ||
     req.body.email === undefined
   ) {
     res.status(400);

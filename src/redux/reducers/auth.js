@@ -2,7 +2,6 @@ const initialState = {
   user: JSON.parse(localStorage.getItem('user')) || {},
   loadingLogin: false,
   loadingRegistration: false,
-  loadingChanges: false,
   error: false,
 };
 
@@ -32,7 +31,22 @@ export const authReducer = (state = initialState, action) => {
         user: {},
       };
 
+    case 'registration/start':
+      return {
+        ...state,
+        loadingRegistration: true,
+        error: false,
+      }
+
+    case 'registration/success':
+      return {
+        ...state,
+          loadingRegistration: false,
+          user: action.payload,
+    }
+
     default:
       return state;
   }
 };
+

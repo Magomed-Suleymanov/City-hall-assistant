@@ -1,15 +1,42 @@
 {
   "users": [
-    { "id": 1,
+    {
+      "id": 1,
+      "status": "admin",
+      "firstName": "Исмаил",
+      "lastName": "Тимуркаев",
+      "avatar": null,
+      "address": "Grozny",
+      "email": "ismtim095@gmail.com",
       "login": "admin",
-      "password": "admin",
-      "token": "alfa123bravo123"
+      "password": "1234",
+      "token": "g82he828ef3bf7eie8fed9f45h"
     },
-    { "id": 2,
-      "login": "user",
-      "password": "user",
-      "token": "alfa123brvavavavo123"
-     }
+    {
+      "id": 2,
+      "status": "admin",
+      "login": "admin2",
+      "password": "qwerty",
+      "firstName": "Магомед",
+      "lastName": "Сулейманов",
+      "email": "kinjudo@mail.ru",
+      "avatar": null,
+      "address": "Grozny",
+      "token": "j06e4g721b99111dcj4aaig4c9"
+     },
+
+    {
+      "id": 2,
+      "status": "User",
+      "login": "User",
+      "password": "User1234",
+      "firstName": "Ахьмад",
+      "lastName": "Кудузов",
+      "email": "Kuduzov@gmail.com",
+      "avatar": null,
+      "address": "Grozny",
+      "token": "7g2394fdcj3iaji59811bj4h4f"
+    }
   ],
   "streets": [
     {
