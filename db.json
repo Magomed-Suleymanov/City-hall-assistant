@@ -1,24 +1,75 @@
 {
   "users": [
-    { "id": 1,
-      "login": "admin",
-      "password": "admin",
+    {
+      "id": 1,
       "status": "admin",
-      "token": "alfa123bravo123"
-
+      "firstName": "Исмаил",
+      "lastName": "Тимуркаев",
+      "avatar": null,
+      "address": "Grozny",
+      "email": "ismtim095@gmail.com",
+      "login": "admin",
+      "password": "1234",
+      "token": "g82he828ef3bf7eie8fed9f45h"
     },
-    { "id": 2,
-      "login": "user",
-      "password": "user",
-      "token": "alfa123brvavavavo123"
-     }
+    {
+      "id": 2,
+      "status": "admin",
+      "login": "admin2",
+      "password": "qwerty",
+      "firstName": "Магомед",
+      "lastName": "Сулейманов",
+      "email": "kinjudo@mail.ru",
+      "avatar": null,
+      "address": "Grozny",
+      "token": "j06e4g721b99111dcj4aaig4c9"
+    },
+    {
+      "id": 3,
+      "status": "User",
+      "login": "User",
+      "password": "User1234",
+      "firstName": "Ахьмад",
+      "lastName": "Кудузов",
+      "email": "Kuduzov@gmail.com",
+      "avatar": null,
+      "address": "Grozny",
+      "token": "7g2394fdcj3iaji59811bj4h4f"
+    },
+    {
+      "firstName": "a",
+      "lastName": "",
+      "email": "",
+      "login": "",
+      "id": 4
+    },
+    {
+      "firstName": "a",
+      "lastName": "a",
+      "email": "a",
+      "login": "a",
+      "id": 5
+    },
+    {
+      "firstName": "aa",
+      "lastName": "aa",
+      "email": "aa",
+      "login": "aa",
+      "id": 6
+    },
+    {
+      "firstName": "aas",
+      "lastName": "aas",
+      "email": "aas",
+      "login": "aas",
+      "id": 7
+    }
   ],
   "streets": [
     {
       "id": 1,
       "url": "https://www.varlamov.me/2016/grozniy_hor/29.jpg",
-      "address": "Проспект Ахмат-Хаджи Кадырова",
-
+      "address": "Проспект Ахмат-Хаджи Кадырова"
     },
     {
       "id": 2,
@@ -48,28 +99,46 @@
   ],
   "appeals": [
     {
-      "streetsId": 1,
-      "appeal": "Много машин, пожалуйста уменьшите трафик на дороге."
+      "id": 1,
+      "streetId": 1,
+      "appeal": "Много машин, по00жалуйста уменьшите трафик на дороге."
     },
     {
-      "streetsId": 2,
+      "streetId": 1,
+      "appeal": "ухххх"
+    },
+    {
+      "streetId": 1,
+      "appeal": "эххх"
+    },
+    {
+      "id": 2,
+      "streetId": 2,
       "appeal": "Очень много зелени, но все же увеличить бы её)"
     },
     {
-      "streetsId": 3,
+      "id": 3,
+      "streetId": 3,
       "appeal": "На дороге есть перепады асфальта, нужно отремонтировать"
     },
     {
-      "streetsId": 4,
+      "id": 4,
+      "streetId": 4,
       "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе."
     },
     {
-      "streetsId": 5,
+      "id": 5,
+      "streetId": 5,
       "appeal": "Шикарные качели, но очень мало. Срочно добавьте."
     },
     {
-      "streetsId": 6,
+      "id": 6,
+      "streetId": 6,
       "appeal": "Всё очень красиво."
+    },
+    {
+      "appeal": "пожалуйста добавьте сюда коров",
+      "id": 7
     }
   ]
 }

@@ -1,5 +1,6 @@
 const initialState = {
-  Items: [],
+  items: [],
+  appeals: [],
   modalListItems: [],
   mapVisibility: true,
   listVisibility: false,
@@ -23,6 +24,27 @@ export default function application(state = initialState, action) {
         listVisibility: true,
         mapVisibility: false,
       };
+
+    case 'loading/appeals/start':
+      return {
+        ...state,
+      };
+    case 'loading/appeals/success':
+      return {
+        ...state,
+        appeals: action.payload,
+      };
+
+    case 'add/text/start' :
+      return {
+        ...state,
+      }
+    case 'add/text/success' :
+      return {
+        ...state,
+        appeals: action.payload
+      }
+
 
     case 'loading/modalStreets/start':
       return {

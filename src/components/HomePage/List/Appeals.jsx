@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react'
 import Box from '@material-ui/core/Box';
-import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
+import { useDispatch, useSelector } from 'react-redux'
+import { AddAppeals } from '../../../redux/actions/application'
+import Button from '@material-ui/core/Button'
 
 const useStyle = makeStyles(() => ({
   inputModal: {
@@ -15,6 +17,8 @@ const useStyle = makeStyles(() => ({
     cursor: 'pointer',
   },
   blockWishes: {
+    height: '70px',
+    overflowY: 'scroll',
     padding: '15px 10px',
     fontSize: '16px',
     marginBottom: '15px',
@@ -26,11 +30,17 @@ const useStyle = makeStyles(() => ({
 }));
 
 function Appeals() {
+  const dispatch = useDispatch();
+  const handleAddText = (e) => {
+    dispatch(AddAppeals(text))
+  }
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
-
+  const appeals = useSelector((state) => state.application.appeals);
   const classes = useStyle();
+  const [text, setText] = useState('');
+
   return (
     <Box padding="0px 2px 8px 2px">
       <Box
@@ -41,12 +51,27 @@ function Appeals() {
       >
         Пожелания или замечания:
       </Box>
-      <Box className={classes.blockWishes}>{}</Box>
+      <Box className={classes.blockWishes}>
+      {
+        appeals.map(item => {
+          if (item.streetId === modalListItems.id) {
+            return <Box>{item.appeal}</Box>
+          } return '';
+        })
+      }
+      </Box>
       <Box>
         <input
+          value={text}
           className={classes.inputModal}
           placeholder="Введите пожелания или замечания"
+          onChange={(e) => setText(e.target.value)}
         />
+      </Box>
+      <Box padding="0px 2px 3px 2px ">
+        <Button onClick={handleAddText} variant="outlined" color="primary">
+          Добавить
+        </Button>
       </Box>
     </Box>
   );

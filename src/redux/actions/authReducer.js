@@ -6,8 +6,8 @@ export const startLogin = (login, password) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        login: login,
-        password: password,
+        login,
+        password,
       }),
     })
       .then((res) => res.json())
@@ -34,5 +34,39 @@ export const authReset = () => {
   localStorage.removeItem('user');
   return {
     type: 'auth/reset',
+  };
+};
+
+export const startRegistration = (
+  getRandomToken,
+  firstName,
+  lastName,
+  email,
+  login,
+  password,
+) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'registration/start',
+    });
+
+    fetch('/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        login,
+        password,
+      }),
+    }).then((res) =>
+      res.json().then((json) => {
+        dispatch({
+          type: 'registration/success',
+          payload: json, getRandomToken
+        });
+      }),
+    );
   };
 };

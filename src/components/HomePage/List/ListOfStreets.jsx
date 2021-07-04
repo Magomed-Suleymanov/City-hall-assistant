@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { LoadModalList } from '../../../redux/actions/application';
+import { loadAppeals, LoadModalList } from '../../../redux/actions/application';
 import { Grid } from '@material-ui/core';
 import SubstrWishes from './SubstrWishes';
 
@@ -26,16 +26,20 @@ const useStyle = makeStyles(() => ({
 function ListOfStreets() {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.application.items);
+  const appeals = useSelector((state) => state.application.appeals);
+  useEffect(() => {
+    dispatch(loadAppeals());
+  }, [dispatch]);
 
   const classes = useStyle();
   return (
     <Box height="100vh">
-      {list.map((item) => {
+      {list.map((itemStreet) => {
         return (
           <Box
-            key={item.id}
+            key={itemStreet.id}
             className={classes.wrapList}
-            onClick={() => dispatch(LoadModalList(item.id))}
+            onClick={() => dispatch(LoadModalList(itemStreet.id))}
           >
             <Grid
               container
@@ -49,12 +53,20 @@ function ListOfStreets() {
                   width="120px"
                   height="100px"
                   style={{ borderRadius: '5px' }}
-                  src={item.url}
+                  src={itemStreet.url}
                 />
               </Box>
               <Box fontSize="16px" padding="5px 0" color="black">
-                {item.address}
-                <SubstrWishes />
+                {itemStreet.address}
+                <Box marginTop='48px'>
+                  {/*{appeals.map((item) => {*/}
+                  {/*  if (item.streetId === itemStreet.id) {*/}
+                  {/*    return <SubstrWishes item={item} key={item.id} />;*/}
+                  {/*  } else {*/}
+                  {/*    return '';*/}
+                  {/*  }*/}
+                  {/*})}*/}
+                </Box>
               </Box>
             </Grid>
           </Box>

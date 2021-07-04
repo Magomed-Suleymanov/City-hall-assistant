@@ -25,6 +25,7 @@ function ModalItemsList() {
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
+  const appeals = useSelector((state) => state.application.appeals);
 
   const handleClickDeactivate = () => {
     dispatch(deactivationModalList());
@@ -51,7 +52,6 @@ function ModalItemsList() {
           />
         </Box>
         <Appeals />
-        <ButtonForWishes />
       </Box>
     </Box>
   );
