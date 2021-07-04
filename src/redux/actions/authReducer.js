@@ -7,7 +7,7 @@ export const startLogin = (login, password) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         login,
-        password
+        password,
       }),
     })
       .then((res) => res.json())
@@ -51,23 +51,22 @@ export const startRegistration = (
 
     fetch('/users', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         firstName,
         lastName,
         email,
         login,
         password,
-      })
+      }),
     })
-        .then((res) => res.json())
-        .then(json => {
-          dispatch({
-            type: 'registration/success',
-            payload: json
-          })
-        }).catch(() => {
-          dispatch({type: 'registration/error'})
-    })
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'registration/success',
+          payload: json,
+        });
+      });
+
   };
 };

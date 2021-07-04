@@ -37,14 +37,14 @@ export const authReducer = (state = initialState, action) => {
         ...state,
         loadingRegistration: true,
         error: false,
-      }
+      };
 
     case 'registration/success':
       return {
         ...state,
-          loadingRegistration: false,
-          user: action.payload,
-    }
+        loadingRegistration: false,
+        user: action.payload,
+      };
 
     case 'registration/error':
       return {
@@ -57,4 +57,3 @@ export const authReducer = (state = initialState, action) => {
       return state;
   }
 };
-

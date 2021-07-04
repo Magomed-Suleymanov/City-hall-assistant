@@ -1,5 +1,5 @@
 const initialState = {
-  Items: [],
+  items: [],
   modalListItems: [],
   mapVisibility: true,
   listVisibility: false,
@@ -8,7 +8,7 @@ const initialState = {
   loading: false,
 };
 
-export default function application(state = initialState, action) {
+export const application = (state = initialState, action) => {
   switch (action.type) {
     case 'loading/street/start':
       return {
@@ -59,4 +59,4 @@ export default function application(state = initialState, action) {
     default:
       return state;
   }
-}
+};

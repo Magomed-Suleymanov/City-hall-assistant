@@ -58,7 +58,7 @@ function ButtonForAuth() {
             variant="outlined"
             color="primary"
             size="medium"
-            startIcon={<ExitToAppIcon />}
+            endIcon={<ExitToAppIcon />}
             className={classes.button}
             onClick={handleClick}
           >

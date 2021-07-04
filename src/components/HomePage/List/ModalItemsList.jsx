@@ -2,19 +2,21 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import Wishes from './Wishes';
-import ButtonForWishes from './ButtonForWishes';
+import Appeals from './Appeals';
 import { deactivationModalList } from '../../../redux/actions/application';
 
 const useStyle = makeStyles(() => ({
   wrapModalList: {
-    width: '600px',
-    padding: '2px',
+    display: 'flex',
+    maxWidth: '1000px',
+    minWidth: '300px',
+    padding: '2px 0 2px 2px',
+    height: '340px',
     background: 'white',
-    boxShadow: '0px 0px 10px rgb(0, 0, 0)',
+    boxShadow: '0px 0px 5px rgb(0, 0, 0)',
     position: 'absolute',
-    left: 'calc(50% - 300px)',
-    top: '8%',
+    left: 'calc(50% - (900px / 2))',
+    top: '10%',
     zIndex: 170,
     borderRadius: '5px',
   },
@@ -45,13 +47,13 @@ function ModalItemsList() {
         <Box>
           <img
             style={{ borderRadius: '3px' }}
-            width="100%"
-            alt=""
+            width="500px"
+            height="100%"
+            alt="img"
             src={modalListItems.url}
           />
         </Box>
-        <Wishes />
-        <ButtonForWishes />
+        <Appeals />
       </Box>
     </Box>
   );

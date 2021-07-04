@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: 'white',
-    maxWidth: '900px',
+    maxWidth: '700px',
     height: '550px',
-    left: 'calc(50% - 450px)',
+    left: 'calc(50% - 350px)',
     zIndex: '220',
     position: 'absolute',
     top: '70px',
@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Registration() {
   const classes = useStyles();
 
+
   const loading = useSelector(state => state.authReducer.loadingRegistration)
   const error = useSelector(state => state.authReducer.error)
   const dispatch = useDispatch();
@@ -81,7 +82,7 @@ export default function Registration() {
           width="100%"
           zIndex="170"
           height="100%"
-          style={{ opacity: 0.1, background: 'black' }}
+          style={{ opacity: 0.9, background: 'black' }}
         />
       </Link>
       <Box className={classes.paper}>

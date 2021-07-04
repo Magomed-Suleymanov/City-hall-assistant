@@ -16,7 +16,7 @@
       "id": 2,
       "status": "Администратор",
       "login": "admin2",
-      "password": "qwerty",
+      "password": "admin",
       "firstName": "Магомед",
       "lastName": "Сулейманов",
       "email": "kinjudo@mail.ru",
@@ -25,28 +25,41 @@
       "token": "j06e4g721b99111dcj4aaig4c9"
     },
     {
-      "id": 2,
-      "status": "Пользоваетель",
-      "login": "User",
-      "password": "User1234",
+      "status": "Администратор",
+      "login": "Ahmad",
+      "password": "Ahmad",
       "firstName": "Ахьмад",
       "lastName": "Кудузов",
       "email": "Kuduzov@gmail.com",
       "avatar": null,
       "address": "Grozny",
-      "token": "7g2394fdcj3iaji59811bj4h4f"
+      "token": "7g2394fdcj3iaji59811bj4h4f",
+      "id": 3
     },
     {
       "firstName": "Альви",
       "lastName": "Цугаев",
       "email": "tsugaev@mail.ru",
       "login": "alvi",
-      "password": "tsugaev",
+      "password": "alvi",
+      "address": null,
+      "status": "Администратор",
+      "avatar": null,
+      "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
+      "id": 4
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "email": "q",
+      "login": "q",
+      "password": "q",
       "address": null,
       "status": "Пользователь",
       "avatar": null,
-      "token": "UENqMI6Je2KGYCYZFNesbRsWgveh11s5eIo18E9vfuGrfunDGq",
-      "id": 3
+      "token": "qxIWUv5sJSkZ3MafMOykQiCzgQWXyEn12quEgDIYys66KmskVn",
+      "id": 5
+
     }
 
   ],
@@ -54,38 +67,64 @@
     {
       "id": 1,
       "url": "https://www.varlamov.me/2016/grozniy_hor/29.jpg",
-      "address": "Проспект Ахмат-Хаджи Кадырова",
-      "wish": "Много машин, пожалуйста уменьшите трафик на дороге."
+      "address": "Проспект Ахмат-Хаджи Кадырова"
     },
     {
       "id": 2,
       "url": "https://pp.userapi.com/c845120/v845120116/fc8bf/pNiG5_gqroI.jpg",
-      "address": "Проспект Махмуда Эсамбаева",
-      "wish": "Очень много зелени, но все же увеличить бы её)"
+      "address": "Проспект Махмуда Эсамбаева"
     },
     {
       "id": 3,
       "url": "https://bkdrf.ru/uploads/news2.0/Чеченская%20республика/2%20г.грозный%20пр.%20исаева%20-%20после%20(1).jpg",
-      "address": "Проспект Хусейна Исаева",
-      "wish": "На дороге есть перепады асфальта, нужно отремонтировать"
+      "address": "Проспект Хусейна Исаева"
     },
     {
       "id": 4,
       "url": "https://grozny-inform.ru/LoadedImages/2017/09/11/IMG_4795.jpg",
-      "address": "ул.Санкт-Петербургская",
-      "wish": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе."
+      "address": "ул.Санкт-Петербургская"
     },
     {
       "id": 5,
       "url": "https://www.culture.ru/storage/images/e6aba7c47c2d76ec25933d9d69df5c98/71eab3a5354ac0ef5d63d9341920604c.jpeg",
-      "address": "ул.Муслима Гайрбекова",
-      "wish": "Шикарные качели, но очень мало. Срочно добавьте."
+      "address": "ул.Муслима Гайрбекова"
     },
     {
       "id": 6,
       "url": "https://apogei-tour.ru/images/CHECHNY/107382696.jpg",
-      "address": "ул.им.Г.А.Угрюмова",
-      "wish": "Всё очень красиво."
+      "address": "ул.им.Г.А.Угрюмова"
+    }
+  ],
+  "appeals": [
+    {
+      "id": 1,
+      "streetId": 1,
+      "appeal": "Много машин, пожалуйста уменьшите трафик на дороге."
+    },
+    {
+      "id": 2,
+      "streetId": 2,
+      "appeal": "Очень много зелени, но все же увеличить бы её)"
+    },
+    {
+      "id": 3,
+      "streetId": 3,
+      "appeal": "На дороге есть перепады асфальта, нужно отремонтировать"
+    },
+    {
+      "id": 4,
+      "streetId": 4,
+      "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе."
+    },
+    {
+      "id": 5,
+      "streetId": 5,
+      "appeal": "Шикарные качели, но очень мало. Срочно добавьте."
+    },
+    {
+      "id": 6,
+      "streetId": 6,
+      "appeal": "Всё очень красиво."
     }
   ]
 }

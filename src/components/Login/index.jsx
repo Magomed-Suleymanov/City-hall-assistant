@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   paper: {
-    marginTop: theme.spacing(12),
+    marginTop: theme.spacing(7),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -65,7 +65,7 @@ function Login() {
           width="100%"
           zIndex="170"
           height="100%"
-          style={{ opacity: 0.1, background: 'black' }}
+          style={{ opacity: 0.9, background: 'black' }}
         />
       </Link>
       <Container component="main" className={classes.modalAuth} maxWidth="xs">
