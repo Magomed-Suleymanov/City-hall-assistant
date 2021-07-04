@@ -39,8 +39,8 @@ server.post("/auth", (req, res) => {
       (user) => user.login === login && user.password === password
     );
   if (authUser) {
-    const {id, login, token} = authUser;
-    res.json({id, login, token, password: null});
+    const {id, login, token, firstName} = authUser;
+    res.json({id, login, token, firstName, password: null});
   } else {
     res.status(401).json({ message: "Ошибка авторизации" });
   }
@@ -48,13 +48,14 @@ server.post("/auth", (req, res) => {
 
 
 //Регистрация
-server.post("/registration", (req, res, next) => {
+server.post("/users", (req, res, next) => {
   const defaultDate = {
     address: null,
+    status: 'Пользователь',
     avatar: null,
-    token: getRandomToken(100),
+    token: getRandomToken(50),
   };
-  const loginCheck = users.toJSON().find(
+  const loginCheck = users.some(
     (user) => user.login === req.body.login
   );
   if (

@@ -49,7 +49,7 @@ export const startRegistration = (
       type: 'registration/start',
     });
 
-    fetch('/registration', {
+    fetch('/users', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -60,13 +60,12 @@ export const startRegistration = (
         password,
       })
     })
-        .then((res) => res.json()
+        .then((res) => res.json())
         .then(json => {
           dispatch({
             type: 'registration/success',
             payload: json
           })
         })
-    );
   };
 };

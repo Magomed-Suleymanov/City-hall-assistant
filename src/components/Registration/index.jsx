@@ -57,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Registration() {
   const classes = useStyles();
 
-  const users = useSelector((state) => state.users.items);
   const loading = useSelector(state => state.authReducer.loadingRegistration)
 
   const dispatch = useDispatch();
@@ -65,8 +64,8 @@ export default function Registration() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [login, setLogin] = useState(users.login);
-  const [password, setPassword] = useState(users.password);
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleReg = (e) => {
     e.preventDefault();

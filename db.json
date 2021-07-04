@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "status": "admin",
+      "status": "Администратор",
       "firstName": "Исмаил",
       "lastName": "Тимуркаев",
       "avatar": null,
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "status": "admin",
+      "status": "Администратор",
       "login": "admin2",
       "password": "qwerty",
       "firstName": "Магомед",
@@ -23,11 +23,10 @@
       "avatar": null,
       "address": "Grozny",
       "token": "j06e4g721b99111dcj4aaig4c9"
-     },
-
+    },
     {
       "id": 2,
-      "status": "User",
+      "status": "Пользоваетель",
       "login": "User",
       "password": "User1234",
       "firstName": "Ахьмад",
