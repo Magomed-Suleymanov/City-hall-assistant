@@ -66,6 +66,8 @@ export const startRegistration = (
             type: 'registration/success',
             payload: json
           })
-        })
+        }).catch(() => {
+          dispatch({type: 'registration/error'})
+    })
   };
 };

@@ -3,11 +3,11 @@ import { Box, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { useSelector } from 'react-redux';
 import Navigation from './Navigation';
+import Places from "./Places";
 
 const useStyle = makeStyles({
   boxOpen: {
-    width: '18vw',
-    minWidth: '12vw',
+    width: '22%',
     height: '100vh',
     background: 'white',
     boxShadow: '4px 0px 8px 0px rgba(34, 60, 80, 0.2)',
@@ -67,6 +67,7 @@ function Dashboard() {
         </Box>
       </Box>
       <Navigation />
+      <Places />
     </Box>
   );
 }

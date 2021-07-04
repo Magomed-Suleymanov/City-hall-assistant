@@ -10,6 +10,7 @@ import TextField from '@material-ui/core/TextField';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import { startRegistration } from '../../redux/actions/authReducer';
+import {Alert} from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -58,7 +59,7 @@ export default function Registration() {
   const classes = useStyles();
 
   const loading = useSelector(state => state.authReducer.loadingRegistration)
-
+  const error = useSelector(state => state.authReducer.error)
   const dispatch = useDispatch();
 
   const [firstName, setFirstName] = useState('');
@@ -166,6 +167,8 @@ export default function Registration() {
               />
             </Grid>
           </Grid>
+
+          {error ? <Alert severity="error">Введите верные данные</Alert>: ''}
 
           <Button
             type="submit"

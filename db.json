@@ -35,7 +35,20 @@
       "avatar": null,
       "address": "Grozny",
       "token": "7g2394fdcj3iaji59811bj4h4f"
+    },
+    {
+      "firstName": "Альви",
+      "lastName": "Цугаев",
+      "email": "tsugaev@mail.ru",
+      "login": "alvi",
+      "password": "tsugaev",
+      "address": null,
+      "status": "Пользователь",
+      "avatar": null,
+      "token": "UENqMI6Je2KGYCYZFNesbRsWgveh11s5eIo18E9vfuGrfunDGq",
+      "id": 3
     }
+
   ],
   "streets": [
     {
