@@ -2,49 +2,64 @@ import React, { useState } from 'react'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/styles';
 import { useDispatch, useSelector } from 'react-redux'
-import { AddAppeals } from '../../../redux/actions/application'
 import Button from '@material-ui/core/Button'
 
 const useStyle = makeStyles(() => ({
   inputModal: {
-    width: '96.3%',
-    padding: '10px',
-    fontSize: '14px',
-    color: 'gray',
+    width: '97%',
+    padding: '12px 5px',
+    fontSize: '16px',
+    color: 'black',
     border: '1px solid lightgray',
-    borderRadius: '3px',
     outline: 'none',
+    borderRadius: '3px',
     cursor: 'pointer',
   },
   blockWishes: {
-    height: '70px',
+    height: '170px',
     overflowY: 'scroll',
     padding: '15px 10px',
     fontSize: '16px',
-    marginBottom: '15px',
+    marginBottom: '12px',
     color: 'black',
-    background: '#f3f3f3',
+    background: '#fdfcf9',
     borderRadius: '2px',
     boxShadow: '0px 0px 5px inset rgb(193, 193, 193)',
   },
+  buttonAppeals: {
+    width: '100%',
+  }
 }));
 
 function Appeals() {
   const dispatch = useDispatch();
-  const handleAddText = (e) => {
-    dispatch(AddAppeals(text))
-  }
+  const appeals = useSelector((state) => state.appeals.appeals);
+
+
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
-  const appeals = useSelector((state) => state.application.appeals);
+
+  // const handleAddText = () => {
+  //   dispatch(AddAppeals(text));
+  //   setText('');
+  // }
+  // const modalListItems = useSelector(
+  //   (state) => state.application.modalListItems,
+  // );
+  // const appeals = useSelector((state) => state.appeals.appeals);
+
+
   const classes = useStyle();
-  const [text, setText] = useState('');
+
+  const [values, setValues] = useState({
+
+  });
 
   return (
-    <Box padding="0px 2px 8px 2px">
+    <Box width='500px' padding="0px 2px 2px 2px">
       <Box
-        padding="10px 0 5px"
+        padding="4px 0 10px 0px"
         fontSize="18px"
         color="black"
         textAlign="center"
@@ -52,24 +67,22 @@ function Appeals() {
         Пожелания или замечания:
       </Box>
       <Box className={classes.blockWishes}>
-      {
-        appeals.map(item => {
-          if (item.streetId === modalListItems.id) {
-            return <Box>{item.appeal}</Box>
-          } return '';
-        })
-      }
+        {appeals.map(item => {
+          if (item.id === modalListItems.id) {
+            return <div>{item.appeal}</div>
+          } return ''
+        })}
       </Box>
       <Box>
         <input
-          value={text}
+          value={''}
           className={classes.inputModal}
           placeholder="Введите пожелания или замечания"
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) => (e.target.value)}
         />
       </Box>
-      <Box padding="0px 2px 3px 2px ">
-        <Button onClick={handleAddText} variant="outlined" color="primary">
+      <Box padding="12px 0px 0px 0px ">
+        <Button className={classes.buttonAppeals} onClick={'handleAddText'} variant="outlined" color="primary">
           Добавить
         </Button>
       </Box>

@@ -57,45 +57,19 @@ const useStyles = makeStyles((theme) => ({
 export default function Registration() {
   const classes = useStyles();
 
-  const users = useSelector((state) => state.users.items);
-  const loading = useSelector((state) => state.authReducer.loadingRegistration);
+  const loading = useSelector(state => state.authReducer.loadingRegistration)
 
   const dispatch = useDispatch();
-
-  const getRandomToken = (length) => {
-    if (length === undefined || length <= 0) {
-      length = 1;
-    }
-    const characters =
-      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let result = "";
-    let first = 0;
-    for (let i = 0; i < length; i++) {
-      if (i === 0) {
-        first = 10;
-      } else {
-        first = 0;
-      }
-      result +=
-        characters[Math.round(Math.random() * (characters.length - first - 1))];
-    }
-    return result;
-  };
-
-
-
-
-
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [login, setLogin] = useState(users.login);
-  const [password, setPassword] = useState(users.password);
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleReg = (e) => {
     e.preventDefault();
-    dispatch(startRegistration(firstName, lastName, email, login, password, getRandomToken));
+    dispatch(startRegistration(firstName, lastName, email, login, password));
   };
 
   return (

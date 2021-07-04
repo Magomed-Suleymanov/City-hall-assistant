@@ -14,7 +14,7 @@ const useStyle = makeStyles({
     zIndex: '2',
     right: '20px',
     top: '22px',
-  },
+  }
 });
 
 function ButtonForAuth() {
@@ -48,11 +48,11 @@ function ButtonForAuth() {
             variant="outlined"
             color="primary"
             size="medium"
-            startIcon={<ExitToAppIcon />}
+            endIcon={<ExitToAppIcon />}
             className={classes.button}
             onClick={handleClick}
           >
-            {user.login}
+            {user.firstName}
           </Button>
         </Box>
       )}

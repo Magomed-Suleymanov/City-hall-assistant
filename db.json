@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "status": "admin",
+      "status": "Администратор",
       "firstName": "Исмаил",
       "lastName": "Тимуркаев",
       "avatar": null,
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "status": "admin",
+      "status": "Администратор",
       "login": "admin2",
       "password": "qwerty",
       "firstName": "Магомед",
@@ -25,8 +25,8 @@
       "token": "j06e4g721b99111dcj4aaig4c9"
     },
     {
-      "id": 3,
-      "status": "User",
+      "id": 2,
+      "status": "Пользоваетель",
       "login": "User",
       "password": "User1234",
       "firstName": "Ахьмад",
@@ -37,32 +37,28 @@
       "token": "7g2394fdcj3iaji59811bj4h4f"
     },
     {
-      "firstName": "a",
-      "lastName": "",
-      "email": "",
-      "login": "",
+      "firstName": "asdas",
+      "lastName": "dasd",
+      "email": "asd",
+      "login": "asdasd",
+      "password": "asd",
+      "address": null,
+      "status": "Пользователь",
+      "avatar": null,
+      "token": "mUwrTKeVKeFQoWmT32xFow25dy1xlcABMeci8GNHtxEybLBgIs",
+      "id": 3
+    },
+    {
+      "firstName": "Альви",
+      "lastName": "Цугаев",
+      "email": "tsugaev@mail.ru",
+      "login": "alfabravo",
+      "password": "alllfa",
+      "address": null,
+      "status": "Пользователь",
+      "avatar": null,
+      "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
-    },
-    {
-      "firstName": "a",
-      "lastName": "a",
-      "email": "a",
-      "login": "a",
-      "id": 5
-    },
-    {
-      "firstName": "aa",
-      "lastName": "aa",
-      "email": "aa",
-      "login": "aa",
-      "id": 6
-    },
-    {
-      "firstName": "aas",
-      "lastName": "aas",
-      "email": "aas",
-      "login": "aas",
-      "id": 7
     }
   ],
   "streets": [
@@ -101,15 +97,7 @@
     {
       "id": 1,
       "streetId": 1,
-      "appeal": "Много машин, по00жалуйста уменьшите трафик на дороге."
-    },
-    {
-      "streetId": 1,
-      "appeal": "ухххх"
-    },
-    {
-      "streetId": 1,
-      "appeal": "эххх"
+      "appeal": "Много машин, пожалуйста уменьшите трафик на дороге."
     },
     {
       "id": 2,
@@ -135,10 +123,6 @@
       "id": 6,
       "streetId": 6,
       "appeal": "Всё очень красиво."
-    },
-    {
-      "appeal": "пожалуйста добавьте сюда коров",
-      "id": 7
     }
   ]
 }

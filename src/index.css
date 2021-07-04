@@ -8,4 +8,18 @@ body {
   color: #908b8b;
   overflow-y: hidden;
   overflow-x: hidden;
+
+}
+::-webkit-scrollbar {
+  width: 8px;
+
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(173, 173, 173, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgb(198, 198, 198);
 }

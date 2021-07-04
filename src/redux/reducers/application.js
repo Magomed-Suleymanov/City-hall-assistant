@@ -1,6 +1,5 @@
 const initialState = {
   items: [],
-  appeals: [],
   modalListItems: [],
   mapVisibility: true,
   listVisibility: false,
@@ -9,7 +8,7 @@ const initialState = {
   loading: false,
 };
 
-export default function application(state = initialState, action) {
+export const application = (state = initialState, action) => {
   switch (action.type) {
     case 'loading/street/start':
       return {
@@ -24,27 +23,6 @@ export default function application(state = initialState, action) {
         listVisibility: true,
         mapVisibility: false,
       };
-
-    case 'loading/appeals/start':
-      return {
-        ...state,
-      };
-    case 'loading/appeals/success':
-      return {
-        ...state,
-        appeals: action.payload,
-      };
-
-    case 'add/text/start' :
-      return {
-        ...state,
-      }
-    case 'add/text/success' :
-      return {
-        ...state,
-        appeals: action.payload
-      }
-
 
     case 'loading/modalStreets/start':
       return {

@@ -6,6 +6,8 @@ const middlewares = jsonServer.defaults({
 });
 const PORT = 5000;
 const users = router.db.get("users");
+const appeals = router.db.get("appeals")
+const streets = router.db.get("streets")
 
 server.use(jsonServer.bodyParser)
 server.use(middlewares);
@@ -41,8 +43,8 @@ server.post("/auth", (req, res) => {
       (user) => user.login === login && user.password === password
     );
   if (authUser) {
-    const {id, login, token} = authUser;
-    res.json({id, login, token, password: null});
+    const {id, login, token, firstName} = authUser;
+    res.json({id, login, token, firstName, password: null});
   } else {
     res.status(401).json({ message: "Ошибка авторизации" });
   }
@@ -50,13 +52,14 @@ server.post("/auth", (req, res) => {
 
 
 //Регистрация
-server.post("/registration", (req, res, next) => {
+server.post("/users", (req, res, next) => {
   const defaultDate = {
     address: null,
+    status: 'Пользователь',
     avatar: null,
-    token: getRandomToken(100),
+    token: getRandomToken(50),
   };
-  const loginCheck = users.toJSON().find(
+  const loginCheck = users.some(
     (user) => user.login === req.body.login
   );
   if (
@@ -75,6 +78,36 @@ server.post("/registration", (req, res, next) => {
   req.body = { ...req.body, ...defaultDate };
   next();
 });
+
+
+
+//Получение пожеланий
+server.get("/appeals", (req, res) => {
+  const filteredAppeals = appeals.filter((item) => item.appeal);
+  if (filteredAppeals.toJSON().length === 0) {
+    res.status(404).json([]);
+  }
+  res.json(filteredAppeals);
+});
+
+
+console.log(streets.toJSON())
+
+
+//Добавление пожеланий
+server.post("/appeals", (req, res, next) => {
+  if (
+    req.body.appeal === undefined ||
+    req.body.streetId === undefined
+  ) {
+    res.status(400);
+    res.send();
+  }
+  req.body.date = new Date();
+  req.body.streetId = Number(req.user.id);
+  next();
+});
+
 
 server.use(router);
 server.listen(PORT, () => {

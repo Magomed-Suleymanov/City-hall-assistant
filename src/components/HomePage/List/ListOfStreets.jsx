@@ -2,18 +2,18 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { loadAppeals, LoadModalList } from '../../../redux/actions/application';
+import { LoadModalList } from '../../../redux/actions/application';
 import { Grid } from '@material-ui/core';
-import SubstrWishes from './SubstrWishes';
+import { loadingAppeals } from '../../../redux/actions/appeals'
 
 const useStyle = makeStyles(() => ({
   wrapList: {
     borderRadius: '5px',
     width: '100%',
     minWidth: '100px',
-    background: 'whitesmoke',
+    background: '#fdfcf9',
     margin: ' 20px 25px 0px 25px',
-    boxShadow: '0px 0px 8px rgb(217, 217, 217)',
+    boxShadow: '0px 0px 4px 2px rgb(217, 217, 217)',
     cursor: 'pointer',
 
     '&:hover': {
@@ -26,9 +26,10 @@ const useStyle = makeStyles(() => ({
 function ListOfStreets() {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.application.items);
-  const appeals = useSelector((state) => state.application.appeals);
+
+
   useEffect(() => {
-    dispatch(loadAppeals());
+    dispatch(loadingAppeals());
   }, [dispatch]);
 
   const classes = useStyle();
@@ -43,7 +44,7 @@ function ListOfStreets() {
           >
             <Grid
               container
-              direction="row"
+              direction='row'
               justify="flex-start"
               alignItems="flex-start"
             >
@@ -58,15 +59,6 @@ function ListOfStreets() {
               </Box>
               <Box fontSize="16px" padding="5px 0" color="black">
                 {itemStreet.address}
-                <Box marginTop='48px'>
-                  {/*{appeals.map((item) => {*/}
-                  {/*  if (item.streetId === itemStreet.id) {*/}
-                  {/*    return <SubstrWishes item={item} key={item.id} />;*/}
-                  {/*  } else {*/}
-                  {/*    return '';*/}
-                  {/*  }*/}
-                  {/*})}*/}
-                </Box>
               </Box>
             </Grid>
           </Box>
