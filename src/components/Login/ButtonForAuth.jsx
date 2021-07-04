@@ -9,11 +9,24 @@ import { authReset } from '../../redux/actions/authReducer';
 const useStyle = makeStyles({
   button: {
     background: 'white',
-    borderRadius: '8px',
+    width: "93px",
+    height: "40px",
+    borderRadius: '200px',
+    textTransform: 'none',
+    boxShadow: "0 1px 3px 0 rgb(38 38 38 / 50%)",
     position: 'absolute',
+    padding: 'none',
     zIndex: '2',
-    right: '20px',
-    top: '22px',
+    right: '60px',
+    top: '18px',
+    fontSize: "14px",
+    lineHeight: '16px',
+    fontWeight: "800",
+
+    "&:hover": {
+      background: "white",
+      color: '#747474'
+    }
   },
 });
 
@@ -32,9 +45,6 @@ function ButtonForAuth() {
         <Box>
           <NavLink to="/auth">
             <Button
-              variant="outlined"
-              color="primary"
-              size="medium"
               startIcon={<ExitToAppIcon />}
               className={classes.button}
             >
