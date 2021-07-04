@@ -16,7 +16,7 @@
       "id": 2,
       "status": "Администратор",
       "login": "admin2",
-      "password": "qwerty",
+      "password": "admin",
       "firstName": "Магомед",
       "lastName": "Сулейманов",
       "email": "kinjudo@mail.ru",
@@ -25,40 +25,40 @@
       "token": "j06e4g721b99111dcj4aaig4c9"
     },
     {
-      "id": 2,
-      "status": "Пользоваетель",
-      "login": "User",
-      "password": "User1234",
+      "status": "Администратор",
+      "login": "Ahmad",
+      "password": "Ahmad",
       "firstName": "Ахьмад",
       "lastName": "Кудузов",
       "email": "Kuduzov@gmail.com",
       "avatar": null,
       "address": "Grozny",
-      "token": "7g2394fdcj3iaji59811bj4h4f"
-    },
-    {
-      "firstName": "asdas",
-      "lastName": "dasd",
-      "email": "asd",
-      "login": "asdasd",
-      "password": "asd",
-      "address": null,
-      "status": "Пользователь",
-      "avatar": null,
-      "token": "mUwrTKeVKeFQoWmT32xFow25dy1xlcABMeci8GNHtxEybLBgIs",
+      "token": "7g2394fdcj3iaji59811bj4h4f",
       "id": 3
     },
     {
       "firstName": "Альви",
       "lastName": "Цугаев",
       "email": "tsugaev@mail.ru",
-      "login": "alfabravo",
-      "password": "alllfa",
+      "login": "alvi",
+      "password": "alvi",
       "address": null,
-      "status": "Пользователь",
+      "status": "Администратор",
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "email": "q",
+      "login": "q",
+      "password": "q",
+      "address": null,
+      "status": "Пользователь",
+      "avatar": null,
+      "token": "qxIWUv5sJSkZ3MafMOykQiCzgQWXyEn12quEgDIYys66KmskVn",
+      "id": 5
     }
   ],
   "streets": [

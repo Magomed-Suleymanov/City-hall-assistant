@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Registration() {
   const classes = useStyles();
 
-  const loading = useSelector(state => state.authReducer.loadingRegistration)
+  const loading = useSelector((state) => state.authReducer.loadingRegistration);
 
   const dispatch = useDispatch();
 

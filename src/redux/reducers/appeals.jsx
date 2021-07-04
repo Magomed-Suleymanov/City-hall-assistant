@@ -3,8 +3,7 @@ const initialState = {
   loadingAppeals: false,
 };
 
-
-export const  appeals = (state = initialState, action) => {
+export const appeals = (state = initialState, action) => {
   switch (action.type) {
     case 'loading/appeals/start':
       return {
@@ -17,20 +16,31 @@ export const  appeals = (state = initialState, action) => {
         loadingAppeals: false,
         appeals: action.payload,
       };
-    case "appeals/add/start":
+    case 'appeals/add/start':
       return {
         ...state,
         loading: true,
       };
-    case "appeals/add/success":
+    case 'appeals/add/success':
       return {
         ...state,
         loading: false,
-        notes: [action.payload, ...state.notes],
-      }
+        appeals: [action.payload, ...state.appeals],
+      };
+
+    case 'appeals/delete/start':
+      return {
+        ...state,
+        loading: true,
+      };
+    case 'appeals/delete/success':
+      return {
+        ...state,
+        loading: false,
+        appeals: state.appeals.filter((appeal) => appeal.id !== action.payload),
+      };
 
     default:
-      return state
+      return state;
   }
-
-}
+};

@@ -7,9 +7,9 @@ import { deactivationModalList } from '../../../redux/actions/application';
 
 const useStyle = makeStyles(() => ({
   wrapModalList: {
-    display:'flex',
+    display: 'flex',
     maxWidth: '1000px',
-    minWidth:'300px',
+    minWidth: '300px',
     padding: '2px 0 2px 2px',
     height: '340px',
     background: 'white',
@@ -48,7 +48,7 @@ function ModalItemsList() {
           <img
             style={{ borderRadius: '3px' }}
             width="500px"
-            height='100%'
+            height="100%"
             alt="img"
             src={modalListItems.url}
           />

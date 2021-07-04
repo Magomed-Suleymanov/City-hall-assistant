@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { LoadModalList } from '../../../redux/actions/application';
 import { Grid } from '@material-ui/core';
-import { loadingAppeals } from '../../../redux/actions/appeals'
+import { loadingAppeals } from '../../../redux/actions/appeals';
 
 const useStyle = makeStyles(() => ({
   wrapList: {
@@ -27,7 +27,6 @@ function ListOfStreets() {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.application.items);
 
-
   useEffect(() => {
     dispatch(loadingAppeals());
   }, [dispatch]);
@@ -44,7 +43,7 @@ function ListOfStreets() {
           >
             <Grid
               container
-              direction='row'
+              direction="row"
               justify="flex-start"
               alignItems="flex-start"
             >

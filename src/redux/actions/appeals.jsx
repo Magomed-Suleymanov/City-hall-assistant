@@ -1,19 +1,19 @@
 export const loadingAppeals = () => {
   return (dispatch) => {
     dispatch({
-      type: "loading/appeals/start",
+      type: 'loading/appeals/start',
     });
 
     fetch(`/appeals`, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     })
       .then((res) => res.json())
       .then((json) => {
         dispatch({
-          type: "loading/appeals/success",
+          type: 'loading/appeals/success',
           payload: json,
         });
       });
@@ -23,13 +23,13 @@ export const loadingAppeals = () => {
 export const addAppeal = (title, text, clientId) => {
   return (dispatch) => {
     dispatch({
-      type: "notes/add/start",
+      type: 'appeals/add/start',
     });
 
-    fetch("/notes", {
-      method: "POST",
+    fetch('/notes', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         title: title,
@@ -40,8 +40,27 @@ export const addAppeal = (title, text, clientId) => {
       .then((res) => res.json())
       .then((json) => {
         dispatch({
-          type: "notes/add/success",
+          type: 'appeals/add/success',
           payload: json,
+        });
+      });
+  };
+};
+
+export const deleteAppeals = (id) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'appeals/delete/start',
+    });
+
+    fetch(`/appeals/${id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'appeals/delete/success',
+          payload: id,
         });
       });
   };

@@ -18,7 +18,7 @@ const useStyle = makeStyles({
     color: 'black',
     width: '24px',
     height: '40px',
-    boxShadow: "0 1px 3px 0 rgb(38 38 38 / 50%)"
+    boxShadow: '0 1px 3px 0 rgb(38 38 38 / 50%)',
   },
   iconDashboardClose: {
     transform: 'rotate(180deg)',
@@ -31,7 +31,7 @@ const useStyle = makeStyles({
     width: '24px',
     height: '40px',
     background: 'white',
-    boxShadow: "0 1px 3px 0 rgb(38 38 38 / 50%)",
+    boxShadow: '0 1px 3px 0 rgb(38 38 38 / 50%)',
     borderRadius: '5px 0 0 5px',
     cursor: 'pointer',
   },

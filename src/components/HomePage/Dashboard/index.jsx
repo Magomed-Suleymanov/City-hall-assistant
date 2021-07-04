@@ -6,8 +6,8 @@ import Navigation from './Navigation';
 
 const useStyle = makeStyles({
   boxOpen: {
-    width: '18vw',
-    minWidth: '12vw',
+    width: '22vw',
+    minWidth: '14vw',
     height: '100vh',
     background: 'white',
     boxShadow: '4px 0px 8px 0px rgba(34, 60, 80, 0.2)',
@@ -23,24 +23,24 @@ const useStyle = makeStyles({
     opacity: '0',
   },
   inputBlock: {
-    backgroundImage:'url(https://d-assets.2gis.ru/headerPhotos/city_2.jpg)',
+    backgroundImage: 'url(https://d-assets.2gis.ru/headerPhotos/city_2.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    position: "relative"
+    position: 'relative',
   },
   opBlock: {
-    backgroundColor: "rgba(0, 0, 0, 0.4)",
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
     width: '100%',
-    height: "100%",
-    position: "absolute"
+    height: '100%',
+    position: 'absolute',
   },
   input: {
     width: '90%',
     background: 'white',
     borderRadius: '5px',
-    position: "absolute",
+    position: 'absolute',
     top: '20px',
-    left: '5%'
+    left: '5%',
   },
 });
 
@@ -52,18 +52,15 @@ function Dashboard() {
 
   return (
     <Box className={!toggleDashBoard ? classes.boxOpen : classes.boxClose}>
-      <Box
-        height="120px"
-        className={classes.inputBlock}
-      >
+      <Box height="120px" className={classes.inputBlock}>
         <Box className={classes.opBlock}>
-        <TextField
-          className={classes.input}
-          id="outlined-size-small"
-          variant="outlined"
-          placeholder="Поиск"
-          size="small"
-        />
+          <TextField
+            className={classes.input}
+            id="outlined-size-small"
+            variant="outlined"
+            placeholder="Поиск"
+            size="small"
+          />
         </Box>
       </Box>
       <Navigation />

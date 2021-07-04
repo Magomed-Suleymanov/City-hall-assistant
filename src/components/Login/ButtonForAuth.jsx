@@ -14,7 +14,7 @@ const useStyle = makeStyles({
     zIndex: '2',
     right: '20px',
     top: '22px',
-  }
+  },
 });
 
 function ButtonForAuth() {

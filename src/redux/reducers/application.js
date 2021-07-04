@@ -59,4 +59,4 @@ export const application = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};

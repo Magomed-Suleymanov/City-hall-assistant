@@ -43,8 +43,8 @@ server.post("/auth", (req, res) => {
       (user) => user.login === login && user.password === password
     );
   if (authUser) {
-    const {id, login, token, firstName} = authUser;
-    res.json({id, login, token, firstName, password: null});
+    const {id, login, token, firstName, status} = authUser;
+    res.json({id, login, token, firstName,status, password: null});
   } else {
     res.status(401).json({ message: "Ошибка авторизации" });
   }
