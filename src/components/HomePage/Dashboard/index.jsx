@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 
 const useStyle = makeStyles({
   boxOpen: {
-    width: '24vw',
+    width: '18vw',
     minWidth: '12vw',
     height: '100vh',
     background: 'white',
@@ -14,28 +14,33 @@ const useStyle = makeStyles({
     transform: 'translateX(0%)',
     position: 'inherit',
     zIndex: 100,
-    transition: '.4s',
     transformOrigin: 'left',
   },
   boxClose: {
     minWidth: 0,
     maxWidth: 0,
     transform: 'translateX(-100%) scaleX(0%)',
-    transition: '0.4s',
     opacity: '0',
   },
   inputBlock: {
-    backgroundImage:
-      'url(https://sdelanounas.ru/i/y/2/h/f_Y2hlY2hueWF0b2RheS5jb20vaW1hZ2VzL3VwbG9hZHMvM' +
-      'jAxOC8wNS8wNC8lRDAlQkIlRDAlQkUlRDAlQkElRDAlQjAlRDAlQkIlRDElODElRDAlQjUlRDElODIlRDE' +
-      'lOEMuanBnP19faWQ9MTA2NzUy.jpeg)',
+    backgroundImage:'url(https://d-assets.2gis.ru/headerPhotos/city_2.jpg)',
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    position: "relative"
+  },
+  opBlock: {
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
+    width: '100%',
+    height: "100%",
+    position: "absolute"
   },
   input: {
     width: '90%',
     background: 'white',
     borderRadius: '5px',
-    opacity: 0.7,
+    position: "absolute",
+    top: '20px',
+    left: '5%'
   },
 });
 
@@ -48,18 +53,18 @@ function Dashboard() {
   return (
     <Box className={!toggleDashBoard ? classes.boxOpen : classes.boxClose}>
       <Box
-        alignItems="center"
-        display="flex"
-        justifyContent="center"
-        height="190px"
+        height="120px"
         className={classes.inputBlock}
       >
+        <Box className={classes.opBlock}>
         <TextField
           className={classes.input}
-          id="outlined-basic"
-          label="Поиск"
+          id="outlined-size-small"
           variant="outlined"
+          placeholder="Поиск"
+          size="small"
         />
+        </Box>
       </Box>
       <Navigation />
     </Box>

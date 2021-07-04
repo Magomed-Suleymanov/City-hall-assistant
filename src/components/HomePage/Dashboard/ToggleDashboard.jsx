@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
-import MenuOpenIcon from '@material-ui/icons/MenuOpen';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { makeStyles } from '@material-ui/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleDashboard } from '../../../redux/actions/application';
@@ -8,26 +8,31 @@ import { useHotkeys } from 'react-hotkeys-hook';
 
 const useStyle = makeStyles({
   iconDashboardOpen: {
-    transition: '.3s',
     position: 'absolute',
     zIndex: 150,
-    top: 22,
-    left: '8px',
+    top: 20,
     background: 'white',
-    border: '1px solid lightgrey',
-    borderRadius: '3px',
+    borderRadius: '0 5px 5px 0',
     cursor: 'pointer',
+    fontSize: '20px',
+    color: 'black',
+    width: '24px',
+    height: '40px',
+    boxShadow: "0 1px 3px 0 rgb(38 38 38 / 50%)"
   },
   iconDashboardClose: {
     transform: 'rotate(180deg)',
-    transition: '.3s',
     position: 'absolute',
-    top: 22,
-    left: '4px',
+    top: 20,
+    left: '0px',
     zIndex: 150,
+    fontSize: '20px',
+    color: 'black',
+    width: '24px',
+    height: '40px',
     background: 'white',
-    border: '1px solid lightgrey',
-    borderRadius: '3px',
+    boxShadow: "0 1px 3px 0 rgb(38 38 38 / 50%)",
+    borderRadius: '5px 0 0 5px',
     cursor: 'pointer',
   },
 });
@@ -50,8 +55,7 @@ function ToggleDashboard() {
 
   return (
     <Box position="relative">
-      <MenuOpenIcon
-        fontSize="large"
+      <ChevronLeftIcon
         className={
           !toggleDashBoard
             ? classes.iconDashboardOpen
