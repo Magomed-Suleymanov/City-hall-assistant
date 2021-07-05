@@ -46,6 +46,13 @@ export const authReducer = (state = initialState, action) => {
         user: action.payload,
       };
 
+    case 'registration/error':
+      return {
+        ...state,
+        error: true,
+        loadingRegistration: false,
+      }
+
     default:
       return state;
   }
