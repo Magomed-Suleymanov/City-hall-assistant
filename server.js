@@ -33,9 +33,6 @@ const getRandomToken = (length) => {
   return result;
 };
 
-
-
-
 //Авторизация
 server.post("/auth", (req, res) => {
   const { login, password } = req.body;
@@ -89,9 +86,6 @@ server.get("/appeals", (req, res) => {
   }
   res.json(filteredAppeals);
 });
-
-
-console.log(streets.toJSON())
 
 
 //Добавление пожеланий

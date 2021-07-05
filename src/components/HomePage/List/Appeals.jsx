@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/styles';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
-import Appeal from './Appeal'
+import Appeal from './Appeal';
+import { addAppeal } from '../../../redux/actions/appeals';
 
 const useStyle = makeStyles(() => ({
   inputModal: {
@@ -46,11 +47,8 @@ function Appeals() {
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
+  const dispatch = useDispatch();
 
-  // const handleAddText = () => {
-  //   dispatch(AddAppeals(text));
-  //   setText('');
-  // }
   // const modalListItems = useSelector(
   //   (state) => state.application.modalListItems,
   // );
@@ -58,10 +56,13 @@ function Appeals() {
 
   const classes = useStyle();
 
-  const [values, setValues] = useState({
-    streetId: "",
-    appeal: "",
-  });
+  const [appeal, setAppeal] = useState('');
+
+  const [streetId, setStreetId] = useState('');
+  const handleAddAppeal = () => {
+    dispatch(addAppeal(appeal, streetId));
+    setAppeal('');
+  };
 
   return (
     <Box width="500px" padding="0px 2px 2px 2px">
@@ -77,10 +78,12 @@ function Appeals() {
         {appeals.map((item) => {
           if (item.id === modalListItems.id) {
             return (
-              <Appeal key={item.id}
-                      modalListItems={modalListItems}
-                      item={item}
-                      user={user}/>
+              <Appeal
+                key={item.id}
+                modalListItems={modalListItems}
+                item={item}
+                user={user}
+              />
             );
           }
           return '';
@@ -88,36 +91,35 @@ function Appeals() {
       </Box>
       <Box>
         <input
-          value={values.appeal}
+          value={appeal}
           className={classes.inputModal}
           placeholder="Введите пожелания или замечания"
-          onChange={(e) => setValues.appeal(e.target.value)}
+          onChange={(e) => setAppeal(e.target.value)}
         />
       </Box>
       <Box padding="12px 0px 0px 0px ">
-        {user.token ?
+        {user.token ? (
           <Button
-          className={classes.buttonAppeals}
-          // onClick={handleAddText}
-          variant="outlined"
-          color="primary"
-        >
-          Добавить
-        </Button>
-          :
-          <Box title='Авторизуйтесь для добавления пожелания'>
-          <Button disabled={true}
-
             className={classes.buttonAppeals}
-            // onClick={handleAddText}
+            onClick={handleAddAppeal}
             variant="outlined"
             color="primary"
           >
             Добавить
           </Button>
+        ) : (
+          <Box title="Авторизуйтесь для добавления пожелания">
+            <Button
+              disabled={true}
+              className={classes.buttonAppeals}
+              onClick={handleAddAppeal}
+              variant="outlined"
+              color="primary"
+            >
+              Добавить
+            </Button>
           </Box>
-
-        }
+        )}
       </Box>
     </Box>
   );

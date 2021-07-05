@@ -20,21 +20,20 @@ export const loadingAppeals = () => {
   };
 };
 
-export const addAppeal = (title, text, clientId) => {
+export const addAppeal = (appeal, streetId, id) => {
   return (dispatch) => {
     dispatch({
       type: 'appeals/add/start',
     });
 
-    fetch('/notes', {
+    fetch(`/appeals`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        title: title,
-        content: text,
-        clientId: clientId,
+        appeal,
+        streetId,
       }),
     })
       .then((res) => res.json())

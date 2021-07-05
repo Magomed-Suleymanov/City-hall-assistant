@@ -37,28 +37,16 @@
       "id": 3
     },
     {
+      "status": "Администратор",
       "firstName": "Альви",
       "lastName": "Цугаев",
       "email": "tsugaev@mail.ru",
       "login": "alvi",
       "password": "alvi",
       "address": null,
-      "status": "Администратор",
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
-    },
-    {
-      "firstName": "q",
-      "lastName": "q",
-      "email": "q",
-      "login": "q",
-      "password": "q",
-      "address": null,
-      "status": "Пользователь",
-      "avatar": null,
-      "token": "qxIWUv5sJSkZ3MafMOykQiCzgQWXyEn12quEgDIYys66KmskVn",
-      "id": 5
     }
   ],
   "streets": [
