@@ -45,7 +45,7 @@ const useStyle = makeStyles({
 
         '&:hover': {
             content: 'attr(data-title)',
-            fontSize: '30px',
+            fontSize: '31px',
             transition: '0.3s'
         },
 
