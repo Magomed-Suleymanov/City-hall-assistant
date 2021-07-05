@@ -67,6 +67,5 @@ export const startRegistration = (
           payload: json,
         });
       });
-
   };
 };

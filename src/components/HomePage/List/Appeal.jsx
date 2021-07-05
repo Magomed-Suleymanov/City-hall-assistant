@@ -1,7 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import DeleteIcon from '@material-ui/icons/Delete';
-import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
 import { deleteAppeals } from '../../../redux/actions/appeals';
@@ -44,8 +43,8 @@ function Appeal({ item, modalListItems, user }) {
   const classes = useStyle();
   const dispatch = useDispatch();
 
-  const handleDeleteAppeals = (id) => {
-    dispatch(deleteAppeals(modalListItems.id));
+  const handleDeleteAppeals = () => {
+    dispatch(deleteAppeals(item.id));
   };
 
   return (

@@ -76,10 +76,10 @@ function Appeals() {
       </Box>
       <Box className={classes.blockWishes}>
         {appeals.map((item) => {
-          if (item.id === modalListItems.id) {
+          if (item.streetId === modalListItems.id) {
             return (
               <Appeal
-                key={item.id}
+                key={item.streetId}
                 modalListItems={modalListItems}
                 item={item}
                 user={user}

@@ -48,11 +48,11 @@
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
     }
-
   ],
   "streets": [
     {
       "id": 1,
+      "streetId": 1,
       "url": "https://www.varlamov.me/2016/grozniy_hor/29.jpg",
       "address": "Проспект Ахмат-Хаджи Кадырова"
     },
@@ -87,6 +87,31 @@
       "id": 1,
       "streetId": 1,
       "appeal": "Много машин, пожалуйста уменьшите трафик на дороге."
+    },
+    {
+      "id": 10,
+      "streetId": 1,
+      "appeal": "1"
+    },
+    {
+      "id": 11,
+      "streetId": 1,
+      "appeal": "2"
+    },
+    {
+      "id": 12,
+      "streetId": 1,
+      "appeal": "3"
+    },
+    {
+      "id": 13,
+      "streetId": 1,
+      "appeal": "4"
+    },
+    {
+      "id": 14,
+      "streetId": 1,
+      "appeal": "5"
     },
     {
       "id": 2,
