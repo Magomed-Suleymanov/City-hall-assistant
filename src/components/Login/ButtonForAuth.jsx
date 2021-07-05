@@ -61,10 +61,6 @@ const useStyle = makeStyles({
   },
   text: {
     fontSize: "16px",
-
-    '&:hover': {
-      color: 'black',
-    }
   },
 
 });
