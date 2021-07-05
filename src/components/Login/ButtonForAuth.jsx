@@ -102,17 +102,13 @@ function ButtonForAuth() {
         </Box>
       ) : (
         <Box>
-          <Avatar
-              className={classes.avatar}
-              src="/broken-image.jpg"
-              aria-controls='simple-menu'
-              aria-haspopup="true"
-              onClick={handleClick}
-          />
-
-          <IconButton onClick={handleClick}>
-            <Avatar />
-          </IconButton>
+            <Avatar
+                className={classes.avatar}
+                src="/broken-image.jpg"
+                aria-controls='simple-menu'
+                aria-haspopup="true"
+                onClick={handleClick}
+            />
           <Popover
               id={id}
               open={open}
