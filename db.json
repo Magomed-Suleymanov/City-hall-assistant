@@ -37,35 +37,22 @@
       "id": 3
     },
     {
+      "status": "Администратор",
       "firstName": "Альви",
       "lastName": "Цугаев",
       "email": "tsugaev@mail.ru",
       "login": "alvi",
       "password": "alvi",
       "address": null,
-      "status": "Администратор",
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
-    },
-    {
-      "firstName": "q",
-      "lastName": "q",
-      "email": "q",
-      "login": "q",
-      "password": "q",
-      "address": null,
-      "status": "Пользователь",
-      "avatar": null,
-      "token": "qxIWUv5sJSkZ3MafMOykQiCzgQWXyEn12quEgDIYys66KmskVn",
-      "id": 5
-
     }
-
   ],
   "streets": [
     {
       "id": 1,
+      "streetId": 1,
       "url": "https://www.varlamov.me/2016/grozniy_hor/29.jpg",
       "address": "Проспект Ахмат-Хаджи Кадырова"
     },
@@ -100,6 +87,31 @@
       "id": 1,
       "streetId": 1,
       "appeal": "Много машин, пожалуйста уменьшите трафик на дороге."
+    },
+    {
+      "id": 10,
+      "streetId": 1,
+      "appeal": "1"
+    },
+    {
+      "id": 11,
+      "streetId": 1,
+      "appeal": "2"
+    },
+    {
+      "id": 12,
+      "streetId": 1,
+      "appeal": "3"
+    },
+    {
+      "id": 13,
+      "streetId": 1,
+      "appeal": "4"
+    },
+    {
+      "id": 14,
+      "streetId": 1,
+      "appeal": "5"
     },
     {
       "id": 2,

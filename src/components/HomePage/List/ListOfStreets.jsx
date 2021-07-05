@@ -9,8 +9,7 @@ import { loadingAppeals } from '../../../redux/actions/appeals';
 const useStyle = makeStyles(() => ({
   wrapList: {
     borderRadius: '5px',
-    width: '100%',
-    minWidth: '100px',
+    width: '500px',
     background: '#fdfcf9',
     margin: ' 20px 25px 0px 25px',
     boxShadow: '0px 0px 4px 2px rgb(217, 217, 217)',
@@ -32,8 +31,9 @@ function ListOfStreets() {
   }, [dispatch]);
 
   const classes = useStyle();
+
   return (
-    <Box height="100vh">
+    <Box>
       {list.map((itemStreet) => {
         return (
           <Box

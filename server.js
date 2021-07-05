@@ -33,9 +33,6 @@ const getRandomToken = (length) => {
   return result;
 };
 
-
-
-
 //Авторизация
 server.post("/auth", (req, res) => {
   const { login, password } = req.body;
@@ -82,16 +79,13 @@ server.post("/users", (req, res, next) => {
 
 
 //Получение пожеланий
-server.get("/appeals", (req, res) => {
-  const filteredAppeals = appeals.filter((item) => item.appeal);
-  if (filteredAppeals.toJSON().length === 0) {
-    res.status(404).json([]);
-  }
-  res.json(filteredAppeals);
-});
-
-
-console.log(streets.toJSON())
+// server.get("/appeals", (req, res) => {
+//   const filteredAppeals = appeals.filter((item) => item.appeal);
+//   if (filteredAppeals.toJSON().length === 0) {
+//     res.status(404).json([]);
+//   }
+//   res.json(filteredAppeals);
+// });
 
 
 //Добавление пожеланий
