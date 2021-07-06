@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, YMaps } from 'react-yandex-maps';
+import {Map, TypeSelector, YMaps} from 'react-yandex-maps';
 
 function MyMap() {
   const mapState = {
@@ -18,7 +18,9 @@ function MyMap() {
           height: '100%',
         }}
         state={mapState}
-      ></Map>
+      >
+          <TypeSelector options={{ float: 'right' }} />
+      </Map>
     </YMaps>
   );
 }

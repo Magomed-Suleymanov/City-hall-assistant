@@ -12,7 +12,7 @@ const useStyle = makeStyles({
         width: '100%',
         display: "flex",
         flexWrap: 'wrap',
-        justifyContent: "space-between",
+        justifyContent: "space-around",
         marginTop: '20px',
     },
 

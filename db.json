@@ -59,9 +59,7 @@
       "avatar": null,
       "token": "qxIWUv5sJSkZ3MafMOykQiCzgQWXyEn12quEgDIYys66KmskVn",
       "id": 5
-
     }
-
   ],
   "streets": [
     {
@@ -96,11 +94,6 @@
     }
   ],
   "appeals": [
-    {
-      "id": 1,
-      "streetId": 1,
-      "appeal": "Много машин, пожалуйста уменьшите трафик на дороге."
-    },
     {
       "id": 2,
       "streetId": 2,
