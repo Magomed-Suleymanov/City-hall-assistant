@@ -57,7 +57,7 @@ function Places(props) {
   return (
     <Box className={classes.placesBlock}>
       <Tooltip title="Покушать">
-        <Box className={classes.place} >
+        <Box className={classes.place}>
           <RestaurantIcon className={classes.icon} />
         </Box>
       </Tooltip>

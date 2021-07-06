@@ -20,7 +20,7 @@ export const loadingAppeals = () => {
   };
 };
 
-export const addAppeal = (appeal, streetId, id) => {
+export const addAppeal = (appeal) => {
   return (dispatch) => {
     dispatch({
       type: 'appeals/add/start',
@@ -32,8 +32,7 @@ export const addAppeal = (appeal, streetId, id) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        appeal,
-        streetId,
+        appeal: appeal,
       }),
     })
       .then((res) => res.json())
