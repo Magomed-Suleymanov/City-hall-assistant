@@ -89,18 +89,18 @@ server.post("/users", (req, res, next) => {
 
 
 //Добавление пожеланий
-server.post("/appeals", (req, res, next) => {
-  if (
-    req.body.appeal === undefined ||
-    req.body.streetId === undefined
-  ) {
-    res.status(400);
-    res.send();
-  }
-  req.body.date = new Date();
-  req.body.streetId = Number(req.user.id);
-  next();
-});
+// server.post("/appeals", (req, res, next) => {
+//   if (
+//     req.body.appeal === undefined ||
+//     req.body.streetId === undefined
+//   ) {
+//     res.status(400);
+//     res.send();
+//   }
+//   req.body.date = new Date();
+//   req.body.streetId = Number(req.user.id);
+//   next();
+// });
 
 
 server.use(router);

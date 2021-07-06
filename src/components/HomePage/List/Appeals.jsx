@@ -48,6 +48,7 @@ function Appeals() {
     (state) => state.application.modalListItems,
   );
   const dispatch = useDispatch();
+  console.log(modalListItems);
 
   // const modalListItems = useSelector(
   //   (state) => state.application.modalListItems,
@@ -60,7 +61,7 @@ function Appeals() {
 
   const [streetId, setStreetId] = useState('');
   const handleAddAppeal = () => {
-    dispatch(addAppeal(appeal, streetId));
+    dispatch(addAppeal(appeal));
     setAppeal('');
   };
 
@@ -75,19 +76,22 @@ function Appeals() {
         Пожелания или замечания:
       </Box>
       <Box className={classes.blockWishes}>
-        {appeals.map((item) => {
-          if (item.streetId === modalListItems.id) {
-            return (
-              <Appeal
-                key={item.streetId}
-                modalListItems={modalListItems}
-                item={item}
-                user={user}
-              />
-            );
-          }
-          return '';
-        })}
+
+        {/*если раскомментить ошибка не появится , но если нажать на добавление , то да + добавится объект в массив appeals*/}
+
+
+        {/*{appeals.map((item) => {*/}
+        {/*  if (item.streetId === modalListItems.id) {*/}
+        {/*    return (*/}
+        {/*      <Appeal*/}
+        {/*        key={item.streetId}*/}
+        {/*        modalListItems={modalListItems}*/}
+        {/*        item={item}*/}
+        {/*        user={user}*/}
+        {/*      />*/}
+        {/*    );*/}
+        {/*  }*/}
+        {/*})}*/}
       </Box>
       <Box>
         <input
@@ -112,7 +116,6 @@ function Appeals() {
             <Button
               disabled={true}
               className={classes.buttonAppeals}
-              onClick={handleAddAppeal}
               variant="outlined"
               color="primary"
             >

@@ -26,8 +26,8 @@
     },
     {
       "status": "Администратор",
-      "login": "Ahmad",
-      "password": "Ahmad",
+      "login": "Akhmad",
+      "password": "Akhmad",
       "firstName": "Ахьмад",
       "lastName": "Кудузов",
       "email": "Kuduzov@gmail.com",
@@ -52,7 +52,6 @@
   "streets": [
     {
       "id": 1,
-      "streetId": 1,
       "url": "https://www.varlamov.me/2016/grozniy_hor/29.jpg",
       "address": "Проспект Ахмат-Хаджи Кадырова"
     },
@@ -137,6 +136,10 @@
       "id": 6,
       "streetId": 6,
       "appeal": "Всё очень красиво."
+    },
+    {
+      "appeal": "as",
+      "id": 15
     }
   ]
 }
