@@ -51,15 +51,14 @@ function Appeals() {
 
   const [appeal, setAppeal] = useState('');
 
-  const streetId = modalListItems.id
+  const streetId = modalListItems.id;
 
   const handleAddAppeal = () => {
     if (appeal.length === 0) return;
     dispatch(addAppeal(appeal, streetId));
     setAppeal('');
-
-
   };
+
   const classes = useStyle();
 
   return (

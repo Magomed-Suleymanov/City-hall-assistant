@@ -10,12 +10,11 @@ import Tooltip from '@material-ui/core/Tooltip';
 const useStyle = makeStyles({
   placesBlock: {
     width: '100%',
-    display: "flex",
+    display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: "space-around",
+    justifyContent: 'space-around',
     marginTop: '20px',
   },
-
 
   place: {
     width: '64px',

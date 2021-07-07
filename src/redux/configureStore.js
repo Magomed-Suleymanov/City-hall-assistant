@@ -11,6 +11,6 @@ const logger = createLogger({
 });
 
 export const store = createStore(
-  combineReducers({ application, authReducer, appeals  }),
+  combineReducers({ application, authReducer, appeals }),
   applyMiddleware(thunk, logger),
 );
