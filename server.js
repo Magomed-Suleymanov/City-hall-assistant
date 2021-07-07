@@ -90,15 +90,15 @@ server.post("/users", (req, res, next) => {
 
 //Добавление пожеланий
 // server.post("/appeals", (req, res, next) => {
+//   const alfa = appeals.find(item => item.streetsId === streets.id)
+//
 //   if (
-//     req.body.appeal === undefined ||
-//     req.body.streetId === undefined
+//     req.body.appeal === undefined
 //   ) {
 //     res.status(400);
 //     res.send();
 //   }
-//   req.body.date = new Date();
-//   req.body.streetId = Number(req.user.id);
+//   req.body.appeal = alfa;
 //   next();
 // });
 

@@ -42,28 +42,22 @@ const useStyle = makeStyles(() => ({
 }));
 
 function Appeals() {
+  const dispatch = useDispatch();
   const appeals = useSelector((state) => state.appeals.appeals);
   const user = useSelector((state) => state.authReducer.user);
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
-  const dispatch = useDispatch();
-  console.log(modalListItems);
-
-  // const modalListItems = useSelector(
-  //   (state) => state.application.modalListItems,
-  // );
-  // const appeals = useSelector((state) => state.appeals.appeals);
-
-  const classes = useStyle();
+  const streetId = modalListItems.id;
 
   const [appeal, setAppeal] = useState('');
 
-  const [streetId, setStreetId] = useState('');
   const handleAddAppeal = () => {
-    dispatch(addAppeal(appeal));
+    if (appeal.length === 0) return;
+    dispatch(addAppeal(appeal, streetId));
     setAppeal('');
   };
+  const classes = useStyle();
 
   return (
     <Box width="500px" padding="0px 2px 2px 2px">
@@ -76,22 +70,19 @@ function Appeals() {
         Пожелания или замечания:
       </Box>
       <Box className={classes.blockWishes}>
-
-        {/*если раскомментить ошибка не появится , но если нажать на добавление , то да + добавится объект в массив appeals*/}
-
-
-        {/*{appeals.map((item) => {*/}
-        {/*  if (item.streetId === modalListItems.id) {*/}
-        {/*    return (*/}
-        {/*      <Appeal*/}
-        {/*        key={item.streetId}*/}
-        {/*        modalListItems={modalListItems}*/}
-        {/*        item={item}*/}
-        {/*        user={user}*/}
-        {/*      />*/}
-        {/*    );*/}
-        {/*  }*/}
-        {/*})}*/}
+        {appeals.map((item) => {
+          if (item.streetId === modalListItems.id) {
+            return (
+              <Appeal
+                key={item.id}
+                modalListItems={modalListItems}
+                item={item}
+                user={user}
+              />
+            );
+          }
+          return '';
+        })}
       </Box>
       <Box>
         <input

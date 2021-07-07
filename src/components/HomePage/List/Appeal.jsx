@@ -39,7 +39,7 @@ const useStyle = makeStyles(() => ({
   },
 }));
 
-function Appeal({ item, modalListItems, user }) {
+function Appeal({ item, user }) {
   const classes = useStyle();
   const dispatch = useDispatch();
 
