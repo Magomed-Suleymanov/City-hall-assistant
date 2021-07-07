@@ -8,13 +8,14 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyle = makeStyles({
-  placesBlock: {
-    width: '100%',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    marginTop: '20px',
-  },
+    placesBlock: {
+        width: '100%',
+        display: "flex",
+        flexWrap: 'wrap',
+        justifyContent: "space-around",
+        marginTop: '20px',
+    },
+
 
   place: {
     width: '64px',

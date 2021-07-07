@@ -32,8 +32,8 @@ export const addAppeal = (appeal, streetId) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        appeal: appeal,
-        streetId: streetId,
+        streetId:streetId,
+        appeal:appeal,
       }),
     })
       .then((res) => res.json())

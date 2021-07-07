@@ -48,10 +48,12 @@ function Appeals() {
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
+
   const streetId = modalListItems.id;
 
-  const [appeal, setAppeal] = useState('');
+  console.log(streetId)
 
+  const [appeal, setAppeal] = useState('');
   const handleAddAppeal = () => {
     if (appeal.length === 0) return;
     dispatch(addAppeal(appeal, streetId));

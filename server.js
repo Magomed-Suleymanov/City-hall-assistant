@@ -37,8 +37,8 @@ const getRandomToken = (length) => {
 server.post("/auth", (req, res) => {
   const { login, password } = req.body;
   const authUser = users.toJSON().find(
-      (user) => user.login === login && user.password === password
-    );
+    (user) => user.login === login && user.password === password
+  );
   if (authUser) {
     const {id, login, token, firstName, status} = authUser;
     res.json({id, login, token, firstName,status, password: null});
