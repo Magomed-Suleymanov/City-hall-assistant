@@ -47,6 +47,18 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
+    },
+    {
+      "firstName": "й",
+      "lastName": "й",
+      "email": "й",
+      "login": "й",
+      "password": "й",
+      "address": null,
+      "status": "Пользователь",
+      "avatar": null,
+      "token": "ggJExRiLC38Lyadk1NONd68EVcehw3Poop8j3Jc6LZMe6qH71o",
+      "id": 5
     }
   ],
   "streets": [
@@ -123,8 +135,14 @@
       "id": 8
     },
     {
-      "appeal": "a",
+      "appeal": "а теперь работает? 3 часа то потратил",
+      "streetId": 1,
       "id": 9
+    },
+    {
+      "appeal": "да, работает",
+      "streetId": 1,
+      "id": 10
     }
   ]
 }
