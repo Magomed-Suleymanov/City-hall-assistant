@@ -20,7 +20,7 @@ export const loadingAppeals = () => {
   };
 };
 
-export const addAppeal = (appeal) => {
+export const addAppeal = (appeal, streetId) => {
   return (dispatch) => {
     dispatch({
       type: 'appeals/add/start',
@@ -33,6 +33,7 @@ export const addAppeal = (appeal) => {
       },
       body: JSON.stringify({
         appeal: appeal,
+        streetId: streetId,
       }),
     })
       .then((res) => res.json())
@@ -63,58 +64,3 @@ export const deleteAppeals = (id) => {
       });
   };
 };
-
-export const loadAppeals = () => {
-  return (dispatch) => {
-    dispatch({ type: 'loading/appeals/start' });
-    fetch('/appeals')
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch({
-          type: 'loading/appeals/success',
-          payload: json,
-        });
-        console.log(json);
-      });
-  };
-};
-
-export const LoadAppealsModal = (id) => {
-  return (dispatch) => {
-    dispatch({ type: 'loading/appeals/start' });
-    fetch(`/appeals/${id}`)
-      .then((response) => response.json())
-      .then((json) =>
-        dispatch({
-          type: 'loading/appeals/success',
-          payload: json,
-        }),
-      );
-  };
-};
-
-
-export const AddAppeals = (text, streetId) => {
-  return (dispatch) => {
-    dispatch({
-      type: 'add/text/start',
-    });
-
-    fetch(`/appeals`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        text,
-        streetId
-
-      }),
-    }).then((res) =>
-      res.json().then((json) => {
-        dispatch({
-          type: 'add/text/success',
-          payload: json,
-        });
-      }),
-    );
-  };
-}

@@ -37,8 +37,8 @@ const getRandomToken = (length) => {
 server.post("/auth", (req, res) => {
   const { login, password } = req.body;
   const authUser = users.toJSON().find(
-      (user) => user.login === login && user.password === password
-    );
+    (user) => user.login === login && user.password === password
+  );
   if (authUser) {
     const {id, login, token, firstName, status} = authUser;
     res.json({id, login, token, firstName,status, password: null});
@@ -78,29 +78,29 @@ server.post("/users", (req, res, next) => {
 
 
 
-// Получение пожеланий
-server.get("/appeals", (req, res) => {
-  const filteredAppeals = appeals.filter((item) => item.appeal);
-  if (filteredAppeals.toJSON().length === 0) {
-    res.status(404).json([]);
-  }
-  res.json(filteredAppeals);
-});
+//Получение пожеланий
+// server.get("/appeals", (req, res) => {
+//   const filteredAppeals = appeals.filter((item) => item.appeal);
+//   if (filteredAppeals.toJSON().length === 0) {
+//     res.status(404).json([]);
+//   }
+//   res.json(filteredAppeals);
+// });
 
 
-// Добавление пожеланий
-server.post("/appeals", (req, res, next) => {
-  if (
-    req.body.appeal === undefined ||
-    req.body.streetId === undefined
-  ) {
-    res.status(400);
-    res.send();
-  }
-  req.body.date = new Date();
-  req.body.streetId = Number(req.user.id);
-  next();
-});
+//Добавление пожеланий
+// server.post("/appeals", (req, res, next) => {
+//   const alfa = appeals.find(item => item.streetsId === streets.id)
+//
+//   if (
+//     req.body.appeal === undefined
+//   ) {
+//     res.status(400);
+//     res.send();
+//   }
+//   req.body.appeal = alfa;
+//   next();
+// });
 
 
 server.use(router);

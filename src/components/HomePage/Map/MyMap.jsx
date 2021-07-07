@@ -1,5 +1,5 @@
 import React from 'react';
-import {Map, Placemark, TypeSelector, YMaps} from 'react-yandex-maps';
+import { Map, Placemark, TypeSelector, YMaps } from 'react-yandex-maps';
 
 function MyMap() {
   const mapState = {
@@ -19,13 +19,13 @@ function MyMap() {
         }}
         state={mapState}
       >
-          <TypeSelector options={{ float: 'right' }} />
-          <Placemark geometry={[43.305141, 45.705414]} />
-          <Placemark geometry={[43.320681, 45.688962]} />
-          <Placemark geometry={[43.315447, 45.690256]} />
-          <Placemark geometry={[43.309334, 45.703802]} />
-          <Placemark geometry={[43.319170, 45.690690]} />
-          <Placemark geometry={[43.320839, 45.682063]} />
+        <TypeSelector options={{ float: 'right' }} />
+        <Placemark geometry={[43.305141, 45.705414]} />
+        <Placemark geometry={[43.320681, 45.688962]} />
+        <Placemark geometry={[43.315447, 45.690256]} />
+        <Placemark geometry={[43.309334, 45.703802]} />
+        <Placemark geometry={[43.31917, 45.69069]} />
+        <Placemark geometry={[43.320839, 45.682063]} />
       </Map>
     </YMaps>
   );
