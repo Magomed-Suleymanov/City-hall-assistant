@@ -23,9 +23,9 @@ const useStyle = makeStyles({
     position: 'absolute',
     padding: 'none',
     zIndex: '2',
-    right: '120px',
-    top: '10px',
-    fontSize: "14px",
+    right: '60px',
+    top: '18px',
+    fontSize: '14px',
     lineHeight: '16px',
     fontWeight: '800',
 
@@ -36,12 +36,12 @@ const useStyle = makeStyles({
   },
 
   avatar: {
-    width: '45px',
-    height: '45px',
+    width: '50px',
+    height: '50px',
     zIndex: '100',
     position: 'absolute',
-    right: '120px',
-    top: '10px',
+    right: '60px',
+    top: '18px',
     cursor: 'pointer',
     transition: '0.5s',
 

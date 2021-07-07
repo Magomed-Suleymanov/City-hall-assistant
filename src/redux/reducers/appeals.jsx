@@ -25,7 +25,7 @@ export const appeals = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        appeals: [action.payload, ...state.appeals],
+        appeals: [...state.appeals, action.payload],
       };
 
     case 'appeals/delete/start':

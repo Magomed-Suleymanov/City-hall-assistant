@@ -49,15 +49,16 @@ function Appeals() {
     (state) => state.application.modalListItems,
   );
 
-  const streetId = modalListItems.id;
-
-  console.log(streetId)
-
   const [appeal, setAppeal] = useState('');
+
+  const streetId = modalListItems.id
+
   const handleAddAppeal = () => {
     if (appeal.length === 0) return;
     dispatch(addAppeal(appeal, streetId));
     setAppeal('');
+
+
   };
   const classes = useStyle();
 
