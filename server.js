@@ -33,9 +33,6 @@ const getRandomToken = (length) => {
   return result;
 };
 
-
-
-
 //Авторизация
 server.post("/auth", (req, res) => {
   const { login, password } = req.body;
@@ -81,7 +78,7 @@ server.post("/users", (req, res, next) => {
 
 
 
-//Получение пожеланий
+// Получение пожеланий
 server.get("/appeals", (req, res) => {
   const filteredAppeals = appeals.filter((item) => item.appeal);
   if (filteredAppeals.toJSON().length === 0) {
@@ -91,10 +88,7 @@ server.get("/appeals", (req, res) => {
 });
 
 
-console.log(streets.toJSON())
-
-
-//Добавление пожеланий
+// Добавление пожеланий
 server.post("/appeals", (req, res, next) => {
   if (
     req.body.appeal === undefined ||

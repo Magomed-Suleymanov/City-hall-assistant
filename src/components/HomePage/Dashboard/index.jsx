@@ -3,7 +3,7 @@ import { Box, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { useSelector } from 'react-redux';
 import Navigation from './Navigation';
-import Places from "./Places";
+import Places from './Places';
 
 const useStyle = makeStyles({
   boxOpen: {

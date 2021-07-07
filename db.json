@@ -26,8 +26,8 @@
     },
     {
       "status": "Администратор",
-      "login": "Ahmad",
-      "password": "Ahmad",
+      "login": "Akhmad",
+      "password": "Akhmad",
       "firstName": "Ахьмад",
       "lastName": "Кудузов",
       "email": "Kuduzov@gmail.com",
@@ -37,13 +37,13 @@
       "id": 3
     },
     {
+      "status": "Администратор",
       "firstName": "Альви",
       "lastName": "Цугаев",
       "email": "tsugaev@mail.ru",
       "login": "alvi",
       "password": "alvi",
       "address": null,
-      "status": "Администратор",
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
@@ -113,11 +113,6 @@
       "id": 5,
       "streetId": 5,
       "appeal": "Шикарные качели, но очень мало. Срочно добавьте."
-    },
-    {
-      "id": 6,
-      "streetId": 6,
-      "appeal": "Всё очень красиво."
     }
   ]
 }
