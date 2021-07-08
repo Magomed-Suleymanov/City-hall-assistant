@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     left: 'calc(50% - 350px)',
     zIndex: '220',
     position: 'absolute',
-    top: '70px',
+    top: '10%',
     borderRadius: '5px',
     boxShadow: '0px 0px 5px 0px rgb(0 0 0)',
   },

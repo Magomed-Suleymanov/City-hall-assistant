@@ -20,7 +20,7 @@ export const loadingAppeals = () => {
   };
 };
 
-export const addAppeal = (appeal, streetId) => {
+export const addAppeal = (appeal, streetId, status) => {
   return (dispatch) => {
     dispatch({
       type: 'appeals/add/start',
@@ -34,6 +34,7 @@ export const addAppeal = (appeal, streetId) => {
       body: JSON.stringify({
         appeal: appeal,
         streetId: streetId,
+        status: status,
       }),
     })
       .then((res) => res.json())
@@ -59,6 +60,30 @@ export const deleteAppeals = (id) => {
       .then((json) => {
         dispatch({
           type: 'appeals/delete/success',
+          payload: id,
+        });
+      });
+  };
+};
+
+export const changeOfStatus = (id, status) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'change/status/start',
+    });
+    fetch(`appeals/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        status: status,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'change/status/success',
           payload: id,
         });
       });

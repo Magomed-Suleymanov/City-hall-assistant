@@ -14,7 +14,7 @@ import { startLogin } from '../../redux/actions/authReducer';
 const useStyles = makeStyles((theme) => ({
   modalAuth: {
     position: 'absolute',
-    top: '70px',
+    top: '10%',
     maxWidth: '700px',
     left: 'calc(50% - 350px)',
     zIndex: '220',
