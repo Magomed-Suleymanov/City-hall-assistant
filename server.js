@@ -79,28 +79,28 @@ server.post("/users", (req, res, next) => {
 
 
 // Получение пожеланий
-server.get("/appeals", (req, res) => {
-  const filteredAppeals = appeals.filter((item) => item.appeal);
-  if (filteredAppeals.toJSON().length === 0) {
-    res.status(404).json([]);
-  }
-  res.json(filteredAppeals);
-});
+// server.get("/appeals", (req, res) => {
+//   const filteredAppeals = appeals.filter((item) => item.appeal);
+//   if (filteredAppeals.toJSON().length === 0) {
+//     res.status(404).json([]);
+//   }
+//   res.json(filteredAppeals);
+// });
 
 
 // Добавление пожеланий
-server.post("/appeals", (req, res, next) => {
-  if (
-    req.body.appeal === undefined ||
-    req.body.streetId === undefined
-  ) {
-    res.status(400);
-    res.send();
-  }
-  req.body.date = new Date();
-  req.body.streetId = Number(req.user.id);
-  next();
-});
+// server.post("/appeals", (req, res, next) => {
+//   if (
+//     req.body.appeal === undefined ||
+//     req.body.streetId === undefined
+//   ) {
+//     res.status(400);
+//     res.send();
+//   }
+//   req.body.date = new Date();
+//   req.body.streetId = Number(req.user.id);
+//   next();
+// });
 
 
 server.use(router);
