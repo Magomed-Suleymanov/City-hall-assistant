@@ -1,6 +1,8 @@
 const initialState = {
   items: [],
+  loadingItems: false,
   modalListItems: [],
+  loadingModalList: false,
   mapVisibility: true,
   listVisibility: false,
   listModalVisibility: false,
@@ -14,6 +16,7 @@ export const application = (state = initialState, action) => {
       return {
         ...state,
         listVisibility: false,
+        loadingItems: true,
       };
 
     case 'loading/street/success':
@@ -22,12 +25,14 @@ export const application = (state = initialState, action) => {
         items: action.payload,
         listVisibility: true,
         mapVisibility: false,
+        loadingItems: false,
       };
 
     case 'loading/modalStreets/start':
       return {
         ...state,
         listModalVisibility: false,
+        loadingModalList: true,
       };
 
     case 'loading/modalStreets/success':
@@ -35,6 +40,7 @@ export const application = (state = initialState, action) => {
         ...state,
         modalListItems: action.payload,
         listModalVisibility: true,
+        loadingModalList: false,
       };
 
     case 'deactivation/ModalListItems':

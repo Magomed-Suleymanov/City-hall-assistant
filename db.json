@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "status": "Администратор",
+      "roles": "Администратор",
       "firstName": "Исмаил",
       "lastName": "Тимуркаев",
       "avatar": null,
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "status": "Администратор",
+      "roles": "Администратор",
       "login": "admin2",
       "password": "admin",
       "firstName": "Магомед",
@@ -25,7 +25,7 @@
       "token": "j06e4g721b99111dcj4aaig4c9"
     },
     {
-      "status": "Администратор",
+      "roles": "Администратор",
       "login": "Akhmad",
       "password": "Akhmad",
       "firstName": "Ахьмад",
@@ -37,7 +37,7 @@
       "id": 3
     },
     {
-      "status": "Администратор",
+      "roles": "Администратор",
       "firstName": "Альви",
       "lastName": "Цугаев",
       "email": "tsugaev@mail.ru",
@@ -55,10 +55,46 @@
       "login": "й",
       "password": "й",
       "address": null,
-      "status": "Пользователь",
+      "roles": "Пользователь",
       "avatar": null,
       "token": "ggJExRiLC38Lyadk1NONd68EVcehw3Poop8j3Jc6LZMe6qH71o",
       "id": 5
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "email": "q",
+      "login": "q",
+      "password": "q",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "GWT3LcuhTqpFAmr6tLGz402Avyhp9iJCctOOKvu4TRckdPkigs",
+      "id": 6
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "login": "",
+      "password": "",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "xpS4YYfKQ5e7mRGW81znreoWL8RZe07vQ4ZHgtDPlDJnqKy6x6",
+      "id": 7
+    },
+    {
+      "firstName": "a",
+      "lastName": "a",
+      "email": "a",
+      "login": "a",
+      "password": "a",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "G3WlfkhOGipfA5cSDWgk7vF2YkhyCK1lFaHWafLyKY0tJ3q0Pq",
+      "id": 8
     }
   ],
   "streets": [
@@ -97,52 +133,38 @@
     {
       "id": 1,
       "streetId": 1,
-      "appeal": "Много машин, пожалуйста уменьшите трафик на дороге."
+      "appeal": "Много машин, пожалуйста уменьшите трафик на дороге.",
+      "status": "Выполнено"
     },
     {
       "id": 2,
       "streetId": 2,
-      "appeal": "Очень много зелени, но все же увеличить бы её)"
+      "appeal": "Очень много зелени, но все же увеличить бы её)",
+      "status": "Выполнено"
     },
     {
       "id": 3,
       "streetId": 3,
-      "appeal": "На дороге есть перепады асфальта, нужно отремонтировать"
+      "appeal": "На дороге есть перепады асфальта, нужно отремонтировать",
+      "status": "Выполнено"
     },
     {
       "id": 4,
       "streetId": 4,
-      "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе."
+      "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе.",
+      "status": "выполнено"
     },
     {
       "id": 5,
       "streetId": 5,
-      "appeal": "Шикарные качели, но очень мало. Срочно добавьте."
+      "appeal": "Шикарные качели, но очень мало. Срочно добавьте.",
+      "status": "выполнено"
     },
     {
       "id": 6,
       "streetId": 6,
-      "appeal": "Всё очень красиво."
-    },
-    {
-      "appeal": "проверка? все работает",
-      "streetId": 1,
-      "id": 7
-    },
-    {
-      "appeal": "да, точно работает",
-      "streetId": 2,
-      "id": 8
-    },
-    {
-      "appeal": "а теперь работает? 3 часа то потратил",
-      "streetId": 1,
-      "id": 9
-    },
-    {
-      "appeal": "да, работает",
-      "streetId": 1,
-      "id": 10
+      "appeal": "Всё очень красиво.",
+      "status": "выполнено"
     }
   ]
 }

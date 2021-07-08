@@ -40,8 +40,8 @@ server.post("/auth", (req, res) => {
     (user) => user.login === login && user.password === password
   );
   if (authUser) {
-    const {id, login, token, firstName, status} = authUser;
-    res.json({id, login, token, firstName,status, password: null});
+    const {id, login, token, firstName, roles} = authUser;
+    res.json({id, login, token, firstName,roles, password: null});
   } else {
     res.status(401).json({ message: "Ошибка авторизации" });
   }
@@ -52,7 +52,7 @@ server.post("/auth", (req, res) => {
 server.post("/users", (req, res, next) => {
   const defaultDate = {
     address: null,
-    status: 'Пользователь',
+    roles: 'Пользователь',
     avatar: null,
     token: getRandomToken(50),
   };
@@ -79,13 +79,13 @@ server.post("/users", (req, res, next) => {
 
 
 //Получение пожеланий
-// server.get("/appeals", (req, res) => {
-//   const filteredAppeals = appeals.filter((item) => item.appeal);
-//   if (filteredAppeals.toJSON().length === 0) {
-//     res.status(404).json([]);
-//   }
-//   res.json(filteredAppeals);
-// });
+server.get("/appeals", (req, res) => {
+  const filteredAppeals = appeals.filter((item) => item.appeal);
+  if (filteredAppeals.toJSON().length === 0) {
+    res.status(404).json([]);
+  }
+  res.json(filteredAppeals);
+});
 
 
 //Добавление пожеланий

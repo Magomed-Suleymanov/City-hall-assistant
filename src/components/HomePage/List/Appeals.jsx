@@ -54,8 +54,9 @@ function Appeals() {
   const streetId = modalListItems.id;
 
   const handleAddAppeal = () => {
+    let status = 'Выполняется';
     if (appeal.length === 0) return;
-    dispatch(addAppeal(appeal, streetId));
+    dispatch(addAppeal(appeal, streetId, status));
     setAppeal('');
   };
 
