@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Box from '@material-ui/core/Box';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from 'react-redux';
@@ -8,7 +8,7 @@ import DoneAllIcon from '@material-ui/icons/DoneAll';
 import {
   changeOfStatus,
   deleteAppeals,
-} from '../../../redux/actions/appeals';
+} from '../../../redux/actions/appeals'
 import Button from '@material-ui/core/Button';
 
 const useStyle = makeStyles(() => ({
@@ -65,6 +65,7 @@ function Appeal({ item, user }) {
     let status = 'Выполнено';
     dispatch(changeOfStatus(item.id, status));
   };
+
 
   return (
     <Box
