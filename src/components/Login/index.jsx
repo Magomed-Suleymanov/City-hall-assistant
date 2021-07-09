@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogin } from '../../redux/actions/authReducer';
 
@@ -52,9 +52,12 @@ function Login() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
+  let history = useHistory()
+
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(startLogin(login, password));
+    history.push('/home')
   };
 
   return (
@@ -99,8 +102,9 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+
             {error && <Alert severity="error">Неверный логин или пароль</Alert>}
-            <Button
+              <Button
               type="submit"
               fullWidth
               variant="contained"
@@ -110,6 +114,7 @@ function Login() {
               disabled={loading}
             >
               Войти
+
             </Button>
             <NavLink to="/registration">Вы не зарегистрированы?</NavLink>
           </form>
