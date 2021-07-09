@@ -25,7 +25,7 @@ const useStyle = makeStyles({
     zIndex: '2',
     right: '120px',
     top: '10px',
-    fontSize: "14px",
+    fontSize: '14px',
     lineHeight: '16px',
     fontWeight: '800',
 

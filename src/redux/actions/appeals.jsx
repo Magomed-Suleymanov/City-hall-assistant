@@ -10,17 +10,17 @@ export const loadingAppeals = () => {
         'Content-Type': 'application/json',
       },
     })
-        .then((res) => res.json())
-        .then((json) => {
-          dispatch({
-            type: 'loading/appeals/success',
-            payload: json,
-          });
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'loading/appeals/success',
+          payload: json,
         });
+      });
   };
 };
 
-export const addAppeal = (appeal, streetId) => {
+export const addAppeal = (appeal, streetId, status) => {
   return (dispatch) => {
     dispatch({
       type: 'appeals/add/start',
@@ -34,15 +34,16 @@ export const addAppeal = (appeal, streetId) => {
       body: JSON.stringify({
         appeal: appeal,
         streetId: streetId,
+        status: status,
       }),
     })
-        .then((res) => res.json())
-        .then((json) => {
-          dispatch({
-            type: 'appeals/add/success',
-            payload: json,
-          });
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'appeals/add/success',
+          payload: json,
         });
+      });
   };
 };
 
@@ -55,12 +56,36 @@ export const deleteAppeals = (id) => {
     fetch(`/appeals/${id}`, {
       method: 'DELETE',
     })
-        .then((res) => res.json())
-        .then((json) => {
-          dispatch({
-            type: 'appeals/delete/success',
-            payload: id,
-          });
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'appeals/delete/success',
+          payload: id,
         });
-  }
-}
+      });
+  };
+};
+
+export const changeOfStatus = (id, status) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'change/status/start',
+    });
+    fetch(`appeals/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        status: status,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'change/status/success',
+          payload: id,
+        });
+      });
+  };
+};

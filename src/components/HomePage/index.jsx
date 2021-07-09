@@ -9,8 +9,7 @@ import ModalItemsList from './List/ModalItemsList';
 import Box from '@material-ui/core/Box';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login';
-import Registration from "../Registration";
-
+import Registration from '../Registration';
 
 function HomePage() {
   const listVisibility = useSelector(

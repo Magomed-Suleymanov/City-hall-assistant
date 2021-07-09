@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     left: 'calc(50% - 350px)',
     zIndex: '220',
     position: 'absolute',
-    top: '70px',
+    top: '10%',
     borderRadius: '5px',
     boxShadow: '0px 0px 5px 0px rgb(0 0 0)',
   },
@@ -68,9 +68,12 @@ export default function Registration() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
+  let history = useHistory()
+
   const handleReg = (e) => {
     e.preventDefault();
     dispatch(startRegistration(firstName, lastName, email, login, password));
+    history.push('/home')
   };
 
   return (

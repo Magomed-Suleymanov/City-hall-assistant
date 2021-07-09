@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "status": "Администратор",
+      "roles": "Администратор",
       "firstName": "Исмаил",
       "lastName": "Тимуркаев",
       "avatar": null,
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "status": "Администратор",
+      "roles": "Администратор",
       "login": "admin2",
       "password": "admin",
       "firstName": "Магомед",
@@ -25,7 +25,7 @@
       "token": "j06e4g721b99111dcj4aaig4c9"
     },
     {
-      "status": "Администратор",
+      "roles": "Администратор",
       "login": "Akhmad",
       "password": "Akhmad",
       "firstName": "Ахьмад",
@@ -37,7 +37,7 @@
       "id": 3
     },
     {
-      "status": "Администратор",
+      "roles": "Пользователь",
       "firstName": "Альви",
       "lastName": "Цугаев",
       "email": "tsugaev@mail.ru",
@@ -49,16 +49,76 @@
       "id": 4
     },
     {
+      "firstName": "й",
+      "lastName": "й",
+      "email": "й",
+      "login": "й",
+      "password": "й",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "ggJExRiLC38Lyadk1NONd68EVcehw3Poop8j3Jc6LZMe6qH71o",
+      "id": 5
+    },
+    {
       "firstName": "q",
       "lastName": "q",
       "email": "q",
       "login": "q",
       "password": "q",
       "address": null,
-      "status": "Пользователь",
+      "roles": "Пользователь",
       "avatar": null,
-      "token": "qxIWUv5sJSkZ3MafMOykQiCzgQWXyEn12quEgDIYys66KmskVn",
-      "id": 5
+      "token": "GWT3LcuhTqpFAmr6tLGz402Avyhp9iJCctOOKvu4TRckdPkigs",
+      "id": 6
+    },
+    {
+      "firstName": "a",
+      "lastName": "a",
+      "email": "a",
+      "login": "a",
+      "password": "a",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "G3WlfkhOGipfA5cSDWgk7vF2YkhyCK1lFaHWafLyKY0tJ3q0Pq",
+      "id": 8
+    },
+    {
+      "firstName": "Qefeofj",
+      "lastName": "kjcvqj",
+      "email": "olcqnoq",
+      "login": "Qwert",
+      "password": "qwert",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "Vwqbc50sP6elvie1Fi1ic0jQ9AtkXjUonTmlbq1YWmOMYoYZ5p",
+      "id": 9
+    },
+    {
+      "firstName": "imya",
+      "lastName": "fam",
+      "email": "qqwe",
+      "login": "qqq",
+      "password": "qqq",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "EtW8Wyjzg80cYg24SnOvvlpohahjci3HtGP2em2IGGoYgPLCpY",
+      "id": 10
+    },
+    {
+      "firstName": "wc",
+      "lastName": "qxq",
+      "email": "qcq",
+      "login": "wcw",
+      "password": "wdcvd",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "IqPDjicNymdZJL45bg5TRsWHsbUj2XEpTgU7ZBHOeD1QKhwUKT",
+      "id": 11
     }
   ],
   "streets": [
@@ -95,48 +155,57 @@
   ],
   "appeals": [
     {
+      "id": 1,
+      "streetId": 1,
+      "appeal": "Много машин, пожалуйста уменьшите трафик на дороге.",
+      "status": "Выполнено"
+    },
+    {
       "id": 2,
       "streetId": 2,
-      "appeal": "Очень много зелени, но все же увеличить бы её)"
+      "appeal": "Очень много зелени, но все же увеличить бы её)",
+      "status": "Выполнено"
     },
     {
       "id": 3,
       "streetId": 3,
-      "appeal": "На дороге есть перепады асфальта, нужно отремонтировать"
+      "appeal": "На дороге есть перепады асфальта, нужно отремонтировать",
+      "status": "Выполнено"
     },
     {
       "id": 4,
       "streetId": 4,
-      "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе."
+      "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе.",
+      "status": "выполнено"
     },
     {
       "id": 5,
       "streetId": 5,
-      "appeal": "Шикарные качели, но очень мало. Срочно добавьте."
+      "appeal": "Шикарные качели, но очень мало. Срочно добавьте.",
+      "status": "выполнено"
     },
     {
-      "appeal": "qq",
-      "streetId": 1,
-      "id": 6
+      "id": 6,
+      "streetId": 6,
+      "appeal": "Всё очень красиво.",
+      "status": "выполнено"
     },
     {
-      "appeal": "Великолепные великолепия",
+      "appeal": "грг",
       "streetId": 1,
+      "status": "Выполнено",
       "id": 7
     },
     {
-      "appeal": "Отличные отличия",
+      "appeal": "btbt",
       "streetId": 1,
-      "id": 8
-    },
-    {
-      "appeal": "Красивые красоты",
-      "streetId": 1,
+      "status": "Выполнено",
       "id": 9
     },
     {
-      "appeal": "Много неформалов",
-      "streetId": 2,
+      "appeal": "ervr",
+      "streetId": 1,
+      "status": "Выполняется",
       "id": 10
     }
   ]
