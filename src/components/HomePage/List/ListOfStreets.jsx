@@ -2,9 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { LoadModalList } from '../../../redux/actions/application';
-import { CircularProgress, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { loadingAppeals } from '../../../redux/actions/appeals';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Appeals from './Appeals';
 
 const useStyle = makeStyles(() => ({
   wrapList: {
@@ -26,12 +31,34 @@ const useStyle = makeStyles(() => ({
     color: 'red',
     top: '40%',
   },
+  wraplist: {
+    position: 'relative',
+    margin: 'auto',
+    width: '100%',
+    height: '100%',
+    background: 'white',
+    boxShadow: '0px 0px 1px rgb(0 0 0)',
+    alignItems: 'center',
+  },
+  wrap: {
+    color: 'black',
+    marginTop: '40px',
+    marginBottom: '50px',
+    margin: 'auto',
+    width: '90%',
+    height: '90%',
+    borderRadius: '5px',
+    background: 'white',
+    boxShadow: '0px 0px 8px 0px rgb(200, 200, 200)',
+  },
+  a: {
+    textDecoration: 'тщту',
+  },
 }));
 
 function ListOfStreets() {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.application.items);
-  const loading = useSelector((state) => state.application.loadingItems);
 
   useEffect(() => {
     dispatch(loadingAppeals());
@@ -40,45 +67,90 @@ function ListOfStreets() {
   const classes = useStyle();
 
   return (
-    <Box>
-      {loading ? (
-        <Box className={classes.loading}>
-          <CircularProgress color="secondary" />
-          <CircularProgress />
-          <CircularProgress color="secondary" />
+    <div style={{ position: 'relative' }}>
+      <Grid container>
+        <Box className={classes.wraplist} display={'flex'}>
+          <Box className={classes.wrap}>
+            {list.map((items) => {
+              return (
+                <Box
+                  paddingBottom="10px"
+                  marginBottom='10px'
+                  alignItems="center"
+                  justifyContent="space-around"
+                  padding="10px 10px"
+                >
+                  <Box display="flex">
+                    <Box marginRight={'100px'}>
+                      <img style={{borderRadius: '5px', marginLeft: '25px'}} alt="img" width="150px" src={items.url} />
+                    </Box>
+                    <Box marginRight={'150px'} fontSize="20px" width={'600px'}>
+                      {items.address}
+                    </Box>
+                  </Box>
+                  <div style={{width: '100%'}}>
+                    <Accordion>
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                      >
+                        <Typography style={{fontSize: '20px', paddingLeft: '10px'}}>Отзывы</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Typography>
+                            <Appeals id={items.id} />
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  </div>
+                </Box>
+              );
+            })}
+          </Box>
         </Box>
-      ) : (
-        list.map((itemStreet) => {
-          return (
-            <Box
-              key={itemStreet.id}
-              className={classes.wrapList}
-              onClick={() => dispatch(LoadModalList(itemStreet.id))}
-            >
-              <Grid
-                container
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
-              >
-                <Box display="flex" marginRight="15px" alignItems="center">
-                  <img
-                    alt="Img"
-                    width="120px"
-                    height="100px"
-                    style={{ borderRadius: '5px' }}
-                    src={itemStreet.url}
-                  />
-                </Box>
-                <Box fontSize="16px" padding="5px 0" color="black">
-                  {itemStreet.address}
-                </Box>
-              </Grid>
-            </Box>
-          );
-        })
-      )}
-    </Box>
+      </Grid>
+    </div>
+
+    // <Box>
+    //   {loading ? (
+    //     <Box className={classes.loading}>
+    //       <CircularProgress color="secondary" />
+    //       <CircularProgress />
+    //       <CircularProgress color="secondary" />
+    //     </Box>
+    //   ) : (
+    //     list.map((itemStreet) => {
+    //       return (
+    //         <Box
+    //           key={itemStreet.id}
+    //           className={classes.wrapList}
+    //           onClick={() => dispatch(LoadModalList(itemStreet.id))}
+    //         >
+    //           <Grid
+    //             container
+    //             direction="row"
+    //             justify="flex-start"
+    //             alignItems="flex-start"
+    //           >
+    //             <Box display="flex" marginRight="15px" alignItems="center">
+    //               <img
+    //                 alt="Img"
+    //                 width="120px"
+    //                 height="100px"
+    //                 style={{ borderRadius: '5px' }}
+    //                 src={itemStreet.url}
+    //               />
+    //             </Box>
+    //             <Box fontSize="16px" padding="5px 0" color="black">
+    //               {itemStreet.address}
+    //             </Box>
+    //           </Grid>
+    //         </Box>
+    //       );
+    //     })
+    //   )}
+    // </Box>
   );
 }
 

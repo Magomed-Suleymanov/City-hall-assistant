@@ -1,13 +1,5 @@
-export function toggleDashboard() {
-  return { type: 'toggle/Dashboard' };
-}
-
 export function addMap() {
   return { type: 'add/Map' };
-}
-
-export function deactivationModalList() {
-  return { type: 'deactivation/ModalListItems' };
 }
 
 export const loadList = () => {

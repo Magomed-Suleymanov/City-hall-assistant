@@ -1,7 +1,12 @@
 import React from 'react';
-import {Map, Placemark, SearchControl, TypeSelector, YMaps, ZoomControl} from 'react-yandex-maps';
-
-
+import {
+  Map,
+  Placemark,
+  SearchControl,
+  TypeSelector,
+  YMaps,
+  ZoomControl,
+} from 'react-yandex-maps';
 
 function MyMap() {
   const mapState = {
@@ -9,29 +14,31 @@ function MyMap() {
     zoom: 14,
   };
 
-
   return (
     <YMaps>
       <Map
         className="map"
         style={{
-          position: 'absolute',
-          zIndex: '1',
+          position: 'fixed',
+          zIndex: '100',
           width: '100%',
           height: '100%',
         }}
         state={mapState}
       >
-          <ZoomControl />
-          <TypeSelector options={{ float: 'right' }}  />
-          <Placemark options={{iconColor: 'red', draggable: true, floatIndex: 200}} geometry={[43.305141, 45.705414]} />
-          <Placemark geometry={[43.320681, 45.688962]} />
-          <Placemark geometry={[43.315447, 45.690256]} />
-          <Placemark geometry={[43.309334, 45.703802]} />
-          <Placemark geometry={[43.319170, 45.690690]} />
-          <Placemark geometry={[43.320839, 45.682063]} />
+        <ZoomControl />
+        <TypeSelector options={{ float: 'left' }} />
+        <Placemark
+          options={{ iconColor: 'red', draggable: true, floatIndex: 200 }}
+          geometry={[43.305141, 45.705414]}
+        />
+        <Placemark geometry={[43.320681, 45.688962]} />
+        <Placemark geometry={[43.315447, 45.690256]} />
+        <Placemark geometry={[43.309334, 45.703802]} />
+        <Placemark geometry={[43.31917, 45.69069]} />
+        <Placemark geometry={[43.320839, 45.682063]} />
 
-          <SearchControl options={{ float: 'left', floatIndex: 200 }}  />
+        <SearchControl options={{ float: 'left', floatIndex: 200 }} />
       </Map>
     </YMaps>
   );
