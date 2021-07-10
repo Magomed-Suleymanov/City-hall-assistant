@@ -52,12 +52,12 @@ function Login() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
-  let history = useHistory()
+  let history = useHistory();
 
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(startLogin(login, password));
-    history.push('/home')
+    history.push('/home');
   };
 
   return (
@@ -104,7 +104,7 @@ function Login() {
             />
 
             {error && <Alert severity="error">Неверный логин или пароль</Alert>}
-              <Button
+            <Button
               type="submit"
               fullWidth
               variant="contained"
@@ -114,7 +114,6 @@ function Login() {
               disabled={loading}
             >
               Войти
-
             </Button>
             <NavLink to="/registration">Вы не зарегистрированы?</NavLink>
           </form>

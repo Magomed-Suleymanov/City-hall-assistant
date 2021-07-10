@@ -5,7 +5,6 @@ function App() {
   return (
     <Box className="app">
       <HomePage />
-      <input type="text" /><input type="text" /><input type="text" /><input type="text" />
     </Box>
   );
 }

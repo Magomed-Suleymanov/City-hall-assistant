@@ -38,10 +38,7 @@ const useStyle = makeStyles({
   avatar: {
     width: '45px',
     height: '45px',
-    zIndex: '100',
-    position: 'absolute',
-    right: '120px',
-    top: '10px',
+    zIndex: '200',
     cursor: 'pointer',
     transition: '0.5s',
 

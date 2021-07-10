@@ -1,29 +1,23 @@
 import React from 'react';
-import Dashboard from './Dashboard';
-import ButtonForAuth from '../Login/ButtonForAuth';
 import MyMap from './Map/MyMap';
-import ToggleDashboard from './Dashboard/ToggleDashboard';
 import ListOfStreets from './List/ListOfStreets';
 import { useSelector } from 'react-redux';
-import ModalItemsList from './List/ModalItemsList';
 import Box from '@material-ui/core/Box';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login';
-import Registration from '../Registration';
+import Registration from '../registration';
+import Header from './Navigation/Header';
 
 function HomePage() {
   const listVisibility = useSelector(
     (state) => state.application.listVisibility,
-  );
-  const listModalVisibility = useSelector(
-    (state) => state.application.listModalVisibility,
   );
 
   const user = useSelector((state) => state.authReducer.user);
 
   const mapVisibility = useSelector((state) => state.application.mapVisibility);
   return (
-    <Box style={{ display: 'flex' }}>
+    <Box>
       {!user.token ? (
         <Switch>
           <Route path="/auth" component={Login} />}
@@ -32,12 +26,9 @@ function HomePage() {
       ) : (
         ''
       )}
-      {listModalVisibility && <ModalItemsList />}
-      <Dashboard />
-      <ToggleDashboard />
+      <Header />
       {listVisibility && <ListOfStreets />}
       {mapVisibility && <MyMap />}
-      <ButtonForAuth />
     </Box>
   );
 }

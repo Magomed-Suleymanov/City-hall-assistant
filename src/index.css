@@ -8,6 +8,7 @@ body {
   color: #908b8b;
   overflow-y: hidden;
   overflow-x: hidden;
+  box-shadow: 1px 1px 1px rgb(219, 219, 219);
 }
 
 ::-webkit-scrollbar {

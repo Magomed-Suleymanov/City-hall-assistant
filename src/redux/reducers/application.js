@@ -56,7 +56,7 @@ export const application = (state = initialState, action) => {
         mapVisibility: true,
       };
 
-    case 'toggle/Dashboard':
+    case 'toggle/Navigation':
       return {
         ...state,
         toggleBlockDashBoard: !state.toggleBlockDashBoard,

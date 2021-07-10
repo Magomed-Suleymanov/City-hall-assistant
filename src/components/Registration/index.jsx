@@ -68,12 +68,12 @@ export default function Registration() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
-  let history = useHistory()
+  let history = useHistory();
 
   const handleReg = (e) => {
     e.preventDefault();
     dispatch(startRegistration(firstName, lastName, email, login, password));
-    history.push('/home')
+    history.push('/home');
   };
 
   return (
