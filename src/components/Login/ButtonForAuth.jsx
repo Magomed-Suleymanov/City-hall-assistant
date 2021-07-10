@@ -1,16 +1,18 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { useDispatch, useSelector } from 'react-redux';
-import { authReset } from '../../redux/actions/authReducer';
+import { authReset } from '../../redux/actions/auth';
 import Avatar from '@material-ui/core/Avatar';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { useState } from 'react';
-import { List, ListItem, Popover } from '@material-ui/core';
+import { Drawer, List, ListItem, Popover } from '@material-ui/core';
 import { AccountCircle, ExitToApp } from '@material-ui/icons';
+import Profile from './Profile';
 
 const useStyle = makeStyles({
   button: {
@@ -33,6 +35,13 @@ const useStyle = makeStyles({
       background: 'white',
       color: '#747474',
     },
+  },
+
+  list: {
+    width: 400,
+  },
+  fullList: {
+    width: 'auto',
   },
 
   avatar: {
@@ -70,6 +79,26 @@ function ButtonForAuth() {
   const classes = useStyle();
 
   const [anchorEl, setAnchorEl] = useState(null);
+  const [state, setState] = React.useState({
+    left: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <div className={classes.list}>
+      <Profile />
+    </div>
+  );
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -121,12 +150,26 @@ function ButtonForAuth() {
             style={{ marginTop: '5px' }}
           >
             <List component="nav" className={classes.root}>
-              <ListItem button>
-                <ListItemIcon className={classes.icon}>
-                  <AccountCircle />
-                </ListItemIcon>
-                <ListItemText secondary="Профиль" className={classes.text} />
-              </ListItem>
+              {['left'].map((anchor) => (
+                <React.Fragment key={anchor}>
+                  <ListItem button onClick={toggleDrawer(anchor, true)}>
+                    <ListItemIcon className={classes.icon}>
+                      <AccountCircle />
+                    </ListItemIcon>
+                    <ListItemText
+                      secondary="Профиль"
+                      className={classes.text}
+                    />
+                  </ListItem>
+                  <Drawer
+                    anchor={anchor}
+                    open={state[anchor]}
+                    onClose={toggleDrawer(anchor, false)}
+                  >
+                    {list(anchor)}
+                  </Drawer>
+                </React.Fragment>
+              ))}
               <ListItem button onClick={handleLogout}>
                 <ListItemIcon className={classes.icon}>
                   <ExitToApp />

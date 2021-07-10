@@ -9,7 +9,7 @@ import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { startLogin } from '../../redux/actions/authReducer';
+import { startLogin } from '../../redux/actions/auth';
 
 const useStyles = makeStyles((theme) => ({
   modalAuth: {
@@ -52,12 +52,12 @@ function Login() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
-  let history = useHistory()
+  let history = useHistory();
 
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(startLogin(login, password));
-    history.push('/home')
+    history.push('/home');
   };
 
   return (
@@ -68,7 +68,7 @@ function Login() {
           width="100%"
           zIndex="170"
           height="100%"
-          style={{ opacity: 0.9, background: 'black' }}
+          style={{ opacity: 0.8, background: 'black' }}
         />
       </Link>
       <Container component="main" className={classes.modalAuth} maxWidth="xs">
@@ -104,7 +104,7 @@ function Login() {
             />
 
             {error && <Alert severity="error">Неверный логин или пароль</Alert>}
-              <Button
+            <Button
               type="submit"
               fullWidth
               variant="contained"
@@ -114,7 +114,6 @@ function Login() {
               disabled={loading}
             >
               Войти
-
             </Button>
             <NavLink to="/registration">Вы не зарегистрированы?</NavLink>
           </form>

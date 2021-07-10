@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
-import { startRegistration } from '../../redux/actions/authReducer';
+import { startRegistration } from '../../redux/actions/auth';
 import { Alert } from '@material-ui/lab';
 
 const useStyles = makeStyles((theme) => ({
@@ -68,12 +68,12 @@ export default function Registration() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
-  let history = useHistory()
+  let history = useHistory();
 
   const handleReg = (e) => {
     e.preventDefault();
     dispatch(startRegistration(firstName, lastName, email, login, password));
-    history.push('/home')
+    history.push('/home');
   };
 
   return (
