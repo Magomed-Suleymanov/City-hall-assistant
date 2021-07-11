@@ -1,12 +1,13 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
 import DoneIcon from '@material-ui/icons/Done';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import { changeOfStatus, deleteAppeals } from '../../../redux/actions/appeals';
 import Button from '@material-ui/core/Button';
+import Appraisals from './Appraisals';
 
 const useStyle = makeStyles(() => ({
   deleteAppeal: {
@@ -26,13 +27,14 @@ const useStyle = makeStyles(() => ({
   },
 }));
 
-function Appeal({ item, user }) {
+function Appeal({ item }) {
   const classes = useStyle();
   const dispatch = useDispatch();
 
   const handleDeleteAppeals = () => {
     dispatch(deleteAppeals(item.id));
   };
+  const user = useSelector((state) => state.authReducer.user);
 
   const handleChangeOfStatus = () => {
     let status = 'Выполнено';
@@ -46,8 +48,12 @@ function Appeal({ item, user }) {
       display="flex"
       alignItems="center"
     >
-      <Box width={'500px'}>{item.appeal}</Box>
-
+      <Box marginBottom="10px">
+        <Box marginBottom="5px" width={'500px'}>
+          {item.appeal}
+        </Box>
+        <Appraisals item={item} />
+      </Box>
       {user.roles === 'Администратор' ? (
         <Box display="flex" justifyContent="space-between" alignItems="center">
           {item.status === 'Выполняется' ? (

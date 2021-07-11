@@ -49,76 +49,16 @@
       "id": 4
     },
     {
-      "firstName": "й",
-      "lastName": "й",
-      "email": "й",
-      "login": "й",
-      "password": "й",
+      "firstName": "3",
+      "lastName": "3",
+      "email": "3",
+      "login": "3",
+      "password": "3",
       "address": null,
       "roles": "Пользователь",
       "avatar": null,
-      "token": "ggJExRiLC38Lyadk1NONd68EVcehw3Poop8j3Jc6LZMe6qH71o",
+      "token": "psumIK6TKUKYe2HTpIx9hcfcwJCqEpVSXEz0bKORkj0BjVMEhT",
       "id": 5
-    },
-    {
-      "firstName": "q",
-      "lastName": "q",
-      "email": "q",
-      "login": "q",
-      "password": "q",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "GWT3LcuhTqpFAmr6tLGz402Avyhp9iJCctOOKvu4TRckdPkigs",
-      "id": 6
-    },
-    {
-      "firstName": "a",
-      "lastName": "a",
-      "email": "a",
-      "login": "a",
-      "password": "a",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "G3WlfkhOGipfA5cSDWgk7vF2YkhyCK1lFaHWafLyKY0tJ3q0Pq",
-      "id": 8
-    },
-    {
-      "firstName": "Qefeofj",
-      "lastName": "kjcvqj",
-      "email": "olcqnoq",
-      "login": "Qwert",
-      "password": "qwert",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "Vwqbc50sP6elvie1Fi1ic0jQ9AtkXjUonTmlbq1YWmOMYoYZ5p",
-      "id": 9
-    },
-    {
-      "firstName": "imya",
-      "lastName": "fam",
-      "email": "qqwe",
-      "login": "qqq",
-      "password": "qqq",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "EtW8Wyjzg80cYg24SnOvvlpohahjci3HtGP2em2IGGoYgPLCpY",
-      "id": 10
-    },
-    {
-      "firstName": "wc",
-      "lastName": "qxq",
-      "email": "qcq",
-      "login": "wcw",
-      "password": "wdcvd",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "IqPDjicNymdZJL45bg5TRsWHsbUj2XEpTgU7ZBHOeD1QKhwUKT",
-      "id": 11
     }
   ],
   "streets": [
@@ -158,55 +98,45 @@
       "id": 1,
       "streetId": 1,
       "appeal": "Много машин, пожалуйста уменьшите трафик на дороге.",
-      "status": "Выполнено"
+      "status": "Выполнено",
+      "rating": null
     },
     {
       "id": 2,
       "streetId": 2,
       "appeal": "Очень много зелени, но все же увеличить бы её)",
-      "status": "Выполнено"
+      "status": "Выполнено",
+      "rating": 1
     },
     {
       "id": 3,
       "streetId": 3,
       "appeal": "На дороге есть перепады асфальта, нужно отремонтировать",
-      "status": "Выполнено"
+      "status": "Выполнено",
+      "rating": 7
     },
     {
       "id": 4,
       "streetId": 4,
       "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе.",
-      "status": "выполнено"
+      "status": "выполнено",
+      "rating": 19
     },
     {
       "id": 5,
       "streetId": 5,
       "appeal": "Шикарные качели, но очень мало. Срочно добавьте.",
-      "status": "выполнено"
+      "status": "выполнено",
+      "rating": 19
     },
     {
       "id": 6,
       "streetId": 6,
       "appeal": "Всё очень красиво.",
-      "status": "выполнено"
-    },
-    {
-      "appeal": "asdasd",
-      "streetId": 5,
-      "status": "Выполнено",
-      "id": 8
-    },
-    {
-      "appeal": "asdadasdasdas das dasd asd asd asd as",
-      "streetId": 1,
-      "status": "Выполняется",
-      "id": 9
-    },
-    {
-      "appeal": "as dasd asd asd as das das asd asd as das das as da",
-      "streetId": 1,
-      "status": "Выполняется",
-      "id": 10
+      "status": "выполнено",
+      "rating": 5
     }
+  ],
+  "appraisals": [
   ]
 }

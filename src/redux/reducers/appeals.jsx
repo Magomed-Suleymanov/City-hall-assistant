@@ -13,8 +13,8 @@ export const appeals = (state = initialState, action) => {
     case 'loading/appeals/success':
       return {
         ...state,
-        loadingAppeals: false,
         appeals: action.payload,
+        loadingAppeals: false,
       };
     case 'appeals/add/start':
       return {
@@ -24,8 +24,8 @@ export const appeals = (state = initialState, action) => {
     case 'appeals/add/success':
       return {
         ...state,
-        loading: false,
         appeals: [...state.appeals, action.payload],
+        loading: false,
       };
     case 'change/status/start':
       return {
@@ -35,6 +35,16 @@ export const appeals = (state = initialState, action) => {
       return {
         ...state,
         appeals: [...state.appeals, action.payload],
+      };
+
+    case 'change/rating/start':
+      return {
+        ...state,
+      };
+    case 'change/rating/success':
+      return {
+        ...state,
+        appeals: [...state, action.payload],
       };
 
     case 'appeals/delete/start':
