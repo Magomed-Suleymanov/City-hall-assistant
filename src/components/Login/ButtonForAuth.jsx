@@ -76,7 +76,7 @@ function ButtonForAuth() {
   const classes = useStyle();
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     left: false,
   });
 
