@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../Login';
-import Registration from '../registration';
+import Registration from '../Registration';
 import Header from './Navigation/Header';
 
 function HomePage() {

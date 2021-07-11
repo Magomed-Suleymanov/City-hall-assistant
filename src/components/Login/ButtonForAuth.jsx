@@ -16,7 +16,8 @@ import Profile from './Profile';
 
 const useStyle = makeStyles({
   button: {
-    background: 'white',
+    background: '#1976d2',
+    color: '#fff',
     width: '93px',
     height: '40px',
     borderRadius: '200px',
@@ -25,15 +26,14 @@ const useStyle = makeStyles({
     position: 'absolute',
     padding: 'none',
     zIndex: '2',
-    right: '120px',
+    right: '20px',
     top: '10px',
     fontSize: '14px',
     lineHeight: '16px',
     fontWeight: '800',
 
     '&:hover': {
-      background: 'white',
-      color: '#747474',
+      background: '#115293',
     },
   },
 
