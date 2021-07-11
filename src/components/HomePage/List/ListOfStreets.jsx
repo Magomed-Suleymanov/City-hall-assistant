@@ -27,6 +27,7 @@ const useStyle = makeStyles(() => ({
       transition: '.1s',
     },
   },
+
   loading: {
     position: 'absolute',
     left: 'calc(50% - 60px)',
@@ -70,7 +71,7 @@ function ListOfStreets() {
   const classes = useStyle();
 
   return (
-    <div style={{ position: 'relative' }}>
+    <Box style={{ position: 'relative' }}>
       <Grid container>
         <Box className={classes.wraplist} display={'flex'}>
           <Box className={classes.wrap}>
@@ -124,7 +125,7 @@ function ListOfStreets() {
           </Box>
         </Box>
       </Grid>
-    </div>
+    </Box>
   );
 }
 

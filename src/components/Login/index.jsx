@@ -10,8 +10,14 @@ import Button from '@material-ui/core/Button';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogin } from '../../redux/actions/auth';
-import {FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput} from "@material-ui/core";
-import {Visibility, VisibilityOff} from "@material-ui/icons";
+import {
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+} from '@material-ui/core';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   modalAuth: {
@@ -56,8 +62,8 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPassword = () => {
-    return setShowPassword(!showPassword)
-  }
+    return setShowPassword(!showPassword);
+  };
 
   let history = useHistory();
 
@@ -86,6 +92,7 @@ function Login() {
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
+              style={{ marginBottom: '15px' }}
               variant="outlined"
               margin="normal"
               fullWidth
@@ -97,8 +104,14 @@ function Login() {
               value={login}
               onChange={(e) => setLogin(e.target.value)}
             />
-            <FormControl fullWidth variant="outlined">
-              <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
+            <FormControl
+              fullWidth
+              variant="outlined"
+              style={{ marginBottom: '15px' }}
+            >
+              <InputLabel htmlFor="outlined-adornment-password">
+                Пароль
+              </InputLabel>
               <OutlinedInput
                 label="Password"
                 autoFocus
@@ -109,14 +122,14 @@ function Login() {
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleShowPassword}
+                      aria-label="toggle password visibility"
+                      onClick={handleShowPassword}
                     >
                       {showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
-            />
+              />
             </FormControl>
             {error && <Alert severity="error">Неверный логин или пароль</Alert>}
             <Button

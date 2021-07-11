@@ -151,6 +151,14 @@
       "userId": 2,
       "login": "admin2",
       "id": 2
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 1,
+      "login": "admin",
+      "id": 3
     }
   ]
 }
