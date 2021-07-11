@@ -10,6 +10,8 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Appeals from './Appeals';
+import { loadingAppraisals } from '../../../redux/actions/appraisals';
+import Rating from './Rating';
 
 const useStyle = makeStyles(() => ({
   wrapList: {
@@ -62,6 +64,7 @@ function ListOfStreets() {
 
   useEffect(() => {
     dispatch(loadingAppeals());
+    dispatch(loadingAppraisals());
   }, [dispatch]);
 
   const classes = useStyle();
@@ -74,33 +77,44 @@ function ListOfStreets() {
             {list.map((items) => {
               return (
                 <Box
+                  key={items.id}
                   paddingBottom="10px"
-                  marginBottom='10px'
+                  marginBottom="10px"
                   alignItems="center"
                   justifyContent="space-around"
                   padding="10px 10px"
                 >
                   <Box display="flex">
                     <Box marginRight={'100px'}>
-                      <img style={{borderRadius: '5px', marginLeft: '25px'}} alt="img" width="150px" src={items.url} />
+                      <img
+                        style={{ borderRadius: '5px', marginLeft: '25px' }}
+                        alt="img"
+                        width="150px"
+                        src={items.url}
+                      />
                     </Box>
                     <Box marginRight={'150px'} fontSize="20px" width={'600px'}>
                       {items.address}
                     </Box>
+                    <Box>
+                      <Rating />
+                    </Box>
                   </Box>
-                  <div style={{width: '100%'}}>
+                  <div style={{ width: '100%' }}>
                     <Accordion>
                       <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                       >
-                        <Typography style={{fontSize: '20px', paddingLeft: '10px'}}>Отзывы</Typography>
+                        <Typography
+                          style={{ fontSize: '20px', paddingLeft: '10px' }}
+                        >
+                          Отзывы
+                        </Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Typography>
-                            <Appeals id={items.id} />
-                        </Typography>
+                        <Appeals id={items.id} />
                       </AccordionDetails>
                     </Accordion>
                   </div>
@@ -111,46 +125,6 @@ function ListOfStreets() {
         </Box>
       </Grid>
     </div>
-
-    // <Box>
-    //   {loading ? (
-    //     <Box className={classes.loading}>
-    //       <CircularProgress color="secondary" />
-    //       <CircularProgress />
-    //       <CircularProgress color="secondary" />
-    //     </Box>
-    //   ) : (
-    //     list.map((itemStreet) => {
-    //       return (
-    //         <Box
-    //           key={itemStreet.id}
-    //           className={classes.wrapList}
-    //           onClick={() => dispatch(LoadModalList(itemStreet.id))}
-    //         >
-    //           <Grid
-    //             container
-    //             direction="row"
-    //             justify="flex-start"
-    //             alignItems="flex-start"
-    //           >
-    //             <Box display="flex" marginRight="15px" alignItems="center">
-    //               <img
-    //                 alt="Img"
-    //                 width="120px"
-    //                 height="100px"
-    //                 style={{ borderRadius: '5px' }}
-    //                 src={itemStreet.url}
-    //               />
-    //             </Box>
-    //             <Box fontSize="16px" padding="5px 0" color="black">
-    //               {itemStreet.address}
-    //             </Box>
-    //           </Grid>
-    //         </Box>
-    //       );
-    //     })
-    //   )}
-    // </Box>
   );
 }
 

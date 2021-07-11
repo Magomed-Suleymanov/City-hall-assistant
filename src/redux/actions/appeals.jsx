@@ -89,3 +89,26 @@ export const changeOfStatus = (id, status) => {
       });
   };
 };
+export const changeRating = (id, rating) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'change/rating/start',
+    });
+    fetch(`appeals/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        rating: rating,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'change/rating/success',
+          payload: id,
+        });
+      });
+  };
+};
