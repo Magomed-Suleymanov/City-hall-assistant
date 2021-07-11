@@ -9,7 +9,7 @@ import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { startLogin } from '../../redux/actions/authReducer';
+import { startLogin } from '../../redux/actions/auth';
 
 const useStyles = makeStyles((theme) => ({
   modalAuth: {
@@ -66,9 +66,9 @@ function Login() {
         <Box
           position="absolute"
           width="100%"
-          zIndex="170"
+          zIndex="220"
           height="100%"
-          style={{ opacity: 0.9, background: 'black' }}
+          style={{ opacity: 0.8, background: 'black' }}
         />
       </Link>
       <Container component="main" className={classes.modalAuth} maxWidth="xs">

@@ -39,8 +39,8 @@ server.post('/auth', (req, res) => {
     .toJSON()
     .find((user) => user.login === login && user.password === password);
   if (authUser) {
-    const { id, login, token, firstName, roles } = authUser;
-    res.json({ id, login, token, firstName, roles, password: null });
+    const { id, login, token, email, firstName, roles, address, lastName, password } = authUser;
+    res.json({ id, login, token, email, firstName, address, lastName, roles, password: null });
   } else {
     res.status(401).json({ message: 'Ошибка авторизации' });
   }

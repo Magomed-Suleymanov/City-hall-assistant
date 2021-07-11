@@ -6,7 +6,7 @@
       "firstName": "Исмаил",
       "lastName": "Тимуркаев",
       "avatar": null,
-      "address": "Grozny",
+      "address": "Грозный",
       "email": "ismtim095@gmail.com",
       "login": "admin",
       "password": "1234",
@@ -21,7 +21,7 @@
       "lastName": "Сулейманов",
       "email": "kinjudo@mail.ru",
       "avatar": null,
-      "address": "Grozny",
+      "address": "Грозный",
       "token": "j06e4g721b99111dcj4aaig4c9"
     },
     {
@@ -32,7 +32,7 @@
       "lastName": "Кудузов",
       "email": "Kuduzov@gmail.com",
       "avatar": null,
-      "address": "Grozny",
+      "address": "Грозный",
       "token": "7g2394fdcj3iaji59811bj4h4f",
       "id": 3
     },
@@ -43,7 +43,7 @@
       "email": "tsugaev@mail.ru",
       "login": "alvi",
       "password": "alvi",
-      "address": null,
+      "address": "Грозный",
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
@@ -138,5 +138,19 @@
     }
   ],
   "appraisals": [
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "id": 1
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 2
+    }
   ]
 }
