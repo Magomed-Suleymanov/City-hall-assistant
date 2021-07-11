@@ -66,7 +66,7 @@ function Login() {
         <Box
           position="absolute"
           width="100%"
-          zIndex="170"
+          zIndex="220"
           height="100%"
           style={{ opacity: 0.8, background: 'black' }}
         />

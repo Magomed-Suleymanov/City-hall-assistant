@@ -32,21 +32,21 @@ export const authReducer = (state = initialState, action) => {
         user: {},
       };
 
-    case 'registration/start':
+    case 'Registration/start':
       return {
         ...state,
         loadingRegistration: true,
         error: false,
       };
 
-    case 'registration/success':
+    case 'Registration/success':
       return {
         ...state,
         loadingRegistration: false,
         user: action.payload,
       };
 
-    case 'registration/error':
+    case 'Registration/error':
       return {
         ...state,
         error: true,

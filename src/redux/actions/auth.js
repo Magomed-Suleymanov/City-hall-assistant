@@ -46,7 +46,7 @@ export const startRegistration = (
 ) => {
   return (dispatch) => {
     dispatch({
-      type: 'registration/start',
+      type: 'Registration/start',
     });
 
     fetch('/users', {
@@ -63,7 +63,7 @@ export const startRegistration = (
       .then((res) => res.json())
       .then((json) => {
         dispatch({
-          type: 'registration/success',
+          type: 'Registration/success',
           payload: json,
         });
       });

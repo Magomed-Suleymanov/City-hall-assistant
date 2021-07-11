@@ -20,7 +20,7 @@ const useStyle = makeStyles(() => ({
   },
   blockWishes: {
     marginRight: '20px',
-    height: '150px',
+    height: '160px',
     overflowY: 'scroll',
     padding: '10px',
     fontSize: '16px',
