@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Appeals from './Appeals';
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
-import Rating from './Rating';
+import Ratings from './Rating';
 
 const useStyle = makeStyles(() => ({
   wrapList: {
@@ -97,7 +97,7 @@ function ListOfStreets() {
                       {items.address}
                     </Box>
                     <Box>
-                      <Rating />
+                      <Ratings />
                     </Box>
                   </Box>
                   <div style={{ width: '100%' }}>

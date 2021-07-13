@@ -59,6 +59,18 @@
       "avatar": null,
       "token": "psumIK6TKUKYe2HTpIx9hcfcwJCqEpVSXEz0bKORkj0BjVMEhT",
       "id": 5
+    },
+    {
+      "firstName": "t",
+      "lastName": "t",
+      "email": "t",
+      "login": "t",
+      "password": "t",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "pOUXeou7oOntVf6czx4yi1QX2i7CeRCIC4SYDR5uCStnwA37gs",
+      "id": 6
     }
   ],
   "streets": [
@@ -99,6 +111,7 @@
       "streetId": 1,
       "appeal": "Много машин, пожалуйста уменьшите трафик на дороге.",
       "status": "Выполнено",
+      "date": "12.07.2021",
       "rating": null
     },
     {
@@ -106,6 +119,7 @@
       "streetId": 2,
       "appeal": "Очень много зелени, но все же увеличить бы её)",
       "status": "Выполнено",
+      "date": "12.07.2021",
       "rating": 1
     },
     {
@@ -113,6 +127,7 @@
       "streetId": 3,
       "appeal": "На дороге есть перепады асфальта, нужно отремонтировать",
       "status": "Выполнено",
+      "date": "12.07.2021",
       "rating": 7
     },
     {
@@ -120,6 +135,7 @@
       "streetId": 4,
       "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе.",
       "status": "выполнено",
+      "date": "12.07.2021",
       "rating": 19
     },
     {
@@ -127,6 +143,7 @@
       "streetId": 5,
       "appeal": "Шикарные качели, но очень мало. Срочно добавьте.",
       "status": "выполнено",
+      "date": "12.07.2021",
       "rating": 19
     },
     {
@@ -134,23 +151,10 @@
       "streetId": 6,
       "appeal": "Всё очень красиво.",
       "status": "выполнено",
+      "date": "12.07.2021",
       "rating": 5
     }
   ],
   "appraisals": [
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "id": 1
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 2
-    }
   ]
 }

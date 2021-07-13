@@ -8,6 +8,7 @@ import DoneAllIcon from '@material-ui/icons/DoneAll';
 import { changeOfStatus, deleteAppeals } from '../../../redux/actions/appeals';
 import Button from '@material-ui/core/Button';
 import Appraisals from './Appraisals';
+import Grid from '@material-ui/core/Grid';
 
 const useStyle = makeStyles(() => ({
   deleteAppeal: {
@@ -42,18 +43,24 @@ function Appeal({ item }) {
   };
 
   return (
-    <Box
-      key={item.id}
-      justifyContent="space-between"
-      display="flex"
-      alignItems="center"
-    >
+    <Grid container={600} key={item.id}>
       <Box marginBottom="10px">
-        <Box marginBottom="5px" width={'500px'}>
+        <Box marginBottom="5px" width={'500px'} title={item.date}>
           {item.appeal}
+          <Box
+            textAlign="center"
+            width={'55px'}
+            fontSize="10px"
+            style={{ background: 'lightgray', borderRadius: '3px' }}
+          >
+            {item.date}
+          </Box>
         </Box>
-        <Appraisals item={item} />
+        <Box display="flex">
+          <Appraisals item={item} />
+        </Box>
       </Box>
+
       {user.roles === 'Администратор' ? (
         <Box display="flex" justifyContent="space-between" alignItems="center">
           {item.status === 'Выполняется' ? (
@@ -91,7 +98,7 @@ function Appeal({ item }) {
           )}
         </Box>
       )}
-    </Box>
+    </Grid>
   );
 }
 

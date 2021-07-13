@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const useStyle = makeStyles(() => ({
   input: {
@@ -23,7 +25,7 @@ const useStyle = makeStyles(() => ({
   },
 }));
 
-function Rating({ id }) {
+function Ratings(props) {
   const dispatch = useDispatch();
   const classes = useStyle();
   const rait = useSelector((state) =>
@@ -32,7 +34,20 @@ function Rating({ id }) {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
 
+  //
+  // const rating = <FontAwesomeIcon icon={faStar} />
+  // const initialValue = props.rating;
+
   return (
+    // <div className={classes.RatingBlock}>
+    //   <Rating
+    //     initialRating={rating}
+    //     emptySymbol={rating}
+    //     fullSymbol={rating}
+    //   />
+    //   <p>rating is {initialValue}</p>
+    // </div>
+
     <div className={classes.RatingBlock}>
       <div>
         {[...Array(5)].map((star, i) => {
@@ -64,4 +79,4 @@ function Rating({ id }) {
   );
 }
 
-export default Rating;
+export default Ratings;
