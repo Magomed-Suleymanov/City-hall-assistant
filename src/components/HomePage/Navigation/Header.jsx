@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, makeStyles, Toolbar } from '@material-ui/core';
 import Navigation from './index';
 import ButtonForAuth from '../../Login/ButtonForAuth';
+import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
   header: {
