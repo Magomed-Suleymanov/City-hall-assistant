@@ -10,6 +10,14 @@ import Button from '@material-ui/core/Button';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogin } from '../../redux/actions/auth';
+import {
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+} from '@material-ui/core';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   modalAuth: {
@@ -51,6 +59,11 @@ function Login() {
 
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleShowPassword = () => {
+    return setShowPassword(!showPassword);
+  };
 
   let history = useHistory();
 
@@ -79,30 +92,45 @@ function Login() {
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
+              style={{ marginBottom: '15px' }}
               variant="outlined"
               margin="normal"
               fullWidth
               id="email"
-              label="Login"
+              label="Логин"
               name="email"
               autoComplete="email"
               autoFocus
               value={login}
               onChange={(e) => setLogin(e.target.value)}
             />
-            <TextField
-              variant="outlined"
-              margin="normal"
+            <FormControl
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-
+              variant="outlined"
+              style={{ marginBottom: '15px' }}
+            >
+              <InputLabel htmlFor="outlined-adornment-password">
+                Пароль
+              </InputLabel>
+              <OutlinedInput
+                label="Password"
+                autoFocus
+                id="outlined-adornment-password"
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleShowPassword}
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
             {error && <Alert severity="error">Неверный логин или пароль</Alert>}
             <Button
               type="submit"

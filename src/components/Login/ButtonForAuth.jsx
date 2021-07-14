@@ -76,7 +76,7 @@ function ButtonForAuth() {
   const classes = useStyle();
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     left: false,
   });
 
@@ -124,13 +124,10 @@ function ButtonForAuth() {
         </Box>
       ) : (
         <Box>
-          <Avatar
-            className={classes.avatar}
-            src="/broken-image.jpg"
-            aria-controls="simple-menu"
-            aria-haspopup="true"
-            onClick={handleClick}
-          />
+          <Avatar className={classes.avatar} onClick={handleClick}>
+            {user.firstName[0]}
+          </Avatar>
+
           <Popover
             id={id}
             open={open}

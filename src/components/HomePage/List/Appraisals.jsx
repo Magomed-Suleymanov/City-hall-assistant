@@ -54,7 +54,6 @@ function Appraisals({ item }) {
     let like = 1;
     let likes = '';
     let dislike = '';
-    const alfa = appraisals.map((items) => items);
     dispatch(addLike(item.id, like, dislike, user.id, user.login));
   };
 
@@ -62,7 +61,6 @@ function Appraisals({ item }) {
     let like = '';
     let dislike = 1;
     dispatch(addLike(item.id, like, dislike, user.id, user.login));
-    console.log(appraisals);
   };
 
   return (

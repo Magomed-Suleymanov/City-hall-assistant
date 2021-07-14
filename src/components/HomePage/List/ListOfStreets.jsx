@@ -11,7 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Appeals from './Appeals';
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
-import Ratings from './Rating';
+import { loadingRatings } from '../../../redux/actions/rating';
+import Ratings from './Ratings';
 
 const useStyle = makeStyles(() => ({
   wrapList: {
@@ -27,6 +28,7 @@ const useStyle = makeStyles(() => ({
       transition: '.1s',
     },
   },
+
   loading: {
     position: 'absolute',
     left: 'calc(50% - 60px)',
@@ -53,9 +55,6 @@ const useStyle = makeStyles(() => ({
     background: 'white',
     boxShadow: '0px 0px 8px 0px rgb(200, 200, 200)',
   },
-  a: {
-    textDecoration: 'тщту',
-  },
 }));
 
 function ListOfStreets() {
@@ -65,12 +64,13 @@ function ListOfStreets() {
   useEffect(() => {
     dispatch(loadingAppeals());
     dispatch(loadingAppraisals());
+    dispatch(loadingRatings());
   }, [dispatch]);
 
   const classes = useStyle();
 
   return (
-    <div style={{ position: 'relative' }}>
+    <Box style={{ position: 'relative' }}>
       <Grid container>
         <Box className={classes.wraplist} display={'flex'}>
           <Box className={classes.wrap}>
@@ -97,7 +97,7 @@ function ListOfStreets() {
                       {items.address}
                     </Box>
                     <Box>
-                      <Ratings />
+                      <Ratings key={items.id} itemStreet={items.id} />
                     </Box>
                   </Box>
                   <div style={{ width: '100%' }}>
@@ -124,7 +124,7 @@ function ListOfStreets() {
           </Box>
         </Box>
       </Grid>
-    </div>
+    </Box>
   );
 }
 

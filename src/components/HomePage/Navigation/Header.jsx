@@ -3,7 +3,7 @@ import { AppBar, makeStyles, Toolbar } from '@material-ui/core';
 import Navigation from './index';
 import ButtonForAuth from '../../Login/ButtonForAuth';
 
-const useStyes = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   header: {
     position: 'relative',
     width: '100%',
@@ -23,12 +23,17 @@ const useStyes = makeStyles((theme) => ({
   },
 }));
 
-function Header(props) {
-  const classes = useStyes();
+function Header() {
+  const classes = useStyles();
   return (
     <div className={classes.wrapper}>
       <div className={classes.header}>
-        <AppBar position="static" color="transparent" variant="outlined">
+        <AppBar
+          style={{ zIndex: 0 }}
+          position="static"
+          color="transparent"
+          variant="outlined"
+        >
           <Toolbar className={classes.navbar}>
             <Navigation />
             <ButtonForAuth />

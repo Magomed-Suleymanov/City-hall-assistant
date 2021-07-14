@@ -72,7 +72,7 @@ server.post('/users', (req, res, next) => {
   next();
 });
 
-//Получение пожеланий
+// Получение пожеланий
 // server.get('/appeals', (req, res) => {
 //   const filteredAppeals = appeals.filter((item) => item.appeal);
 //   if (filteredAppeals.toJSON().length === 0) {

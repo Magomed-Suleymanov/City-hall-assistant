@@ -11,6 +11,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import { startRegistration } from '../../redux/actions/auth';
 import { Alert } from '@material-ui/lab';
+import {
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+} from '@material-ui/core';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -18,9 +26,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: 'white',
-    maxWidth: '700px',
-    height: '550px',
-    left: 'calc(50% - 350px)',
+    maxWidth: '800px',
+    left: 'calc(50% - 400px)',
     zIndex: '220',
     position: 'absolute',
     top: '10%',
@@ -28,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 0px 5px 0px rgb(0 0 0)',
   },
   avatar: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(5),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
@@ -67,6 +74,11 @@ export default function Registration() {
   const [email, setEmail] = useState('');
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleShowPassword = () => {
+    return setShowPassword(!showPassword);
+  };
 
   let history = useHistory();
 
@@ -97,78 +109,86 @@ export default function Registration() {
         </Typography>
 
         <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="Имя"
+          <Grid>
+            <TextField
+              style={{ marginBottom: '10px' }}
+              autoComplete="fname"
+              name="firstName"
+              variant="outlined"
+              required
+              fullWidth
+              id="firstName"
+              label="Имя"
+              autoFocus
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+
+            <TextField
+              style={{ marginBottom: '10px' }}
+              variant="outlined"
+              required
+              fullWidth
+              id="lastName"
+              label="Фамилия"
+              name="lastName"
+              autoComplete="lname"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            <TextField
+              style={{ marginBottom: '10px' }}
+              variant="outlined"
+              required
+              fullWidth
+              id="login"
+              label="Почта"
+              name="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <TextField
+              style={{ marginBottom: '10px' }}
+              variant="outlined"
+              required
+              fullWidth
+              id="login"
+              label="Логин"
+              name="login"
+              autoComplete="login"
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+            />
+
+            <FormControl
+              fullWidth
+              variant="outlined"
+              style={{ marginBottom: '10px' }}
+            >
+              <InputLabel htmlFor="outlined-adornment-password">
+                Пароль
+              </InputLabel>
+              <OutlinedInput
+                label="Password"
                 autoFocus
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-            </Grid>
-
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Фамилия"
-                name="lastName"
-                autoComplete="lname"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="login"
-                label="Почта"
-                name="email"
-                autoComplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="login"
-                label="Логин"
-                name="login"
-                autoComplete="login"
-                value={login}
-                onChange={(e) => setLogin(e.target.value)}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Пароль"
-                type="password"
-                id="password"
-                autoComplete="current-password"
+                id="outlined-adornment-password"
+                type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleShowPassword}
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                }
               />
-            </Grid>
+            </FormControl>
           </Grid>
 
           {error ? <Alert severity="error">Введите верные данные</Alert> : ''}
