@@ -13,6 +13,7 @@ import Appeals from './Appeals';
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
 import { loadingRatings } from '../../../redux/actions/rating';
 import Ratings from './Ratings';
+import DeleteStreets from './DeleteStreets';
 
 const useStyle = makeStyles(() => ({
   wrapList: {
@@ -84,7 +85,11 @@ function ListOfStreets() {
                   justifyContent="space-around"
                   padding="10px 10px"
                 >
-                  <Box display="flex">
+                  <Box
+                    maxWidth="900px"
+                    display="flex"
+                    justifyContent="space-between"
+                  >
                     <Box marginRight={'100px'}>
                       <img
                         style={{ borderRadius: '5px', marginLeft: '25px' }}
@@ -93,11 +98,12 @@ function ListOfStreets() {
                         src={items.url}
                       />
                     </Box>
-                    <Box marginRight={'150px'} fontSize="20px" width={'600px'}>
-                      {items.address}
-                    </Box>
+                    <Box fontSize="20px">{items.address}</Box>
                     <Box>
                       <Ratings key={items.id} itemStreet={items.id} />
+                    </Box>
+                    <Box>
+                      <DeleteStreets />
                     </Box>
                   </Box>
                   <div style={{ width: '100%' }}>

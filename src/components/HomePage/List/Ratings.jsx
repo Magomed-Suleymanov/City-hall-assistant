@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addRating } from '../../../redux/actions/rating';
 import Rating from 'react-rating';
+import Box from '@material-ui/core/Box';
 
 function Ratings({ itemStreet }) {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function Ratings({ itemStreet }) {
   };
 
   return (
-    <div>
+    <Box>
       <Rating
         initialRating={fixed}
         emptySymbol={'fa fa-star defaultColor'}
@@ -31,7 +32,7 @@ function Ratings({ itemStreet }) {
         onClick={handleAddRating}
       />
       <p>Rating is {fixed}</p>
-    </div>
+    </Box>
   );
 }
 

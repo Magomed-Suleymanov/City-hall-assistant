@@ -43,7 +43,7 @@ function Appeal({ item }) {
   };
 
   return (
-    <Grid container={600} key={item.id}>
+    <Grid container key={item.id}>
       <Box marginBottom="10px">
         <Box marginBottom="5px" width={'500px'} title={item.date}>
           {item.appeal}
