@@ -2,7 +2,6 @@ import React from 'react';
 import { AppBar, makeStyles, Toolbar } from '@material-ui/core';
 import Navigation from './index';
 import ButtonForAuth from '../../Login/ButtonForAuth';
-import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Header(props) {
+function Header() {
   const classes = useStyles();
   return (
     <div className={classes.wrapper}>

@@ -11,7 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Appeals from './Appeals';
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
-import Rating from './Rating';
+import { loadingRatings } from '../../../redux/actions/rating';
+import Ratings from './Ratings';
 
 const useStyle = makeStyles(() => ({
   wrapList: {
@@ -54,9 +55,6 @@ const useStyle = makeStyles(() => ({
     background: 'white',
     boxShadow: '0px 0px 8px 0px rgb(200, 200, 200)',
   },
-  a: {
-    textDecoration: 'тщту',
-  },
 }));
 
 function ListOfStreets() {
@@ -66,6 +64,7 @@ function ListOfStreets() {
   useEffect(() => {
     dispatch(loadingAppeals());
     dispatch(loadingAppraisals());
+    dispatch(loadingRatings());
   }, [dispatch]);
 
   const classes = useStyle();
@@ -98,7 +97,7 @@ function ListOfStreets() {
                       {items.address}
                     </Box>
                     <Box>
-                      <Rating />
+                      <Ratings key={items.id} itemStreet={items.id} />
                     </Box>
                   </Box>
                   <div style={{ width: '100%' }}>

@@ -20,7 +20,7 @@ function HomePage() {
     <Box>
       {!user.token ? (
         <Switch>
-          <Route path="/auth" component={Login} />}
+          <Route path="/auth" component={Login} />
           <Route path="/registration" component={Registration} />
         </Switch>
       ) : (
@@ -28,7 +28,7 @@ function HomePage() {
       )}
       <Header />
       {listVisibility && <ListOfStreets />}
-      {mapVisibility && <MyMap />}
+      {/*{mapVisibility && <MyMap />}*/}
     </Box>
   );
 }

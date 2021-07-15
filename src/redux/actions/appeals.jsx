@@ -35,6 +35,7 @@ export const addAppeal = (appeal, streetId, status) => {
         appeal: appeal,
         streetId: streetId,
         status: status,
+        date: new Date().toLocaleDateString(),
       }),
     })
       .then((res) => res.json())

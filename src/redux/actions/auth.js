@@ -70,18 +70,17 @@ export const startRegistration = (
   };
 };
 
-
 export const loadStreets = () => {
-  return dispatch => {
-    dispatch({type: 'streets/load/start'})
+  return (dispatch) => {
+    dispatch({ type: 'streets/load/start' });
 
     fetch('/streets')
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         dispatch({
           type: 'streets/load/success',
           payload: json,
-        })
-      })
-  }
-}
+        });
+      });
+  };
+};

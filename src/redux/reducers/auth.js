@@ -58,14 +58,14 @@ export const authReducer = (state = initialState, action) => {
       return {
         ...state,
         loadingUsers: true,
-      }
+      };
 
     case 'streets/load/success':
       return {
         ...state,
         loadingUsers: false,
-        streets: action.payload
-      }
+        streets: action.payload,
+      };
 
     default:
       return state;

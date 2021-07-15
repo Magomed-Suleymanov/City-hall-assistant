@@ -46,7 +46,7 @@ const useStyles = makeStyles({
   },
 });
 
-function Profile(props) {
+function Profile() {
   const user = useSelector((state) => state.authReducer.user);
   const classes = useStyles();
 

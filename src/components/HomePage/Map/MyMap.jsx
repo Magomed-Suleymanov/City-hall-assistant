@@ -24,8 +24,8 @@ function MyMap() {
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
 
   const handleMarkerClick = (id) => {
-    setCurrentPlaceId(id)
-  }
+    setCurrentPlaceId(id);
+  };
 
   useEffect(() => {
     dispatch(loadStreets());
@@ -40,7 +40,7 @@ function MyMap() {
     >
       {streets.map((street) => {
         return (
-          <div>
+          <div key={street.id}>
             <Marker
               latitude={street.latitude}
               longitude={street.longitude}
@@ -56,29 +56,30 @@ function MyMap() {
                 }}
               />
             </Marker>
-            {street.id === currentPlaceId &&
-            <Popup
-              latitude={street.latitude}
-              longitude={street.longitude}
-              closeButton={true}
-              closeOnClick={false}
-              anchor="left"
-            >
-              <Box style={{marginBottom: '10px', fontSize: '20px'}}>{street.address}</Box>
-              <Box
-                style={{
-                  backgroundImage: `url(${street.url})`,
-                  width: '250px',
-                  height: '150px',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover'
-                }}
+            {street.id === currentPlaceId && (
+              <Popup
+                latitude={street.latitude}
+                longitude={street.longitude}
+                onClose={() => setCurrentPlaceId(null)}
+                closeButton={true}
+                closeOnClick={false}
+                anchor="left"
               >
-
-              </Box>
-            </Popup>
-            }
+                <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
+                  {street.address}
+                </Box>
+                <Box
+                  style={{
+                    backgroundImage: `url(${street.url})`,
+                    width: '250px',
+                    height: '150px',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                  }}
+                ></Box>
+              </Popup>
+            )}
           </div>
         );
       })}

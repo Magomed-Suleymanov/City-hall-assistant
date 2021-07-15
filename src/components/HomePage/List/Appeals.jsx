@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import Appeal from './Appeal';
 import { addAppeal } from '../../../redux/actions/appeals';
+import Grid from '@material-ui/core/Grid';
 
 const useStyle = makeStyles(() => ({
   inputModal: {
@@ -64,7 +65,7 @@ function Appeals({ id }) {
   const classes = useStyle();
 
   return (
-    <Box display="flex">
+    <Grid container>
       <Box className={classes.blockWishes}>
         {appeals.map((item) => {
           if (item.streetId === id) {
@@ -113,7 +114,7 @@ function Appeals({ id }) {
           )}
         </Box>
       </Box>
-    </Box>
+    </Grid>
   );
 }
 

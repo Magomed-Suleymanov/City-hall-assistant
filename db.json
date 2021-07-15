@@ -65,44 +65,32 @@
     {
       "id": 1,
       "url": "https://www.varlamov.me/2016/grozniy_hor/29.jpg",
-      "address": "Проспект Ахмат-Хаджи Кадырова",
-      "latitude": 43.305141,
-      "longitude": 45.705414
-  },
+      "address": "Проспект Ахмат-Хаджи Кадырова"
+    },
     {
       "id": 2,
       "url": "https://pp.userapi.com/c845120/v845120116/fc8bf/pNiG5_gqroI.jpg",
-      "address": "Проспект Махмуда Эсамбаева",
-      "latitude": 43.320681,
-      "longitude": 45.688962
+      "address": "Проспект Махмуда Эсамбаева"
     },
     {
       "id": 3,
       "url": "https://bkdrf.ru/uploads/news2.0/Чеченская%20республика/2%20г.грозный%20пр.%20исаева%20-%20после%20(1).jpg",
-      "address": "Проспект Хусейна Исаева",
-      "latitude": 43.315447,
-      "longitude": 45.690256
+      "address": "Проспект Хусейна Исаева"
     },
     {
       "id": 4,
       "url": "https://grozny-inform.ru/LoadedImages/2017/09/11/IMG_4795.jpg",
-      "address": "ул.Санкт-Петербургская",
-      "latitude": 43.309334,
-      "longitude": 45.703802
+      "address": "ул.Санкт-Петербургская"
     },
     {
       "id": 5,
       "url": "https://www.culture.ru/storage/images/e6aba7c47c2d76ec25933d9d69df5c98/71eab3a5354ac0ef5d63d9341920604c.jpeg",
-      "address": "ул.Муслима Гайрбекова",
-      "latitude": 43.31917,
-      "longitude": 45.69069
+      "address": "ул.Муслима Гайрбекова"
     },
     {
       "id": 6,
       "url": "https://apogei-tour.ru/images/CHECHNY/107382696.jpg",
-      "address": "ул.им.Г.А.Угрюмова",
-      "latitude": 43.320839,
-      "longitude": 45.682063
+      "address": "ул.им.Г.А.Угрюмова"
     }
   ],
   "appeals": [
@@ -154,23 +142,41 @@
       "appealId": 1,
       "like": 1,
       "dislike": "",
-      "id": 1
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
       "userId": 2,
       "login": "admin2",
       "id": 2
+    }
+  ],
+  "ratings": [
+    {
+      "streetId": 1,
+      "rating": 3,
+      "id": 1
     },
     {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
+      "streetId": 2,
+      "rating": 3,
+      "id": 2
+    },
+    {
+      "streetId": 3,
+      "rating": 3,
       "id": 3
+    },
+    {
+      "streetId": 4,
+      "rating": 3,
+      "id": 4
+    },
+    {
+      "streetId": 5,
+      "rating": 3,
+      "id": 5
+    },
+    {
+      "streetId": 6,
+      "rating": 3,
+      "id": 6
     }
   ]
 }
