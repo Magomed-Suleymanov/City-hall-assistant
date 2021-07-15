@@ -59,6 +59,18 @@
       "avatar": null,
       "token": "psumIK6TKUKYe2HTpIx9hcfcwJCqEpVSXEz0bKORkj0BjVMEhT",
       "id": 5
+    },
+    {
+      "firstName": "1",
+      "lastName": "1",
+      "email": "1",
+      "login": "1",
+      "password": "1",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "RAlQje6pZMTxF5Ut5eP5o0ZHqTBTryMjn5NQ5GkGgiD02onk3b",
+      "id": 6
     }
   ],
   "streets": [
@@ -78,7 +90,7 @@
     },
     {
       "id": 3,
-      "url": "https://bkdrf.ru/uploads/news2.0/Чеченская%20республика/2%20г.грозный%20пр.%20исаева%20-%20после%20(1).jpg",
+      "url": "https://transphoto.org/photo/12/45/98/1245983.jpg",
       "address": "Проспект Хусейна Исаева",
       "latitude": 43.315447,
       "longitude": 45.690256
@@ -225,6 +237,21 @@
       "streetId": 1,
       "rating": 5,
       "id": 12
+    },
+    {
+      "streetId": 1,
+      "rating": 5,
+      "id": 13
+    },
+    {
+      "streetId": 1,
+      "rating": 1,
+      "id": 14
+    },
+    {
+      "streetId": 1,
+      "rating": 2,
+      "id": 15
     }
   ]
 }
