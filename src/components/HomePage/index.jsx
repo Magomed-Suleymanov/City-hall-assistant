@@ -28,7 +28,7 @@ function HomePage() {
       )}
       <Header />
       {listVisibility && <ListOfStreets />}
-      {/*{mapVisibility && <MyMap />}*/}
+        {mapVisibility && <MyMap />}
     </Box>
   );
 }
