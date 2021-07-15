@@ -65,32 +65,44 @@
     {
       "id": 1,
       "url": "https://www.varlamov.me/2016/grozniy_hor/29.jpg",
-      "address": "Проспект Ахмат-Хаджи Кадырова"
+      "address": "Проспект Ахмат-Хаджи Кадырова",
+      "latitude": 43.305141,
+      "longitude": 45.705414
     },
     {
       "id": 2,
       "url": "https://pp.userapi.com/c845120/v845120116/fc8bf/pNiG5_gqroI.jpg",
-      "address": "Проспект Махмуда Эсамбаева"
+      "address": "Проспект Махмуда Эсамбаева",
+      "latitude": 43.320681,
+      "longitude": 45.688962
     },
     {
       "id": 3,
       "url": "https://bkdrf.ru/uploads/news2.0/Чеченская%20республика/2%20г.грозный%20пр.%20исаева%20-%20после%20(1).jpg",
-      "address": "Проспект Хусейна Исаева"
+      "address": "Проспект Хусейна Исаева",
+      "latitude": 43.315447,
+      "longitude": 45.690256
     },
     {
       "id": 4,
       "url": "https://grozny-inform.ru/LoadedImages/2017/09/11/IMG_4795.jpg",
-      "address": "ул.Санкт-Петербургская"
+      "address": "ул.Санкт-Петербургская",
+      "latitude": 43.309334,
+      "longitude": 45.703802
     },
     {
       "id": 5,
       "url": "https://www.culture.ru/storage/images/e6aba7c47c2d76ec25933d9d69df5c98/71eab3a5354ac0ef5d63d9341920604c.jpeg",
-      "address": "ул.Муслима Гайрбекова"
+      "address": "ул.Муслима Гайрбекова",
+      "latitude": 43.31917,
+      "longitude": 45.69069
     },
     {
       "id": 6,
       "url": "https://apogei-tour.ru/images/CHECHNY/107382696.jpg",
-      "address": "ул.им.Г.А.Угрюмова"
+      "address": "ул.им.Г.А.Угрюмова",
+      "latitude": 43.320839,
+      "longitude": 45.682063
     }
   ],
   "appeals": [
@@ -99,6 +111,7 @@
       "streetId": 1,
       "appeal": "Много машин, пожалуйста уменьшите трафик на дороге.",
       "status": "Выполнено",
+      "date": "05.07.2021",
       "rating": null
     },
     {
@@ -106,6 +119,7 @@
       "streetId": 2,
       "appeal": "Очень много зелени, но все же увеличить бы её)",
       "status": "Выполнено",
+      "date": "25.07.2021",
       "rating": 1
     },
     {
@@ -113,6 +127,7 @@
       "streetId": 3,
       "appeal": "На дороге есть перепады асфальта, нужно отремонтировать",
       "status": "Выполнено",
+      "date": "13.07.2021",
       "rating": 7
     },
     {
@@ -120,6 +135,7 @@
       "streetId": 4,
       "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе.",
       "status": "выполнено",
+      "date": "11.07.2021",
       "rating": 19
     },
     {
@@ -127,6 +143,7 @@
       "streetId": 5,
       "appeal": "Шикарные качели, но очень мало. Срочно добавьте.",
       "status": "выполнено",
+      "date": "09.07.2021",
       "rating": 19
     },
     {
@@ -134,6 +151,7 @@
       "streetId": 6,
       "appeal": "Всё очень красиво.",
       "status": "выполнено",
+      "date": "07.07.2021",
       "rating": 5
     }
   ],
@@ -177,6 +195,36 @@
       "streetId": 6,
       "rating": 3,
       "id": 6
+    },
+    {
+      "streetId": 1,
+      "rating": 5,
+      "id": 7
+    },
+    {
+      "streetId": 1,
+      "rating": 1,
+      "id": 8
+    },
+    {
+      "streetId": 2,
+      "rating": 1,
+      "id": 9
+    },
+    {
+      "streetId": 1,
+      "rating": 5,
+      "id": 10
+    },
+    {
+      "streetId": 1,
+      "rating": 5,
+      "id": 11
+    },
+    {
+      "streetId": 1,
+      "rating": 5,
+      "id": 12
     }
   ]
 }
