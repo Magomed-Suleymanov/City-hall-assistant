@@ -86,8 +86,8 @@ export const loadStreets = () => {
 };
 
 export const addStreet = (address, latitude, longitude) => {
-  return dispatch => {
-    dispatch({type: 'add/street/load'})
+  return (dispatch) => {
+    dispatch({ type: 'add/street/load' });
 
     fetch('/streets', {
       method: 'POST',
@@ -98,12 +98,12 @@ export const addStreet = (address, latitude, longitude) => {
         longitude,
       }),
     })
-        .then(res => res.json())
-        .then(json => {
-          dispatch({
-            type: 'add/street/success',
-            payload: json,
-          })
-        })
-  }
-}
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'add/street/success',
+          payload: json,
+        });
+      });
+  };
+};

@@ -6,6 +6,7 @@ import ButtonForAuth from '../../Login/ButtonForAuth';
 const useStyles = makeStyles((theme) => ({
   header: {
     position: 'relative',
+    zIndex: 200,
     width: '100%',
     boxShadow: '0 0 30px -10px rgba(0,0,0,.2)',
     right: 0,

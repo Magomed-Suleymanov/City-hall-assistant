@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Appeal from './Appeal';
 import { addAppeal } from '../../../redux/actions/appeals';
 import Grid from '@material-ui/core/Grid';
+import PropTypes from 'prop-types';
 
 const useStyle = makeStyles(() => ({
   inputModal: {
@@ -20,8 +21,10 @@ const useStyle = makeStyles(() => ({
     cursor: 'pointer',
   },
   blockWishes: {
-    marginRight: '20px',
+    maxWidth: '700px',
+    minWidth: '350px',
     height: '160px',
+    marginRight: '20px',
     overflowY: 'scroll',
     padding: '10px',
     fontSize: '16px',
@@ -117,5 +120,9 @@ function Appeals({ id }) {
     </Grid>
   );
 }
+
+Appeals.propTypes = {
+  id: PropTypes.number.isRequired,
+};
 
 export default Appeals;

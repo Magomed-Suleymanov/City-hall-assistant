@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,29 +14,17 @@ import { loadingAppraisals } from '../../../redux/actions/appraisals';
 import { loadingRatings } from '../../../redux/actions/rating';
 import Ratings from './Ratings';
 import DeleteStreets from './DeleteStreets';
+import { loadingDefaultImg } from '../../../redux/actions/application';
+import { useHistory } from 'react-router-dom';
 
 const useStyle = makeStyles(() => ({
-  wrapList: {
-    borderRadius: '5px',
-    width: '500px',
-    background: '#fdfcf9',
-    margin: ' 20px 25px 0px 25px',
-    boxShadow: '0px 0px 4px 2px rgb(217, 217, 217)',
-    cursor: 'pointer',
-
-    '&:hover': {
-      transform: 'scale(1.04)',
-      transition: '.1s',
-    },
-  },
-
   loading: {
     position: 'absolute',
     left: 'calc(50% - 60px)',
     color: 'red',
     top: '40%',
   },
-  wraplist: {
+  wrapList: {
     position: 'relative',
     margin: 'auto',
     width: '100%',
@@ -60,20 +48,31 @@ const useStyle = makeStyles(() => ({
 
 function ListOfStreets() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const list = useSelector((state) => state.application.items);
+  const defaultImg = useSelector((state) => state.application.defaultImg);
 
   useEffect(() => {
     dispatch(loadingAppeals());
     dispatch(loadingAppraisals());
     dispatch(loadingRatings());
+    dispatch(loadingDefaultImg());
   }, [dispatch]);
+
+  const [id, setId] = useState(false);
 
   const classes = useStyle();
 
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   return (
-    <Box style={{ position: 'relative' }}>
+    <Box>
       <Grid container>
-        <Box className={classes.wraplist} display={'flex'}>
+        <Box className={classes.wrapList} display={'flex'}>
           <Box className={classes.wrap}>
             {list.map((items) => {
               return (
@@ -85,29 +84,56 @@ function ListOfStreets() {
                   justifyContent="space-around"
                   padding="10px 10px"
                 >
-                  <Box
-                    display="flex"
-                    justifyContent="space-between"
-                  >
+                  <Box display="flex" justifyContent="space-between">
                     <Box marginRight={'100px'}>
-                      <img
-                        style={{ borderRadius: '5px', marginLeft: '25px' }}
-                        alt="img"
-                        width="150px"
-                        src={items.url}
-                      />
+                      {items.url ? (
+                        <img
+                          style={{ borderRadius: '5px', marginLeft: '25px' }}
+                          alt="img"
+                          width="150px"
+                          src={items.url}
+                        />
+                      ) : (
+                        defaultImg.map((item) => {
+                          return (
+                            <Box key={item.id}>
+                              <img
+                                style={{
+                                  borderRadius: '5px',
+                                  marginLeft: '25px',
+                                }}
+                                width="150px"
+                                src={item.url}
+                                alt="img"
+                              />
+                            </Box>
+                          );
+                        })
+                      )}
                     </Box>
-                    <Box width={'400px'} fontSize="20px">{items.address}</Box>
+                    <Box width={'400px'} fontSize="20px">
+                      {items.address}
+                    </Box>
                     <Box>
                       <Ratings key={items.id} itemStreet={items.id} />
                     </Box>
                     <Box>
-                      <DeleteStreets key={items.id} streetId={items.id}/>
+                      <DeleteStreets key={items.id} streetId={items.id} />
                     </Box>
                   </Box>
                   <div style={{ width: '100%' }}>
-                    <Accordion>
+                    <Accordion
+                      expanded={expanded === items.id}
+                      onChange={handleChange(items.id)}
+                    >
                       <AccordionSummary
+                        onClick={() => {
+                          setId(!id);
+                          if (id) {
+                            history.push(`/`);
+                          }
+                          history.push(`/:id/${items.id}`);
+                        }}
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"

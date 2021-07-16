@@ -51,3 +51,18 @@ export const deleteStreet = (id) => {
       });
   };
 };
+
+export const loadingDefaultImg = () => {
+  return (dispatch) => {
+    dispatch({ type: 'loading/defaultImg/start' });
+
+    fetch('/defaultImg')
+      .then((response) => response.json())
+      .then((json) => {
+        dispatch({
+          type: 'loading/defaultImg/success',
+          payload: json,
+        });
+      });
+  };
+};

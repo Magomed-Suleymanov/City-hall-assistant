@@ -72,29 +72,6 @@ server.post('/users', (req, res, next) => {
   next();
 });
 
-// Получение пожеланий
-// server.get('/appeals', (req, res) => {
-//   const filteredAppeals = appeals.filter((item) => item.appeal);
-//   if (filteredAppeals.toJSON().length === 0) {
-//     res.status(404).json([]);
-//   }
-//   res.json(filteredAppeals);
-// });
-
-//Добавление пожеланий
-// server.post("/appeals", (req, res, next) => {
-//   const alfa = appeals.find(item => item.streetsId === streets.id)
-//
-//   if (
-//     req.body.appeal === undefined
-//   ) {
-//     res.status(400);
-//     res.send();
-//   }
-//   req.body.appeal = alfa;
-//   next();
-// });
-
 server.use(router);
 server.listen(PORT, () => {
   console.log(`JSON Server is running on ${PORT}`);
