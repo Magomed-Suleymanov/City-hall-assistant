@@ -91,12 +91,6 @@
       "address": "ул.им.Г.А.Угрюмова",
       "latitude": 43.320839,
       "longitude": 45.682063
-    },
-    {
-      "address": "",
-      "latitude": 43.33197186181051,
-      "longitude": 45.69381540431502,
-      "id": 7
     }
   ],
   "appeals": [
@@ -140,83 +134,41 @@
       "streetId": 6,
       "appeal": "Всё очень красиво.",
       "status": "выполнено",
-      "date": "07.07.2021"
+      "date": "07.07.2021",
+      "rating": 5
     }
   ],
-  "appraisals": [
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 1
-    },
-    {
-      "appealId": 2,
-      "like": "",
-      "dislike": 1,
-      "userId": 2,
-      "login": "admin2",
-      "id": 2
-    },
-    {
-      "appealId": 3,
-      "like": "",
-      "dislike": 1,
-      "userId": 2,
-      "login": "admin2",
-      "id": 3
-    },
-    {
-      "appealId": 2,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 4
-    }
-  ],
+  "appraisals": [],
   "ratings": [
     {
       "streetId": 1,
-      "rating": 3,
+      "rating": 2,
       "id": 1
     },
     {
       "streetId": 2,
-      "rating": 1,
+      "rating": 3,
       "id": 2
     },
     {
       "streetId": 3,
-      "rating": 5,
+      "rating": 4,
       "id": 3
     },
     {
       "streetId": 4,
-      "rating": 2,
+      "rating": 1,
       "id": 4
     },
     {
       "streetId": 5,
-      "rating": 4,
+      "rating": 2,
       "id": 5
     },
     {
-      "streetId": 4,
-      "rating": 1,
-      "id": 6
-    },
-    {
-      "streetId": 4,
-      "rating": 4,
-      "id": 7
-    },
-    {
-      "streetId": 4,
+      "streetId": 6,
       "rating": 2,
-      "id": 8
+      "id": 6
     }
   ],
   "defaultImg": [

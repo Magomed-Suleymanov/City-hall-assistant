@@ -4,8 +4,9 @@ import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import RoomIcon from '@material-ui/icons/Room';
 import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/auth';
-import { Box } from '@material-ui/core';
+import { Box, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({});
 
@@ -32,7 +33,14 @@ function MyMap() {
   const handleAddCLick = (e) => {
     const [lat, long] = e.lngLat;
     dispatch(addStreet(address, long, lat));
-    console.log(e);
+  };
+
+  const handleAddPopup = (e) => {
+    const [long, lat] = e.lngLat;
+    setNewPlace({
+      lat,
+      long,
+    });
   };
 
   useEffect(() => {
@@ -45,7 +53,7 @@ function MyMap() {
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
       mapStyle="mapbox://styles/timurkaev/ckqpd1ujo2jau17nw7n786vj7"
-      onClick={handleAddCLick}
+      onDblClick={handleAddPopup}
       doubleClickZoom={false}
     >
       {streets.map((street) => {
@@ -93,6 +101,37 @@ function MyMap() {
           </div>
         );
       })}
+
+      {newPlace && (
+        <Popup
+          latitude={newPlace.lat}
+          longitude={newPlace.long}
+          onClose={() => setNewPlace(null)}
+          closeButton={true}
+          closeOnClick={false}
+          anchor="left"
+        >
+          <Box>
+            <TextField
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              style={{ marginBottom: '15px' }}
+              id="standard-basic"
+              label="Название улицы"
+            />
+          </Box>
+          <>
+            <Button
+              fullWidth
+              variant="contained"
+              color="primary"
+              // onClick={handleAddCLick}
+            >
+              Добавить
+            </Button>
+          </>
+        </Popup>
+      )}
     </ReactMapGL>
   );
 }
