@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import RoomIcon from '@material-ui/icons/Room';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadStreets } from '../../../redux/actions/auth';
+import {addStreet, loadStreets} from '../../../redux/actions/auth';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
@@ -22,10 +22,19 @@ function MyMap() {
   const streets = useSelector((state) => state.authReducer.streets);
   const dispatch = useDispatch();
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
+  const [newPlace, setNewPlace] = useState(null);
+  const [address, setAddress] = useState('')
 
   const handleMarkerClick = (id) => {
     setCurrentPlaceId(id);
   };
+
+  const handleAddCLick = (e) => {
+    const [lat, long] = e.lngLat
+    dispatch(addStreet(address, long, lat))
+    console.log(e)
+  }
+
 
   useEffect(() => {
     dispatch(loadStreets());
@@ -37,7 +46,9 @@ function MyMap() {
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
       mapStyle="mapbox://styles/timurkaev/ckqpd1ujo2jau17nw7n786vj7"
-    >
+      onClick={handleAddCLick}
+      doubleClickZoom={false}
+>
       {streets.map((street) => {
         return (
           <div key={street.id}>
@@ -83,6 +94,7 @@ function MyMap() {
           </div>
         );
       })}
+
     </ReactMapGL>
   );
 }

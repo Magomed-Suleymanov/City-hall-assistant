@@ -25,7 +25,7 @@ export const application = (state = initialState, action) => {
         items: action.payload,
         listVisibility: true,
         mapVisibility: false,
-        loadingItems: false,
+        loadingItems: true,
       };
 
     case 'loading/modalStreets/start':
