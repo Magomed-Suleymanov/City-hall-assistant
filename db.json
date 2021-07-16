@@ -115,18 +115,6 @@
       "address": "ул.им.Г.А.Угрюмова",
       "latitude": 43.320839,
       "longitude": 45.682063
-    },
-    {
-      "address": "",
-      "latitude": 43.29295242328406,
-      "longitude": 45.86631331125254,
-      "id": 7
-    },
-    {
-      "address": "",
-      "latitude": 43.307250581924635,
-      "longitude": 45.72861604557129,
-      "id": 8
     }
   ],
   "appeals": [
@@ -177,6 +165,13 @@
       "status": "выполнено",
       "date": "07.07.2021",
       "rating": 5
+    },
+    {
+      "appeal": "ОТличный отличия",
+      "streetId": 7,
+      "status": "Выполняется",
+      "date": "16.07.2021",
+      "id": 7
     }
   ],
   "appraisals": [
@@ -264,6 +259,21 @@
       "streetId": 1,
       "rating": 2,
       "id": 15
+    },
+    {
+      "streetId": 7,
+      "rating": 2,
+      "id": 16
+    },
+    {
+      "streetId": 8,
+      "rating": 3,
+      "id": 17
+    },
+    {
+      "streetId": 8,
+      "rating": 1,
+      "id": 18
     }
   ]
 }
