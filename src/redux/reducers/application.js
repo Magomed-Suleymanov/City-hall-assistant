@@ -42,6 +42,17 @@ export const application = (state = initialState, action) => {
         listModalVisibility: true,
         loadingModalList: false,
       };
+    case 'street/delete/start':
+      return {
+        ...state,
+        loadingItems: true,
+      };
+    case 'street/delete/success':
+      return {
+        ...state,
+        loading: false,
+        items: state.items.filter((street) => street.id !== action.payload),
+      };
 
     case 'deactivation/ModalListItems':
       return {

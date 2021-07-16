@@ -86,7 +86,6 @@ function ListOfStreets() {
                   padding="10px 10px"
                 >
                   <Box
-                    maxWidth="900px"
                     display="flex"
                     justifyContent="space-between"
                   >
@@ -98,12 +97,12 @@ function ListOfStreets() {
                         src={items.url}
                       />
                     </Box>
-                    <Box fontSize="20px">{items.address}</Box>
+                    <Box width={'400px'} fontSize="20px">{items.address}</Box>
                     <Box>
                       <Ratings key={items.id} itemStreet={items.id} />
                     </Box>
                     <Box>
-                      <DeleteStreets />
+                      <DeleteStreets key={items.id} streetId={items.id}/>
                     </Box>
                   </Box>
                   <div style={{ width: '100%' }}>

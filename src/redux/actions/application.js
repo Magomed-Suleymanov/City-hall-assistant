@@ -29,3 +29,25 @@ export const LoadModalList = (id) => {
       );
   };
 };
+
+export const deleteStreet = (id) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'street/delete/start',
+    });
+
+    fetch(`/streets/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        dispatch({
+          type: 'street/delete/success',
+          payload: id,
+        });
+      });
+  };
+};

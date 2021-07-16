@@ -252,6 +252,16 @@
       "streetId": 1,
       "rating": 2,
       "id": 15
+    },
+    {
+      "streetId": 1,
+      "rating": 1,
+      "id": 16
+    },
+    {
+      "streetId": 1,
+      "rating": 5,
+      "id": 17
     }
   ]
 }
