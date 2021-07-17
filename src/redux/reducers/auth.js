@@ -1,13 +1,12 @@
 const initialState = {
   user: JSON.parse(localStorage.getItem('user')) || {},
-  streets: [],
   loadingUsers: false,
   loadingLogin: false,
   loadingRegistration: false,
   error: false,
 };
 
-export const authReducer = (state = initialState, action) => {
+export const auth = (state = initialState, action) => {
   switch (action.type) {
     case 'auth/login/start':
       return {
@@ -52,19 +51,6 @@ export const authReducer = (state = initialState, action) => {
         ...state,
         error: true,
         loadingRegistration: false,
-      };
-
-    case 'streets/load/start':
-      return {
-        ...state,
-        loadingUsers: true,
-      };
-
-    case 'streets/load/success':
-      return {
-        ...state,
-        loadingUsers: false,
-        streets: action.payload,
       };
 
     default:

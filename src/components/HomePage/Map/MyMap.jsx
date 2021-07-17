@@ -3,15 +3,13 @@ import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import RoomIcon from '@material-ui/icons/Room';
 import { useDispatch, useSelector } from 'react-redux';
-import { addStreet, loadStreets } from '../../../redux/actions/auth';
+import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
-
-const useStyles = makeStyles({});
+import { Link } from 'react-router-dom';
+import { loadingDefaultImg } from '../../../redux/actions/application';
 
 function MyMap() {
-  const classes = useStyles();
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',
@@ -19,8 +17,8 @@ function MyMap() {
     longitude: 45.6935787840332,
     zoom: 12,
   });
-
-  const streets = useSelector((state) => state.authReducer.streets);
+  const streets = useSelector((state) => state.streets.items);
+  const defaultImg = useSelector((state) => state.application.defaultImg);
   const dispatch = useDispatch();
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null);
@@ -31,8 +29,7 @@ function MyMap() {
   };
 
   const handleAddCLick = (e) => {
-    const [lat, long] = e.lngLat;
-    dispatch(addStreet(address, long, lat));
+    dispatch(addStreet(address, newPlace.lat, newPlace.long));
   };
 
   const handleAddPopup = (e) => {
@@ -45,6 +42,7 @@ function MyMap() {
 
   useEffect(() => {
     dispatch(loadStreets());
+    dispatch(loadingDefaultImg());
   }, [dispatch]);
 
   return (
@@ -84,18 +82,38 @@ function MyMap() {
                 anchor="left"
               >
                 <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
-                  {street.address}
+                  <Link to={'/list'}>
+                    <Box width="250px">{street.address}</Box>
+                  </Link>
                 </Box>
-                <Box
-                  style={{
-                    backgroundImage: `url(${street.url})`,
-                    width: '250px',
-                    height: '150px',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                  }}
-                ></Box>
+                {street.url ? (
+                  <Box
+                    style={{
+                      backgroundImage: `url(${street.url})`,
+                      width: '250px',
+                      height: '150px',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      backgroundSize: 'cover',
+                    }}
+                  />
+                ) : (
+                  defaultImg.map((item) => {
+                    return (
+                      <Box
+                        key={item.id}
+                        style={{
+                          backgroundImage: `url(${item.url})`,
+                          width: '250px',
+                          height: '150px',
+                          backgroundRepeat: 'no-repeat',
+                          backgroundPosition: 'center',
+                          backgroundSize: 'cover',
+                        }}
+                      />
+                    );
+                  })
+                )}
               </Popup>
             )}
           </div>
@@ -120,16 +138,16 @@ function MyMap() {
               label="Название улицы"
             />
           </Box>
-          <>
+          <Box>
             <Button
+              onClick={handleAddCLick}
               fullWidth
               variant="contained"
               color="primary"
-              // onClick={handleAddCLick}
             >
               Добавить
             </Button>
-          </>
+          </Box>
         </Popup>
       )}
     </ReactMapGL>

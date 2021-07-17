@@ -72,7 +72,7 @@ const useStyle = makeStyles({
 
 function ButtonForAuth() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.authReducer.user);
+  const user = useSelector((state) => state.auth.user);
   const classes = useStyle();
 
   const [anchorEl, setAnchorEl] = useState(null);

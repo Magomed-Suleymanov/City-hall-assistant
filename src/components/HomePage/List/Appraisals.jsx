@@ -20,7 +20,7 @@ function Appraisals({ item }) {
   const dispatch = useDispatch();
   const classes = useStyle();
   const appraisals = useSelector((state) => state.appraisals.appraisals);
-  const user = useSelector((state) => state.authReducer.user);
+  const user = useSelector((state) => state.auth.user);
 
   const [activeLike, setActiveLike] = useState(false);
   const [activeDislike, setActiveDislike] = useState(false);

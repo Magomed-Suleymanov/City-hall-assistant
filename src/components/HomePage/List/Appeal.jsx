@@ -36,7 +36,7 @@ function Appeal({ item }) {
   const handleDeleteAppeals = () => {
     dispatch(deleteAppeals(item.id));
   };
-  const user = useSelector((state) => state.authReducer.user);
+  const user = useSelector((state) => state.auth.user);
 
   const handleChangeOfStatus = () => {
     let status = 'Выполнено';

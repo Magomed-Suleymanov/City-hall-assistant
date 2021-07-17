@@ -11,6 +11,11 @@ body {
   box-shadow: 1px 1px 1px rgb(219, 219, 219);
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -22,4 +27,7 @@ body {
 
 .activeColor {
   color: #ecec40;
+}
+.a {
+  text-decoration: none;
 }
