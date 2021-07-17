@@ -18,6 +18,7 @@ function MyMap() {
   });
 
   const streets = useSelector((state) => state.streets.items);
+  const loading = useSelector(state => state.streets.loading)
   const dispatch = useDispatch();
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null);
@@ -123,16 +124,15 @@ function MyMap() {
             />
           </Box>
           <Box>
-            <Link to="" refresh="true">
               <Button
                 onClick={handleAddCLick}
                 fullWidth
                 variant="contained"
                 color="primary"
+                disabled={loading}
               >
                 Добавить
               </Button>
-            </Link>
           </Box>
         </Popup>
       )}

@@ -47,7 +47,7 @@ const useStyles = makeStyles({
 });
 
 function Profile() {
-  const user = useSelector((state) => state.authReducer.user);
+  const user = useSelector((state) => state.auth.user);
   const classes = useStyles();
 
   return (
