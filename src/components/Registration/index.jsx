@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link, NavLink, useHistory } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { useDispatch, useSelector } from 'react-redux';
@@ -80,12 +80,9 @@ export default function Registration() {
     return setShowPassword(!showPassword);
   };
 
-  let history = useHistory();
-
   const handleReg = (e) => {
     e.preventDefault();
     dispatch(startRegistration(firstName, lastName, email, login, password));
-    history.push('/home');
   };
 
   return (
