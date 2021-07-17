@@ -85,12 +85,12 @@ export default function Registration() {
   const handleReg = (e) => {
     e.preventDefault();
     dispatch(startRegistration(firstName, lastName, email, login, password));
-    history.push('/home');
+    history.push('/map');
   };
 
   return (
     <Box>
-      <Link to="/home">
+      <Link to="/map">
         <Box
           position="absolute"
           width="100%"

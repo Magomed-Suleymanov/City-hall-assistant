@@ -70,18 +70,18 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(startLogin(login, password));
-    history.push('/home');
+    history.push('/map');
   };
 
   return (
     <Box>
-      <Link to="/home">
+      <Link to="/map">
         <Box
           position="absolute"
           width="100%"
           zIndex="220"
           height="100%"
-          style={{ opacity: 0.8, background: 'black' }}
+          style={{ opacity: 0.9, background: 'black' }}
         />
       </Link>
       <Container component="main" className={classes.modalAuth} maxWidth="xs">
