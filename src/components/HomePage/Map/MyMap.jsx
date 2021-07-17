@@ -6,8 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import {Link} from "react-router-dom";
-
+import { Link, useHistory } from 'react-router-dom';
 
 function MyMap() {
   const [viewport, setViewport] = useState({
@@ -28,8 +27,14 @@ function MyMap() {
     setCurrentPlaceId(id);
   };
 
+  const closePopup = () => {
+    setNewPlace(null);
+  };
+
   const handleAddCLick = (e) => {
     dispatch(addStreet(address, newPlace.lat, newPlace.long));
+    window.location.reload();
+    closePopup();
   };
 
   const handleAddPopup = (e) => {
@@ -118,14 +123,16 @@ function MyMap() {
             />
           </Box>
           <Box>
-            <Button
-              onClick={handleAddCLick}
-              fullWidth
-              variant="contained"
-              color="primary"
-            >
-              Добавить
-            </Button>
+            <Link to="" refresh="true">
+              <Button
+                onClick={handleAddCLick}
+                fullWidth
+                variant="contained"
+                color="primary"
+              >
+                Добавить
+              </Button>
+            </Link>
           </Box>
         </Popup>
       )}
