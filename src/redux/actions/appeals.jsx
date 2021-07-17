@@ -72,7 +72,7 @@ export const changeOfStatus = (id, status) => {
     dispatch({
       type: 'change/status/start',
     });
-    fetch(`appeals/${id}`, {
+    fetch(`/appeals/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         status: status,

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import { loadingDefaultImg } from '../../../redux/actions/application';
 import { Link, useHistory } from 'react-router-dom';
 
 function MyMap() {
@@ -16,8 +17,8 @@ function MyMap() {
     longitude: 45.6935787840332,
     zoom: 12,
   });
-
   const streets = useSelector((state) => state.streets.items);
+  const defaultImg = useSelector((state) => state.application.defaultImg);
   const loading = useSelector(state => state.streets.loading)
   const dispatch = useDispatch();
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
@@ -48,6 +49,7 @@ function MyMap() {
 
   useEffect(() => {
     dispatch(loadStreets());
+    dispatch(loadingDefaultImg());
   }, [dispatch]);
 
   return (
@@ -87,18 +89,38 @@ function MyMap() {
                 anchor="left"
               >
                 <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
-                  <Link to={'/'}>{street.address}</Link>
+                  <Link to={'/list'}>
+                    <Box width="250px">{street.address}</Box>
+                  </Link>
                 </Box>
-                <Box
-                  style={{
-                    backgroundImage: `url(${street.url})`,
-                    width: '250px',
-                    height: '150px',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                  }}
-                ></Box>
+                {street.url ? (
+                  <Box
+                    style={{
+                      backgroundImage: `url(${street.url})`,
+                      width: '250px',
+                      height: '150px',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      backgroundSize: 'cover',
+                    }}
+                  />
+                ) : (
+                  defaultImg.map((item) => {
+                    return (
+                      <Box
+                        key={item.id}
+                        style={{
+                          backgroundImage: `url(${item.url})`,
+                          width: '250px',
+                          height: '150px',
+                          backgroundRepeat: 'no-repeat',
+                          backgroundPosition: 'center',
+                          backgroundSize: 'cover',
+                        }}
+                      />
+                    );
+                  })
+                )}
               </Popup>
             )}
           </div>

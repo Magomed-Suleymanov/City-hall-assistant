@@ -47,18 +47,6 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "login": "",
-      "password": "",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "XE2lCvQN1cMp4RMkldeBzJFtU2O66pjQ1PmakC7v8fizrs7RCe",
-      "id": 5
     }
   ],
   "streets": [
@@ -103,12 +91,6 @@
       "address": "ул.им.Г.А.Угрюмова",
       "latitude": 43.320839,
       "longitude": 45.682063
-    },
-    {
-      "address": "kjj d",
-      "latitude": 43.34269432481498,
-      "longitude": 45.68482405380852,
-      "id": 7
     }
   ],
   "appeals": [
@@ -152,40 +134,46 @@
       "streetId": 6,
       "appeal": "Всё очень красиво.",
       "status": "выполнено",
-      "date": "07.07.2021",
-      "rating": 5
+      "date": "07.07.2021"
+    },
+    {
+      "appeal": "asd",
+      "streetId": 5,
+      "status": "Выполняется",
+      "date": "17.07.2021",
+      "id": 8
     }
   ],
   "appraisals": [],
   "ratings": [
     {
       "streetId": 1,
-      "rating": 2,
+      "rating": 3,
       "id": 1
     },
     {
       "streetId": 2,
-      "rating": 3,
+      "rating": 2,
       "id": 2
     },
     {
       "streetId": 3,
-      "rating": 4,
+      "rating": 1,
       "id": 3
     },
     {
       "streetId": 4,
-      "rating": 1,
+      "rating": 4,
       "id": 4
     },
     {
       "streetId": 5,
-      "rating": 2,
+      "rating": 5,
       "id": 5
     },
     {
       "streetId": 6,
-      "rating": 2,
+      "rating": 4,
       "id": 6
     }
   ],
