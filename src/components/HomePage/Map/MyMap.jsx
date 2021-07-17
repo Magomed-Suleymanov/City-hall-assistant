@@ -3,15 +3,12 @@ import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import RoomIcon from '@material-ui/icons/Room';
 import { useDispatch, useSelector } from 'react-redux';
-import { addStreet, loadStreets } from '../../../redux/actions/auth';
+import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles({});
 
 function MyMap() {
-  const classes = useStyles();
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',
@@ -20,7 +17,7 @@ function MyMap() {
     zoom: 12,
   });
 
-  const streets = useSelector((state) => state.authReducer.streets);
+  const streets = useSelector((state) => state.streets.items);
   const dispatch = useDispatch();
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null);
@@ -33,6 +30,7 @@ function MyMap() {
   const handleAddCLick = (e) => {
     const [lat, long] = e.lngLat;
     dispatch(addStreet(address, long, lat));
+    newPlace(false)
   };
 
   const handleAddPopup = (e) => {
@@ -113,7 +111,6 @@ function MyMap() {
         >
           <Box>
             <TextField
-              value={address}
               onChange={(e) => setAddress(e.target.value)}
               style={{ marginBottom: '15px' }}
               id="standard-basic"

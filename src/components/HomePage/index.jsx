@@ -13,7 +13,7 @@ function HomePage() {
     (state) => state.application.listVisibility,
   );
 
-  const user = useSelector((state) => state.authReducer.user);
+  const user = useSelector((state) => state.auth.user);
 
   const mapVisibility = useSelector((state) => state.application.mapVisibility);
   return (

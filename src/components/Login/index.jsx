@@ -54,8 +54,8 @@ function Login() {
   const classes = useStyles();
 
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.authReducer.error);
-  const loading = useSelector((state) => state.authReducer.loadingLogin);
+  const error = useSelector((state) => state.auth.error);
+  const loading = useSelector((state) => state.auth.loadingLogin);
 
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
