@@ -22,9 +22,9 @@ function HomePage() {
         ''
       )}
       <Header />
-        <Route path={`/map`} component={MyMap} />
-        <Route path={`/list`} component={ListOfStreets} />
-        <Redirect to="/map" />
+      <Route path="/map" component={MyMap} />
+      <Route path="/list" component={ListOfStreets} />
+      <Redirect to="/map" />
     </Box>
   );
 }
