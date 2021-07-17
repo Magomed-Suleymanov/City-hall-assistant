@@ -37,7 +37,7 @@
       "id": 3
     },
     {
-      "roles": "Пользователь",
+      "roles": "Администратор",
       "firstName": "Альви",
       "lastName": "Цугаев",
       "email": "tsugaev@mail.ru",
@@ -47,30 +47,6 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
-    },
-    {
-      "firstName": "3",
-      "lastName": "3",
-      "email": "3",
-      "login": "3",
-      "password": "3",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "psumIK6TKUKYe2HTpIx9hcfcwJCqEpVSXEz0bKORkj0BjVMEhT",
-      "id": 5
-    },
-    {
-      "firstName": "1",
-      "lastName": "1",
-      "email": "1",
-      "login": "1",
-      "password": "1",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "RAlQje6pZMTxF5Ut5eP5o0ZHqTBTryMjn5NQ5GkGgiD02onk3b",
-      "id": 6
     }
   ],
   "streets": [
@@ -123,40 +99,35 @@
       "streetId": 1,
       "appeal": "Много машин, пожалуйста уменьшите трафик на дороге.",
       "status": "Выполнено",
-      "date": "05.07.2021",
-      "rating": null
+      "date": "05.07.2021"
     },
     {
       "id": 2,
       "streetId": 2,
       "appeal": "Очень много зелени, но все же увеличить бы её)",
       "status": "Выполнено",
-      "date": "25.07.2021",
-      "rating": 1
+      "date": "25.07.2021"
     },
     {
       "id": 3,
       "streetId": 3,
       "appeal": "На дороге есть перепады асфальта, нужно отремонтировать",
       "status": "Выполнено",
-      "date": "13.07.2021",
-      "rating": 7
+      "date": "13.07.2021"
     },
     {
       "id": 4,
       "streetId": 4,
       "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе.",
       "status": "выполнено",
-      "date": "11.07.2021",
-      "rating": 19
+      "date": "11.07.2021"
     },
     {
       "id": 5,
       "streetId": 5,
       "appeal": "Шикарные качели, но очень мало. Срочно добавьте.",
       "status": "выполнено",
-      "date": "09.07.2021",
-      "rating": 19
+      "date": "09.07.2021"
     },
     {
       "id": 6,
@@ -165,29 +136,13 @@
       "status": "выполнено",
       "date": "07.07.2021",
       "rating": 5
-    },
-    {
-      "appeal": "ОТличный отличия",
-      "streetId": 7,
-      "status": "Выполняется",
-      "date": "16.07.2021",
-      "id": 7
     }
   ],
-  "appraisals": [
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 2
-    }
-  ],
+  "appraisals": [],
   "ratings": [
     {
       "streetId": 1,
-      "rating": 3,
+      "rating": 2,
       "id": 1
     },
     {
@@ -197,83 +152,29 @@
     },
     {
       "streetId": 3,
-      "rating": 3,
+      "rating": 4,
       "id": 3
     },
     {
       "streetId": 4,
-      "rating": 3,
+      "rating": 1,
       "id": 4
     },
     {
       "streetId": 5,
-      "rating": 3,
+      "rating": 2,
       "id": 5
     },
     {
       "streetId": 6,
-      "rating": 3,
+      "rating": 2,
       "id": 6
-    },
+    }
+  ],
+  "defaultImg": [
     {
-      "streetId": 1,
-      "rating": 5,
-      "id": 7
-    },
-    {
-      "streetId": 1,
-      "rating": 1,
-      "id": 8
-    },
-    {
-      "streetId": 2,
-      "rating": 1,
-      "id": 9
-    },
-    {
-      "streetId": 1,
-      "rating": 5,
-      "id": 10
-    },
-    {
-      "streetId": 1,
-      "rating": 5,
-      "id": 11
-    },
-    {
-      "streetId": 1,
-      "rating": 5,
-      "id": 12
-    },
-    {
-      "streetId": 1,
-      "rating": 5,
-      "id": 13
-    },
-    {
-      "streetId": 1,
-      "rating": 1,
-      "id": 14
-    },
-    {
-      "streetId": 1,
-      "rating": 2,
-      "id": 15
-    },
-    {
-      "streetId": 7,
-      "rating": 2,
-      "id": 16
-    },
-    {
-      "streetId": 8,
-      "rating": 3,
-      "id": 17
-    },
-    {
-      "streetId": 8,
-      "rating": 1,
-      "id": 18
+      "id": 1,
+      "url": "https://www.sharonwee.com.au/wp-content/uploads/2014/03/placeholder4.png"
     }
   ]
 }

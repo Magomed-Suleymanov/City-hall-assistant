@@ -6,11 +6,12 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import MapIcon from '@material-ui/icons/Map';
 import { addMap, loadList } from '../../../redux/actions/application';
 import ReorderIcon from '@material-ui/icons/Reorder';
+import { useHistory } from 'react-router-dom';
 
 function Navigation() {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState(0);
-
+  const history = useHistory();
   return (
     <Box position="relative" left="calc(50% - 80px)">
       <Grid
@@ -29,12 +30,18 @@ function Navigation() {
           <BottomNavigationAction
             label="Карта"
             icon={<MapIcon />}
-            onClick={() => dispatch(addMap())}
+            onClick={() => {
+              dispatch(addMap());
+              history.push(`/`);
+            }}
           />
           <BottomNavigationAction
             label="Список"
             icon={<ReorderIcon />}
-            onClick={() => dispatch(loadList())}
+            onClick={() => {
+              dispatch(loadList());
+              history.push(`/list`);
+            }}
           />
         </BottomNavigation>
       </Grid>

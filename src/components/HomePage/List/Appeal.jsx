@@ -9,6 +9,7 @@ import { changeOfStatus, deleteAppeals } from '../../../redux/actions/appeals';
 import Button from '@material-ui/core/Button';
 import Appraisals from './Appraisals';
 import Grid from '@material-ui/core/Grid';
+import PropTypes from 'prop-types';
 
 const useStyle = makeStyles(() => ({
   deleteAppeal: {
@@ -101,5 +102,9 @@ function Appeal({ item }) {
     </Grid>
   );
 }
+
+Appeal.propTypes = {
+  item: PropTypes.object.isRequired,
+};
 
 export default Appeal;

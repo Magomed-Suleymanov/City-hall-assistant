@@ -107,7 +107,7 @@ function ButtonForAuth() {
 
   const handleLogout = () => {
     dispatch(authReset());
-    handleClose()
+    handleClose();
   };
 
   const open = Boolean(anchorEl);

@@ -1,5 +1,6 @@
 const initialState = {
   items: [],
+  defaultImg: [],
   loadingItems: false,
   modalListItems: [],
   loadingModalList: false,
@@ -25,28 +26,30 @@ export const application = (state = initialState, action) => {
         items: action.payload,
         listVisibility: true,
         mapVisibility: false,
+        loadingItems: false,
+      };
+
+    case 'street/delete/start':
+      return {
+        ...state,
         loadingItems: true,
       };
-
-    case 'loading/modalStreets/start':
+    case 'street/delete/success':
       return {
         ...state,
-        listModalVisibility: false,
-        loadingModalList: true,
+        loading: false,
+        items: state.items.filter((street) => street.id !== action.payload),
       };
 
-    case 'loading/modalStreets/success':
+    case 'loading/defaultImg/start':
       return {
         ...state,
-        modalListItems: action.payload,
-        listModalVisibility: true,
-        loadingModalList: false,
       };
 
-    case 'deactivation/ModalListItems':
+    case 'loading/defaultImg/success':
       return {
         ...state,
-        listModalVisibility: false,
+        defaultImg: action.payload,
       };
 
     case 'add/Map':
