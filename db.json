@@ -47,6 +47,18 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "email": "q",
+      "login": "q",
+      "password": "q",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "bBiCYrNeiPZpYkZjmJwmFH52gnkwc1hu345DPgmpeDRhwpKjhl",
+      "id": 5
     }
   ],
   "streets": [
@@ -134,8 +146,7 @@
       "streetId": 6,
       "appeal": "Всё очень красиво.",
       "status": "выполнено",
-      "date": "07.07.2021",
-      "rating": 5
+      "date": "07.07.2021"
     }
   ],
   "appraisals": [],

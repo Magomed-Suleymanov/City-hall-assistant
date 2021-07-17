@@ -16,6 +16,8 @@ import Ratings from './Ratings';
 import DeleteStreets from './DeleteStreets';
 import { loadingDefaultImg } from '../../../redux/actions/application';
 import { useHistory } from 'react-router-dom';
+import Stack from '@material-ui/core/Stack';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 const useStyle = makeStyles(() => ({
   loading: {
@@ -32,8 +34,10 @@ const useStyle = makeStyles(() => ({
     background: 'white',
     boxShadow: '0px 0px 1px rgb(0 0 0)',
     alignItems: 'center',
+    display: 'flex',
   },
   wrap: {
+    position: 'relative',
     color: 'black',
     marginTop: '40px',
     marginBottom: '50px',
@@ -50,6 +54,7 @@ function ListOfStreets() {
   const dispatch = useDispatch();
   const history = useHistory();
   const list = useSelector((state) => state.application.items);
+  const loading = useSelector((state) => state.application.loadingItems);
   const defaultImg = useSelector((state) => state.application.defaultImg);
 
   useEffect(() => {
@@ -72,7 +77,7 @@ function ListOfStreets() {
   return (
     <Box>
       <Grid container>
-        <Box className={classes.wrapList} display={'flex'}>
+        <Box className={classes.wrapList}>
           <Box className={classes.wrap}>
             {list.map((items) => {
               return (
@@ -85,40 +90,41 @@ function ListOfStreets() {
                   padding="10px 10px"
                 >
                   <Box display="flex" justifyContent="space-between">
-                    <Box marginRight={'100px'}>
-                      {items.url ? (
-                        <img
-                          style={{ borderRadius: '5px', marginLeft: '25px' }}
-                          alt="img"
-                          width="150px"
-                          src={items.url}
-                        />
-                      ) : (
-                        defaultImg.map((item) => {
-                          return (
-                            <Box key={item.id}>
-                              <img
-                                style={{
-                                  borderRadius: '5px',
-                                  marginLeft: '25px',
-                                }}
-                                width="150px"
-                                src={item.url}
-                                alt="img"
-                              />
-                            </Box>
-                          );
-                        })
-                      )}
-                    </Box>
-                    <Box width={'400px'} fontSize="20px">
-                      {items.address}
-                    </Box>
+                    <Grid container sm={6} justify={'space-between'}>
+                      <Box>
+                        {items.url ? (
+                          <img
+                            style={{ borderRadius: '5px' }}
+                            alt="img"
+                            width="150px"
+                            src={items.url}
+                          />
+                        ) : (
+                          defaultImg.map((item) => {
+                            return (
+                              <Box key={item.id}>
+                                <img
+                                  style={{
+                                    borderRadius: '5px',
+                                  }}
+                                  width="150px"
+                                  src={item.url}
+                                  alt="img"
+                                />
+                              </Box>
+                            );
+                          })
+                        )}
+                      </Box>
+                      <Box maxWidth={'350px'} minWidth={'100px'} fontSize="20px">
+                        {items.address}
+                      </Box>
+                      <Box>
+                        <Ratings key={items.id} itemStreet={items.id}/>
+                      </Box>
+                    </Grid>
                     <Box>
-                      <Ratings key={items.id} itemStreet={items.id} />
-                    </Box>
-                    <Box>
-                      <DeleteStreets key={items.id} streetId={items.id} />
+                      <DeleteStreets key={items.id} streetId={items.id}/>
                     </Box>
                   </Box>
                   <div style={{ width: '100%' }}>
@@ -134,7 +140,7 @@ function ListOfStreets() {
                           }
                           history.push(`/:id/${items.id}`);
                         }}
-                        expandIcon={<ExpandMoreIcon />}
+                        expandIcon={<ExpandMoreIcon/>}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                       >
@@ -145,7 +151,7 @@ function ListOfStreets() {
                         </Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Appeals id={items.id} />
+                        <Appeals id={items.id}/>
                       </AccordionDetails>
                     </Accordion>
                   </div>
