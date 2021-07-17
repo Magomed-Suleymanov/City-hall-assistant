@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import {Link} from "react-router-dom";
 
 
 function MyMap() {
@@ -30,7 +31,6 @@ function MyMap() {
   const handleAddCLick = (e) => {
     const [lat, long] = e.lngLat;
     dispatch(addStreet(address, long, lat));
-    newPlace(false)
   };
 
   const handleAddPopup = (e) => {
@@ -82,7 +82,7 @@ function MyMap() {
                 anchor="left"
               >
                 <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
-                  {street.address}
+                  <Link to={'/'}>{street.address}</Link>
                 </Box>
                 <Box
                   style={{
@@ -111,22 +111,23 @@ function MyMap() {
         >
           <Box>
             <TextField
+              value={address}
               onChange={(e) => setAddress(e.target.value)}
               style={{ marginBottom: '15px' }}
               id="standard-basic"
               label="Название улицы"
             />
           </Box>
-          <>
+          <Box>
             <Button
               fullWidth
               variant="contained"
               color="primary"
-              // onClick={handleAddCLick}
+              onClick={handleAddCLick}
             >
               Добавить
             </Button>
-          </>
+          </Box>
         </Popup>
       )}
     </ReactMapGL>

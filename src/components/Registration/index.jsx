@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     maxWidth: '800px',
     left: 'calc(50% - 400px)',
-    zIndex: '220',
+    zIndex: '2000',
     position: 'absolute',
     top: '10%',
     borderRadius: '5px',
@@ -94,7 +94,7 @@ export default function Registration() {
         <Box
           position="absolute"
           width="100%"
-          zIndex="170"
+          zIndex='1000'
           height="100%"
           style={{ opacity: 0.9, background: 'black' }}
         />
