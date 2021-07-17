@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
 import { loadingDefaultImg } from '../../../redux/actions/application';
+import { Link, useHistory } from 'react-router-dom';
 
 function MyMap() {
   const [viewport, setViewport] = useState({
@@ -19,6 +19,7 @@ function MyMap() {
   });
   const streets = useSelector((state) => state.streets.items);
   const defaultImg = useSelector((state) => state.application.defaultImg);
+  const loading = useSelector(state => state.streets.loading)
   const dispatch = useDispatch();
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null);
@@ -28,8 +29,14 @@ function MyMap() {
     setCurrentPlaceId(id);
   };
 
+  const closePopup = () => {
+    setNewPlace(null);
+  };
+
   const handleAddCLick = (e) => {
     dispatch(addStreet(address, newPlace.lat, newPlace.long));
+    window.location.reload();
+    closePopup();
   };
 
   const handleAddPopup = (e) => {
@@ -139,14 +146,15 @@ function MyMap() {
             />
           </Box>
           <Box>
-            <Button
-              onClick={handleAddCLick}
-              fullWidth
-              variant="contained"
-              color="primary"
-            >
-              Добавить
-            </Button>
+              <Button
+                onClick={handleAddCLick}
+                fullWidth
+                variant="contained"
+                color="primary"
+                disabled={loading}
+              >
+                Добавить
+              </Button>
           </Box>
         </Popup>
       )}
