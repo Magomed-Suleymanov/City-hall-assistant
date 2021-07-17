@@ -47,6 +47,18 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "login": "",
+      "password": "",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "XE2lCvQN1cMp4RMkldeBzJFtU2O66pjQ1PmakC7v8fizrs7RCe",
+      "id": 5
     }
   ],
   "streets": [
@@ -91,6 +103,18 @@
       "address": "ул.им.Г.А.Угрюмова",
       "latitude": 43.320839,
       "longitude": 45.682063
+    },
+    {
+      "address": "ksc  bwkjsca ",
+      "latitude": 45.672464434667894,
+      "longitude": 43.336330336577284,
+      "id": 7
+    },
+    {
+      "address": "Алтайская улица",
+      "latitude": 43.33682949701605,
+      "longitude": 45.66782957749016,
+      "id": 8
     }
   ],
   "appeals": [

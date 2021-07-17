@@ -29,8 +29,7 @@ function MyMap() {
   };
 
   const handleAddCLick = (e) => {
-    const [lat, long] = e.lngLat;
-    dispatch(addStreet(address, long, lat));
+    dispatch(addStreet(address, newPlace.lat, newPlace.long));
   };
 
   const handleAddPopup = (e) => {
@@ -120,10 +119,10 @@ function MyMap() {
           </Box>
           <Box>
             <Button
+              onClick={handleAddCLick}
               fullWidth
               variant="contained"
               color="primary"
-              onClick={handleAddCLick}
             >
               Добавить
             </Button>
