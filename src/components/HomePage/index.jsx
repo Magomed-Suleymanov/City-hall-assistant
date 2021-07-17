@@ -22,11 +22,9 @@ function HomePage() {
         ''
       )}
       <Header />
-      <Switch>
-        <Route exact path={`/map`} component={MyMap} />
-        <Route path={`/list`} component={ListOfStreets} />
-          <Redirect to='/map' />
-      </Switch>
+      <Route path="/map" component={MyMap} />
+      <Route path="/list" component={ListOfStreets} />
+      <Redirect to="/map" />
     </Box>
   );
 }

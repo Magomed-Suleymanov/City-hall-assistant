@@ -144,7 +144,56 @@
       "id": 8
     }
   ],
-  "appraisals": [],
+  "appraisals": [
+    {
+      "appealId": 1,
+      "like": "",
+      "dislike": 1,
+      "userId": 1,
+      "login": "admin",
+      "id": 1
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 1,
+      "login": "admin",
+      "id": 2
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 1,
+      "login": "admin",
+      "id": 3
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 1,
+      "login": "admin",
+      "id": 4
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 1,
+      "login": "admin",
+      "id": 5
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 1,
+      "login": "admin",
+      "id": 6
+    }
+  ],
   "ratings": [
     {
       "streetId": 1,

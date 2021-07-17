@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
-import { NavLink, Link } from 'react-router-dom';
+import {NavLink, Link, useHistory} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogin } from '../../redux/actions/auth';
 import {
@@ -65,9 +65,12 @@ function Login() {
     return setShowPassword(!showPassword);
   };
 
+  let history = useHistory()
+
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(startLogin(login, password));
+    history.push('/map')
   };
 
   return (
@@ -78,7 +81,7 @@ function Login() {
           width="100%"
           zIndex="220"
           height="100%"
-          style={{ opacity: 0.8, background: 'black' }}
+          style={{ opacity: 0.9, background: 'black' }}
         />
       </Link>
       <Container component="main" className={classes.modalAuth} maxWidth="xs">
