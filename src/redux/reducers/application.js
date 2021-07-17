@@ -2,11 +2,6 @@ const initialState = {
   items: [],
   defaultImg: [],
   loadingItems: false,
-  modalListItems: [],
-  loadingModalList: false,
-  mapVisibility: true,
-  listVisibility: false,
-  listModalVisibility: false,
   toggleBlockDashBoard: false,
   loading: false,
 };
@@ -16,7 +11,6 @@ export const application = (state = initialState, action) => {
     case 'loading/street/start':
       return {
         ...state,
-        listVisibility: false,
         loadingItems: true,
       };
 
@@ -24,8 +18,6 @@ export const application = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
-        listVisibility: true,
-        mapVisibility: false,
         loadingItems: false,
       };
 
@@ -50,13 +42,6 @@ export const application = (state = initialState, action) => {
       return {
         ...state,
         defaultImg: action.payload,
-      };
-
-    case 'add/Map':
-      return {
-        ...state,
-        listVisibility: false,
-        mapVisibility: true,
       };
 
     case 'toggle/Navigation':

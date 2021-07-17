@@ -87,11 +87,11 @@ export default function Registration() {
 
   return (
     <Box>
-      <Link to="/home">
+      <Link to="/map">
         <Box
           position="absolute"
           width="100%"
-          zIndex='1000'
+          zIndex="1000"
           height="100%"
           style={{ opacity: 0.9, background: 'black' }}
         />

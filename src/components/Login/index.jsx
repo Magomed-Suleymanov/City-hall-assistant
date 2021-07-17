@@ -56,7 +56,6 @@ function Login() {
   const dispatch = useDispatch();
   const error = useSelector((state) => state.auth.error);
   const loading = useSelector((state) => state.auth.loadingLogin)
-  const user = useSelector(state => state.auth.user)
 
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
@@ -73,7 +72,7 @@ function Login() {
 
   return (
     <Box>
-      <Link to="/home">
+      <Link to="/map">
         <Box
           position="absolute"
           width="100%"
