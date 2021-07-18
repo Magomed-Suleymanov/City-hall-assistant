@@ -52,17 +52,22 @@ function MyMap() {
 
   useEffect(() => {
     dispatch(loadStreets());
-    dispatch(loadingDefaultImg());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(loadingDefaultImg())
+  }, [dispatch])
 
   const MAP_TOKEN =
     'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w';
+  const MAP_STYLE = 'mapbox://styles/timurkaev/ckqpd1ujo2jau17nw7n786vj7';
 
   return (
     <ReactMapGL
       {...viewport}
       mapboxApiAccessToken={MAP_TOKEN}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
+      mapStyle={MAP_STYLE}
       onDblClick={handleAddPopup}
       doubleClickZoom={false}
       asyncRender={true}
