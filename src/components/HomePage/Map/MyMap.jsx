@@ -9,7 +9,7 @@ import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { loadingDefaultImg } from '../../../redux/actions/application';
 import { Link } from 'react-router-dom';
-
+import {accessToken} from "mapbox-gl";
 
 function MyMap() {
   const [viewport, setViewport] = useState({
@@ -60,8 +60,8 @@ function MyMap() {
   }, [dispatch]);
 
   const MAP_TOKEN =
-    'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w';
-  const MAP_STYLE = "mapbox://styles/timurkaev/ckr9p4x0r4hye17m5osn6e2q9";
+    'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjlxMW53cDBveWUyd3A4dnE1bnpsZGgifQ.xcTxyr6TROZra6x1TFTqTw';
+  const MAP_STYLE = 'mapbox://styles/timurkaev/ckr9p4x0r4hye17m5osn6e2q9';
 
   return (
     <ReactMapGL
