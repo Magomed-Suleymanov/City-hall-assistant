@@ -47,6 +47,18 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
+    },
+    {
+      "firstName": "фыв",
+      "lastName": "фыв",
+      "email": "фывфы",
+      "login": "в",
+      "password": "фыв",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "uzS4S0zO0Q8uDpuV2v0dxfBrJ2r6diQA33GxhEpxqxkKKAd3yg",
+      "id": 5
     }
   ],
   "streets": [
@@ -93,9 +105,9 @@
       "longitude": 45.682063
     },
     {
-      "address": "ул.Висаитова",
-      "latitude": 43.3131183540503,
-      "longitude": 45.67830092148682,
+      "address": "фывфыв",
+      "latitude": 43.331485576209076,
+      "longitude": 45.68842894272598,
       "id": 7
     }
   ],
@@ -148,56 +160,47 @@
       "status": "Выполняется",
       "date": "17.07.2021",
       "id": 8
+    },
+    {
+      "appeal": "фывфыв",
+      "streetId": 1,
+      "status": "Выполнено",
+      "date": "18.07.2021",
+      "id": 9
     }
   ],
   "appraisals": [
     {
-      "appealId": 1,
-      "like": "",
-      "dislike": 1,
-      "userId": 1,
-      "login": "admin",
+      "appealId": 9,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
       "id": 1
     },
     {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
+      "appealId": 9,
+      "like": "",
+      "dislike": 1,
+      "userId": 2,
+      "login": "admin2",
       "id": 2
     },
     {
       "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
+      "like": "",
+      "dislike": 1,
+      "userId": 2,
+      "login": "admin2",
       "id": 3
     },
     {
       "appealId": 1,
       "like": 1,
       "dislike": "",
-      "userId": 1,
-      "login": "admin",
+      "userId": 2,
+      "login": "admin2",
       "id": 4
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
-      "id": 5
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
-      "id": 6
     }
   ],
   "ratings": [
@@ -205,31 +208,6 @@
       "streetId": 1,
       "rating": 3,
       "id": 1
-    },
-    {
-      "streetId": 2,
-      "rating": 2,
-      "id": 2
-    },
-    {
-      "streetId": 3,
-      "rating": 1,
-      "id": 3
-    },
-    {
-      "streetId": 4,
-      "rating": 4,
-      "id": 4
-    },
-    {
-      "streetId": 5,
-      "rating": 5,
-      "id": 5
-    },
-    {
-      "streetId": 6,
-      "rating": 4,
-      "id": 6
     }
   ],
   "defaultImg": [
