@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import mapboxgl from "mapbox-gl";
 import { useState } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
@@ -13,8 +12,6 @@ import { Link } from 'react-router-dom';
 
 
 function MyMap() {
-  mapboxgl.accessToken = 'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w';
-
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',
