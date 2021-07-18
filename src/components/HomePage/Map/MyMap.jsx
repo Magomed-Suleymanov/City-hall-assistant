@@ -11,10 +11,10 @@ import Button from '@material-ui/core/Button';
 import { loadingDefaultImg } from '../../../redux/actions/application';
 import { Link } from 'react-router-dom';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w';
-
 
 function MyMap() {
+  mapboxgl.accessToken = 'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w';
+
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',
