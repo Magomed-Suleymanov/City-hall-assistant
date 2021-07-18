@@ -20,8 +20,8 @@ function MyMap() {
   });
   const streets = useSelector((state) => state.streets.items);
   const defaultImg = useSelector((state) => state.application.defaultImg);
-  const loading = useSelector(state => state.streets.loading)
-  const user = useSelector(state => state.auth.user)
+  const loading = useSelector((state) => state.streets.loading);
+  const user = useSelector((state) => state.auth.user);
 
   const dispatch = useDispatch();
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
@@ -55,8 +55,9 @@ function MyMap() {
     dispatch(loadingDefaultImg());
   }, [dispatch]);
 
-  const MAP_TOKEN = 'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w'
-  const MAP_STYLE = "mapbox://styles/timurkaev/ckqpd1ujo2jau17nw7n786vj7"
+  const MAP_TOKEN =
+    'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w';
+  const MAP_STYLE = 'mapbox://styles/timurkaev/ckqpd1ujo2jau17nw7n786vj7';
 
   return (
     <ReactMapGL
@@ -66,6 +67,7 @@ function MyMap() {
       mapStyle={MAP_STYLE}
       onDblClick={handleAddPopup}
       doubleClickZoom={false}
+      asyncRender={true}
     >
       {streets.map((street) => {
         return (
@@ -133,26 +135,26 @@ function MyMap() {
         );
       })}
 
-      {newPlace && (
-        user.token ?
+      {newPlace &&
+        (user.token ? (
           <Popup
-          latitude={newPlace.lat}
-          longitude={newPlace.long}
-          onClose={() => setNewPlace(null)}
-          closeButton={true}
-          closeOnClick={false}
-          anchor="left"
-        >
-          <Box>
-            <TextField
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              style={{ marginBottom: '15px' }}
-              id="standard-basic"
-              label="Название улицы"
-            />
-          </Box>
-          <Box>
+            latitude={newPlace.lat}
+            longitude={newPlace.long}
+            onClose={() => setNewPlace(null)}
+            closeButton={true}
+            closeOnClick={false}
+            anchor="left"
+          >
+            <Box>
+              <TextField
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                style={{ marginBottom: '15px' }}
+                id="standard-basic"
+                label="Название улицы"
+              />
+            </Box>
+            <Box>
               <Button
                 onClick={handleAddCLick}
                 fullWidth
@@ -162,9 +164,9 @@ function MyMap() {
               >
                 Добавить
               </Button>
-          </Box>
-        </Popup> : null
-      )}
+            </Box>
+          </Popup>
+        ) : null)}
     </ReactMapGL>
   );
 }
