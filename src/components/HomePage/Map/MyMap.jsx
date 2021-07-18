@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import RoomIcon from '@material-ui/icons/Room';
@@ -54,10 +55,12 @@ function MyMap() {
     dispatch(loadingDefaultImg());
   }, [dispatch]);
 
+  const MAP_TOKEN = 'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w'
+
   return (
     <ReactMapGL
       {...viewport}
-      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
+      mapboxApiAccessToken={MAP_TOKEN}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
       mapStyle="mapbox://styles/timurkaev/ckqpd1ujo2jau17nw7n786vj7"
       onDblClick={handleAddPopup}
