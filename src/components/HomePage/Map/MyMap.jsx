@@ -55,8 +55,8 @@ function MyMap() {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(loadingDefaultImg())
-  }, [dispatch])
+    dispatch(loadingDefaultImg());
+  }, [dispatch]);
 
   const MAP_TOKEN =
     'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w';
