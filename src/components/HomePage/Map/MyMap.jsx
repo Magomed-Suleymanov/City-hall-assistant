@@ -58,9 +58,9 @@ function MyMap() {
     dispatch(loadingDefaultImg());
   }, [dispatch]);
 
-  const MAP_TOKEN = mapboxgl.accessToken =
+  const MAP_TOKEN =
     'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjlxMW53cDBveWUyd3A4dnE1bnpsZGgifQ.xcTxyr6TROZra6x1TFTqTw';
-  const MAP_STYLE = 'mapbox://styles/timurkaev/ckr9p4x0r4hye17m5osn6e2q9';
+  const MAP_STYLE = mapboxgl.accessToken = 'mapbox://styles/timurkaev/ckr9p4x0r4hye17m5osn6e2q9';
 
   return (
     <ReactMapGL
