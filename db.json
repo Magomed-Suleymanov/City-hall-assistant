@@ -47,6 +47,18 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
+    },
+    {
+      "firstName": "Зайнаб",
+      "lastName": "Шазбанова",
+      "email": "zainab@mail.ru",
+      "login": "zainab",
+      "password": "zainab",
+      "address": null,
+      "roles": "Пользователь",
+      "avatar": null,
+      "token": "VXbjyAKWOZkMnM30BYJKlIsPbhhWxIyCIbuvLDjkVKhc7IgqPq",
+      "id": 5
     }
   ],
   "streets": [
