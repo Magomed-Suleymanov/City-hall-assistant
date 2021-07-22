@@ -18,6 +18,7 @@ function MyMap() {
     zoom: 12,
   });
   const streets = useSelector((state) => state.streets.items);
+  const list = useSelector((state) => state.application.items);
   const defaultImg = useSelector((state) => state.application.defaultImg);
   const loading = useSelector((state) => state.streets.loading);
   const user = useSelector((state) => state.auth.user);
@@ -99,7 +100,7 @@ function MyMap() {
                 anchor="left"
               >
                 <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
-                  <Link to={'/list'}>
+                  <Link to={`/list/id/`}>
                     <Box width="250px">{street.address}</Box>
                   </Link>
                 </Box>

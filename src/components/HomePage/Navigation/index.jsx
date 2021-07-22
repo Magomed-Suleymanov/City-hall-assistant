@@ -4,11 +4,9 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import MapIcon from '@material-ui/icons/Map';
 import ReorderIcon from '@material-ui/icons/Reorder';
-import { useHistory } from 'react-router-dom';
+import {NavLink, useHistory} from 'react-router-dom';
 
 function Navigation() {
-  const [value, setValue] = React.useState(0);
-  const history = useHistory();
   return (
     <Box position="relative" left="calc(50% - 80px)">
       <Grid
@@ -16,29 +14,17 @@ function Navigation() {
         direction="row"
         justify="space-between"
         alignItems="center"
-      >
-        <BottomNavigation
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-          showLabels
         >
           <BottomNavigationAction
             label="Карта"
             icon={<MapIcon />}
-            onClick={() => {
-              history.push(`/map`);
-            }}
+            component={NavLink} activeStyle={{color: '#1976d2'}} to='/map'
           />
           <BottomNavigationAction
             label="Список"
             icon={<ReorderIcon />}
-            onClick={() => {
-              history.push(`/list`);
-            }}
+            component={NavLink} activeStyle={{color: '#1976d2'}} to='/list'
           />
-        </BottomNavigation>
       </Grid>
     </Box>
   );

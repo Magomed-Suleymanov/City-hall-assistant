@@ -60,6 +60,7 @@ function Appraisals({ item }) {
   };
 
   return (
+      user.token ?
     <Box width="100px" display="flex" justifyContent="space-between">
       <Box
         onClick={() => setActiveLike(!activeLike)}
@@ -79,7 +80,7 @@ function Appraisals({ item }) {
         <Box marginRight="5px">{sumDislike}</Box>
         <ThumbDownIcon cursor="pointer" onClick={handleAddDisLike} />
       </Box>
-    </Box>
+    </Box> : null
   );
 }
 Appraisals.propTypes = {
