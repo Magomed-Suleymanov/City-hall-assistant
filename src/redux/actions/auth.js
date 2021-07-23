@@ -1,4 +1,4 @@
-export const startLogin = (login, password) => {
+export const startLogin = (login, password, history) => {
   return (dispatch) => {
     dispatch({ type: 'auth/login/start' });
 
@@ -16,6 +16,7 @@ export const startLogin = (login, password) => {
           dispatch({ type: 'auth/login/error' });
         } else {
           localStorage.setItem('user', JSON.stringify(json));
+          history.push('/')
           dispatch({
             type: 'auth/login/success',
             payload: json,
@@ -43,6 +44,7 @@ export const startRegistration = (
   email,
   login,
   password,
+  history
 ) => {
   return (dispatch) => {
     dispatch({
@@ -62,6 +64,7 @@ export const startRegistration = (
     })
       .then((res) => res.json())
       .then((json) => {
+        history.push('/')
         dispatch({
           type: 'Registration/success',
           payload: json,

@@ -21,7 +21,7 @@ function HomePage() {
       ) : ( ''
       )}
       <Header />
-        <Route exact path="/map" component={MyMap} />
+        <Route exact path="/" component={MyMap} />
         <Route path="/list" component={ListOfStreets} />
     </Box>
   );

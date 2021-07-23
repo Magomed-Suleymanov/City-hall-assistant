@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
-import { NavLink, Link, useHistory } from 'react-router-dom';
+import {NavLink, Link, useHistory} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogin } from '../../redux/actions/auth';
 import {
@@ -55,8 +55,7 @@ function Login() {
 
   const dispatch = useDispatch();
   const error = useSelector((state) => state.auth.error);
-  const loading = useSelector((state) => state.auth.loadingLogin);
-
+  const loading = useSelector((state) => state.auth.loadingLogin)
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -65,17 +64,16 @@ function Login() {
     return setShowPassword(!showPassword);
   };
 
-  let history = useHistory();
+  let history = useHistory()
 
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(startLogin(login, password));
-    history.push('/map');
+    dispatch(startLogin(login, password, history));
   };
 
   return (
     <Box>
-      <Link to="/map">
+      <Link to="/">
         <Box
           position="absolute"
           width="100%"

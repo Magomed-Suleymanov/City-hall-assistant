@@ -17,7 +17,7 @@ function Navigation() {
           <BottomNavigationAction
             label="Карта"
             icon={<MapIcon />}
-            component={NavLink} activeStyle={{color: '#1976d2'}} to='/map'
+            component={NavLink} activeStyle={{color: '#1976d2'}} to='/'
           />
           <BottomNavigationAction
             label="Список"

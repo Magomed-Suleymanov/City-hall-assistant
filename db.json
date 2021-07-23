@@ -49,15 +49,15 @@
       "id": 4
     },
     {
-      "firstName": "asdasd",
-      "lastName": "a",
-      "email": "a",
-      "login": "a",
-      "password": "a",
+      "firstName": "e",
+      "lastName": "e",
+      "email": "e",
+      "login": "e",
+      "password": "e",
       "address": null,
       "roles": "Пользователь",
       "avatar": null,
-      "token": "MwCcUuxp4pr7ibZRLwJWk1Bn52MQLnasuhH0ESRBMIGFzQMjT9",
+      "token": "uRlWr1ibYsD8ANV2oHMb5nIUT2Byb4SRaU4eYGgZlt6w74j8Jl",
       "id": 5
     }
   ],
@@ -103,12 +103,6 @@
       "address": "ул.им.Г.А.Угрюмова",
       "latitude": 43.320839,
       "longitude": 45.682063
-    },
-    {
-      "address": "as",
-      "latitude": 43.31824836344076,
-      "longitude": 45.698041979835054,
-      "id": 7
     }
   ],
   "appeals": [
@@ -155,96 +149,7 @@
       "date": "07.07.2021"
     }
   ],
-  "appraisals": [
-    {
-      "appealId": 1,
-      "like": "",
-      "dislike": 1,
-      "userId": 2,
-      "login": "admin2",
-      "id": 3
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 4
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 5
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 6
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 7
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 8
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 9
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 10
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 11
-    },
-    {
-      "appealId": 6,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 12
-    },
-    {
-      "appealId": 6,
-      "like": "",
-      "dislike": 1,
-      "userId": 2,
-      "login": "admin2",
-      "id": 13
-    }
-  ],
+  "appraisals": [],
   "ratings": [
     {
       "streetId": 1,

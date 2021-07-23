@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import { loadingDefaultImg } from '../../../redux/actions/application';
-import { Link } from 'react-router-dom';
+import {loadingDefaultImg, loadList} from '../../../redux/actions/application';
+import { Link, useParams } from 'react-router-dom';
 
 function MyMap() {
   const [viewport, setViewport] = useState({
@@ -52,6 +52,7 @@ function MyMap() {
 
   useEffect(() => {
     dispatch(loadStreets());
+    dispatch(loadList())
   }, [dispatch]);
 
   useEffect(() => {
@@ -61,7 +62,6 @@ function MyMap() {
   const MAP_TOKEN =
     'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjlxMW53cDBveWUyd3A4dnE1bnpsZGgifQ.xcTxyr6TROZra6x1TFTqTw';
   const MAP_STYLE = 'mapbox://styles/timurkaev/ckr9p4x0r4hye17m5osn6e2q9';
-
 
   return (
     <ReactMapGL
@@ -101,7 +101,7 @@ function MyMap() {
                 anchor="left"
               >
                 <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
-                  <Link to={`/list/id/${street.id}`}>
+                  <Link to={`/list/id/${parseInt(street.id)}`}>
                     <Box width="250px">{street.address}</Box>
                   </Link>
                 </Box>

@@ -19,6 +19,8 @@ import {
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
 import { loadingRatings } from '../../../redux/actions/rating';
 import { useHistory } from 'react-router-dom';
+import {streets} from "../../../redux/reducers/streets";
+import {loadStreets} from "../../../redux/actions/streets";
 
 const useStyle = makeStyles(() => ({
   loading: {
@@ -54,6 +56,7 @@ const useStyle = makeStyles(() => ({
 function ListOfStreets() {
   const list = useSelector((state) => state.application.items);
   const defaultImg = useSelector((state) => state.application.defaultImg);
+  const streets = useSelector(state => state.streets.items.map(item => item.id))
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -63,17 +66,16 @@ function ListOfStreets() {
     dispatch(loadingRatings());
     dispatch(loadingDefaultImg());
     dispatch(loadList());
+    dispatch(loadStreets());
   }, [dispatch]);
-
-  const [id, setId] = useState(false);
 
   const classes = useStyle();
 
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
+    setExpanded(isExpanded ? panel : true);
+    };
 
   return (
     <Box>
@@ -135,7 +137,6 @@ function ListOfStreets() {
                   <div style={{ width: '100%' }}>
                     <Accordion
                       onClick={() => {
-                        setId(!id);
                         history.push(`/list/id/${items.id}`);
                       }}
                       expanded={expanded === items.id}
