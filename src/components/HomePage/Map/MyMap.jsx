@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import ReactMapGL, {GeolocateControl, Marker, NavigationControl, Popup, ScaleControl} from 'react-map-gl';
 import RoomIcon from '@material-ui/icons/Room';
 import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/streets';
@@ -19,6 +18,7 @@ function MyMap() {
     zoom: 12,
   });
   const streets = useSelector((state) => state.streets.items);
+  const list = useSelector((state) => state.application.items);
   const defaultImg = useSelector((state) => state.application.defaultImg);
   const loading = useSelector((state) => state.streets.loading);
   const user = useSelector((state) => state.auth.user);
@@ -59,8 +59,9 @@ function MyMap() {
   }, [dispatch]);
 
   const MAP_TOKEN =
-    'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjF6c2s2NTBreWEycnFteGh2N3pzOHAifQ.MoYhP45E9CemdOQ7jovs_w';
-  const MAP_STYLE = 'mapbox://styles/timurkaev/ckr9nax923tai17no5dtj97zi';
+    'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjlxMW53cDBveWUyd3A4dnE1bnpsZGgifQ.xcTxyr6TROZra6x1TFTqTw';
+  const MAP_STYLE = 'mapbox://styles/timurkaev/ckr9p4x0r4hye17m5osn6e2q9';
+
 
   return (
     <ReactMapGL
@@ -100,7 +101,7 @@ function MyMap() {
                 anchor="left"
               >
                 <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
-                  <Link to={'/list'}>
+                  <Link to={`/list/id/${street.id}`}>
                     <Box width="250px">{street.address}</Box>
                   </Link>
                 </Box>
@@ -139,37 +140,37 @@ function MyMap() {
       })}
 
       {newPlace &&
-        (user.token ? (
-          <Popup
-            latitude={newPlace.lat}
-            longitude={newPlace.long}
-            onClose={() => setNewPlace(null)}
-            closeButton={true}
-            closeOnClick={false}
-            anchor="left"
-          >
-            <Box>
-              <TextField
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                style={{ marginBottom: '15px' }}
-                id="standard-basic"
-                label="Название улицы"
-              />
-            </Box>
-            <Box>
-              <Button
-                onClick={handleAddCLick}
-                fullWidth
-                variant="contained"
-                color="primary"
-                disabled={loading}
-              >
-                Добавить
-              </Button>
-            </Box>
-          </Popup>
-        ) : null)}
+      (user.token ? (
+        <Popup
+          latitude={newPlace.lat}
+          longitude={newPlace.long}
+          onClose={() => setNewPlace(null)}
+          closeButton={true}
+          closeOnClick={false}
+          anchor="left"
+        >
+          <Box>
+            <TextField
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              style={{ marginBottom: '15px' }}
+              id="standard-basic"
+              label="Название улицы"
+            />
+          </Box>
+          <Box>
+            <Button
+              onClick={handleAddCLick}
+              fullWidth
+              variant="contained"
+              color="primary"
+              disabled={loading}
+            >
+              Добавить
+            </Button>
+          </Box>
+        </Popup>
+      ) : null)}
     </ReactMapGL>
   );
 }

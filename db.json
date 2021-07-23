@@ -49,15 +49,15 @@
       "id": 4
     },
     {
-      "firstName": "фыв",
-      "lastName": "фыв",
-      "email": "фывфы",
-      "login": "в",
-      "password": "фыв",
+      "firstName": "asdasd",
+      "lastName": "a",
+      "email": "a",
+      "login": "a",
+      "password": "a",
       "address": null,
       "roles": "Пользователь",
       "avatar": null,
-      "token": "uzS4S0zO0Q8uDpuV2v0dxfBrJ2r6diQA33GxhEpxqxkKKAd3yg",
+      "token": "MwCcUuxp4pr7ibZRLwJWk1Bn52MQLnasuhH0ESRBMIGFzQMjT9",
       "id": 5
     }
   ],
@@ -105,9 +105,9 @@
       "longitude": 45.682063
     },
     {
-      "address": "фывфыв",
-      "latitude": 43.331485576209076,
-      "longitude": 45.68842894272598,
+      "address": "as",
+      "latitude": 43.31824836344076,
+      "longitude": 45.698041979835054,
       "id": 7
     }
   ],
@@ -153,39 +153,9 @@
       "appeal": "Всё очень красиво.",
       "status": "выполнено",
       "date": "07.07.2021"
-    },
-    {
-      "appeal": "asd",
-      "streetId": 5,
-      "status": "Выполняется",
-      "date": "17.07.2021",
-      "id": 8
-    },
-    {
-      "appeal": "фывфыв",
-      "streetId": 1,
-      "status": "Выполнено",
-      "date": "18.07.2021",
-      "id": 9
     }
   ],
   "appraisals": [
-    {
-      "appealId": 9,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 1
-    },
-    {
-      "appealId": 9,
-      "like": "",
-      "dislike": 1,
-      "userId": 2,
-      "login": "admin2",
-      "id": 2
-    },
     {
       "appealId": 1,
       "like": "",
@@ -201,6 +171,78 @@
       "userId": 2,
       "login": "admin2",
       "id": 4
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 5
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 6
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 7
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 8
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 9
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 10
+    },
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 11
+    },
+    {
+      "appealId": 6,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 12
+    },
+    {
+      "appealId": 6,
+      "like": "",
+      "dislike": 1,
+      "userId": 2,
+      "login": "admin2",
+      "id": 13
     }
   ],
   "ratings": [
@@ -208,6 +250,31 @@
       "streetId": 1,
       "rating": 3,
       "id": 1
+    },
+    {
+      "streetId": 2,
+      "rating": 2,
+      "id": 2
+    },
+    {
+      "streetId": 3,
+      "rating": 1,
+      "id": 3
+    },
+    {
+      "streetId": 4,
+      "rating": 5,
+      "id": 4
+    },
+    {
+      "streetId": 5,
+      "rating": 1,
+      "id": 5
+    },
+    {
+      "streetId": 6,
+      "rating": 3,
+      "id": 6
     }
   ],
   "defaultImg": [
