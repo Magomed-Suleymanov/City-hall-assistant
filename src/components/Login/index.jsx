@@ -56,7 +56,7 @@ function Login() {
   const dispatch = useDispatch();
   const error = useSelector((state) => state.auth.error);
   const loading = useSelector((state) => state.auth.loadingLogin)
-
+  const auth = useSelector(state => state.auth.auth)
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -69,13 +69,12 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(startLogin(login, password));
-    history.push('/map')
+    dispatch(startLogin(login, password, history));
   };
 
   return (
     <Box>
-      <Link to="/map">
+      <Link to="/">
         <Box
           position="absolute"
           width="100%"

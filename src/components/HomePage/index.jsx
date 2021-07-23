@@ -3,7 +3,7 @@ import MyMap from './Map/MyMap';
 import ListOfStreets from './List/ListOfStreets';
 import { useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Login from '../Login';
 import Registration from '../Registration';
 import Header from './Navigation/Header';
@@ -21,7 +21,7 @@ function HomePage() {
       ) : ( ''
       )}
       <Header />
-        <Route exact path="/map" component={MyMap} />
+        <Route exact path="/" component={MyMap} />
         <Route path="/list" component={ListOfStreets} />
     </Box>
   );

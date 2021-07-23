@@ -1,6 +1,7 @@
 const initialState = {
   user: JSON.parse(localStorage.getItem('user')) || {},
   loadingUsers: false,
+  auth: false,
   loadingLogin: false,
   loadingRegistration: false,
   error: false,
@@ -13,18 +14,21 @@ export const auth = (state = initialState, action) => {
         ...state,
         loadingLogin: true,
         error: false,
+        auth: false,
       };
     case 'auth/login/success':
       return {
         ...state,
         user: action.payload,
         loadingLogin: false,
+        auth: true,
       };
     case 'auth/login/error':
       return {
         ...state,
         error: true,
         loadingLogin: false,
+        auth: false,
       };
     case 'auth/reset':
       return {
