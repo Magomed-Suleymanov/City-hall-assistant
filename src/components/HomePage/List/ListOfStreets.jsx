@@ -69,8 +69,6 @@ function ListOfStreets() {
     dispatch(loadStreets());
   }, [dispatch]);
 
-
-
   const classes = useStyle();
 
   return (
