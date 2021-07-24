@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,8 +9,6 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Appeals from './Appeals';
-import Ratings from './Ratings';
-import DeleteStreets from './DeleteStreets';
 import { loadingAppeals } from '../../../redux/actions/appeals';
 import {
   loadingDefaultImg,
@@ -18,17 +16,11 @@ import {
 } from '../../../redux/actions/application';
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
 import { loadingRatings } from '../../../redux/actions/rating';
-import { useHistory } from 'react-router-dom';
-import {streets} from "../../../redux/reducers/streets";
-import {loadStreets} from "../../../redux/actions/streets";
+import { useHistory, useParams } from 'react-router-dom';
+import { loadStreets } from '../../../redux/actions/streets';
+import InfoStreets from './InfoStreets';
 
 const useStyle = makeStyles(() => ({
-  loading: {
-    position: 'absolute',
-    left: 'calc(50% - 60px)',
-    color: 'red',
-    top: '40%',
-  },
   wrapList: {
     position: 'relative',
     margin: 'auto',
@@ -55,8 +47,8 @@ const useStyle = makeStyles(() => ({
 
 function ListOfStreets() {
   const list = useSelector((state) => state.application.items);
-  const defaultImg = useSelector((state) => state.application.defaultImg);
-  const streets = useSelector(state => state.streets.items.map(item => item.id))
+
+  const { id } = useParams();
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -70,12 +62,6 @@ function ListOfStreets() {
   }, [dispatch]);
 
   const classes = useStyle();
-
-  const [expanded, setExpanded] = useState(false);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : true);
-    };
 
   return (
     <Box>
@@ -92,55 +78,13 @@ function ListOfStreets() {
                   justifyContent="space-around"
                   padding="10px 10px"
                 >
-                  <Box display="flex" justifyContent="space-between">
-                    <Grid container md={7} item justify={'space-between'}>
-                      <Box>
-                        {items.url ? (
-                          <img
-                            style={{ borderRadius: '5px' }}
-                            alt="img"
-                            width="150px"
-                            src={items.url}
-                          />
-                        ) : (
-                          defaultImg.map((item) => {
-                            return (
-                              <Box key={item.id}>
-                                <img
-                                  style={{
-                                    borderRadius: '5px',
-                                  }}
-                                  width="150px"
-                                  src={item.url}
-                                  alt="img"
-                                />
-                              </Box>
-                            );
-                          })
-                        )}
-                      </Box>
-                      <Box
-                        maxWidth={'350px'}
-                        minWidth={'100px'}
-                        fontSize="20px"
-                      >
-                        {items.address}
-                      </Box>
-                      <Box>
-                        <Ratings key={items.id} itemStreet={items.id} />
-                      </Box>
-                    </Grid>
-                    <Box>
-                      <DeleteStreets key={items.id} streetId={items.id} />
-                    </Box>
-                  </Box>
-                  <div style={{ width: '100%' }}>
+                  <InfoStreets items={items} />
+                  <Box style={{ width: '100%' }}>
                     <Accordion
                       onClick={() => {
-                        history.push(`/list/id/${items.id}`);
+                        history.push(`/list/${items.id}`);
                       }}
-                      expanded={expanded === items.id}
-                      onChange={handleChange(items.id)}
+                      expanded={parseInt(id) === parseInt(items.id)}
                     >
                       <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -157,7 +101,7 @@ function ListOfStreets() {
                         <Appeals id={items.id} />
                       </AccordionDetails>
                     </Accordion>
-                  </div>
+                  </Box>
                 </Box>
               );
             })}

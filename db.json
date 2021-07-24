@@ -47,18 +47,6 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
-    },
-    {
-      "firstName": "e",
-      "lastName": "e",
-      "email": "e",
-      "login": "e",
-      "password": "e",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "uRlWr1ibYsD8ANV2oHMb5nIUT2Byb4SRaU4eYGgZlt6w74j8Jl",
-      "id": 5
     }
   ],
   "streets": [
@@ -153,7 +141,7 @@
   "ratings": [
     {
       "streetId": 1,
-      "rating": 3,
+      "rating": 1,
       "id": 1
     },
     {
@@ -163,22 +151,22 @@
     },
     {
       "streetId": 3,
-      "rating": 1,
+      "rating": 3,
       "id": 3
     },
     {
       "streetId": 4,
-      "rating": 5,
+      "rating": 4,
       "id": 4
     },
     {
       "streetId": 5,
-      "rating": 1,
+      "rating": 5,
       "id": 5
     },
     {
       "streetId": 6,
-      "rating": 3,
+      "rating": 4,
       "id": 6
     }
   ],

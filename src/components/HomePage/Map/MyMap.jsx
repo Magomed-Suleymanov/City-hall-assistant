@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import ReactMapGL, {GeolocateControl, Marker, NavigationControl, Popup, ScaleControl} from 'react-map-gl';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import RoomIcon from '@material-ui/icons/Room';
 import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import {loadingDefaultImg, loadList} from '../../../redux/actions/application';
-import { Link, useParams } from 'react-router-dom';
+import {
+  loadingDefaultImg,
+  loadList,
+} from '../../../redux/actions/application';
+import { Link } from 'react-router-dom';
 
 function MyMap() {
   const [viewport, setViewport] = useState({
@@ -18,7 +21,6 @@ function MyMap() {
     zoom: 12,
   });
   const streets = useSelector((state) => state.streets.items);
-  const list = useSelector((state) => state.application.items);
   const defaultImg = useSelector((state) => state.application.defaultImg);
   const loading = useSelector((state) => state.streets.loading);
   const user = useSelector((state) => state.auth.user);
@@ -52,7 +54,7 @@ function MyMap() {
 
   useEffect(() => {
     dispatch(loadStreets());
-    dispatch(loadList())
+    dispatch(loadList());
   }, [dispatch]);
 
   useEffect(() => {
@@ -101,7 +103,7 @@ function MyMap() {
                 anchor="left"
               >
                 <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
-                  <Link to={`/list/id/${parseInt(street.id)}`}>
+                  <Link to={`/list/${parseInt(street.id)}`}>
                     <Box width="250px">{street.address}</Box>
                   </Link>
                 </Box>
@@ -140,37 +142,37 @@ function MyMap() {
       })}
 
       {newPlace &&
-      (user.token ? (
-        <Popup
-          latitude={newPlace.lat}
-          longitude={newPlace.long}
-          onClose={() => setNewPlace(null)}
-          closeButton={true}
-          closeOnClick={false}
-          anchor="left"
-        >
-          <Box>
-            <TextField
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              style={{ marginBottom: '15px' }}
-              id="standard-basic"
-              label="Название улицы"
-            />
-          </Box>
-          <Box>
-            <Button
-              onClick={handleAddCLick}
-              fullWidth
-              variant="contained"
-              color="primary"
-              disabled={loading}
-            >
-              Добавить
-            </Button>
-          </Box>
-        </Popup>
-      ) : null)}
+        (user.token ? (
+          <Popup
+            latitude={newPlace.lat}
+            longitude={newPlace.long}
+            onClose={() => setNewPlace(null)}
+            closeButton={true}
+            closeOnClick={false}
+            anchor="left"
+          >
+            <Box>
+              <TextField
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                style={{ marginBottom: '15px' }}
+                id="standard-basic"
+                label="Название улицы"
+              />
+            </Box>
+            <Box>
+              <Button
+                onClick={handleAddCLick}
+                fullWidth
+                variant="contained"
+                color="primary"
+                disabled={loading}
+              >
+                Добавить
+              </Button>
+            </Box>
+          </Popup>
+        ) : null)}
     </ReactMapGL>
   );
 }

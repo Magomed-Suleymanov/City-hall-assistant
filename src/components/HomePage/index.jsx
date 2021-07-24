@@ -18,11 +18,12 @@ function HomePage() {
           <Route exact path="/auth" component={Login} />
           <Route path="/registration" component={Registration} />
         </Switch>
-      ) : ( ''
-      )}
+      ) : null}
       <Header />
+      <Switch>
         <Route exact path="/" component={MyMap} />
-        <Route path="/list" component={ListOfStreets} />
+        <Route path="/list/:id" component={ListOfStreets} />
+      </Switch>
     </Box>
   );
 }
