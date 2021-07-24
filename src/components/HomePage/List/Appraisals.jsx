@@ -59,8 +59,7 @@ function Appraisals({ item }) {
     dispatch(addLike(item.id, like, dislike, user.id, user.login));
   };
 
-  return (
-      user.token ?
+  return user.token ? (
     <Box width="100px" display="flex" justifyContent="space-between">
       <Box
         onClick={() => setActiveLike(!activeLike)}
@@ -80,8 +79,8 @@ function Appraisals({ item }) {
         <Box marginRight="5px">{sumDislike}</Box>
         <ThumbDownIcon cursor="pointer" onClick={handleAddDisLike} />
       </Box>
-    </Box> : null
-  );
+    </Box>
+  ) : null;
 }
 Appraisals.propTypes = {
   item: PropTypes.object.isRequired,

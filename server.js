@@ -5,8 +5,6 @@ const middlewares = jsonServer.defaults({
   static: './build',
 });
 const users = router.db.get('users');
-const appeals = router.db.get('appeals');
-const streets = router.db.get('streets');
 
 server.use(jsonServer.bodyParser);
 server.use(middlewares);
@@ -38,7 +36,7 @@ server.post('/auth', (req, res) => {
     .toJSON()
     .find((user) => user.login === login && user.password === password);
   if (authUser) {
-    const { id, login, token, email, firstName, roles, address, lastName, password } = authUser;
+    const { id, login, token, email, firstName, roles, address, lastName } = authUser;
     res.json({ id, login, token, email, firstName, address, lastName, roles, password: null });
   } else {
     res.status(401).json({ message: 'Ошибка авторизации' });

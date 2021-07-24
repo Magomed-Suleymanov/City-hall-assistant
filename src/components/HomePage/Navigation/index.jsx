@@ -26,7 +26,7 @@ function Navigation() {
           icon={<ReorderIcon />}
           component={NavLink}
           activeStyle={{ color: '#1976d2' }}
-          to="/list"
+          to="/list/:id"
         />
       </Grid>
     </Box>

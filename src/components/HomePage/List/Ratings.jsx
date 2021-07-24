@@ -4,20 +4,20 @@ import { addRating } from '../../../redux/actions/rating';
 import Rating from 'react-rating';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyle = makeStyles(() => ({
-    defaultColor: {
-        color: 'lightgray'
-    },
+  defaultColor: {
+    color: 'lightgray',
+  },
 
-    activeColor: {
-        color: '#fcf137'
-    }
-}))
+  activeColor: {
+    color: '#fcf137',
+  },
+}));
 
 function Ratings({ itemStreet }) {
-  const classes = useStyle()
+  const classes = useStyle();
   const dispatch = useDispatch();
   const ratings = useSelector((state) => {
     const items = state.rating.rating.filter(
@@ -39,8 +39,8 @@ function Ratings({ itemStreet }) {
     <Box>
       <Rating
         initialRating={fixed}
-        emptySymbol={classes.defaultColor}
-        fullSymbol={'fa fa-star activeColor'}
+        emptySymbol={`fa fa-star ${classes.defaultColor}`}
+        fullSymbol={`fa fa-star ${classes.activeColor}`}
         onClick={handleAddRating}
       />
       <p>{ratings ? fixed : 0}</p>

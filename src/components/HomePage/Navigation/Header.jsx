@@ -32,7 +32,7 @@ function Header() {
         <AppBar
           style={{ zIndex: 0 }}
           position="static"
-          color="#fff"
+          color="inherit"
           variant="outlined"
         >
           <Toolbar className={classes.navbar}>

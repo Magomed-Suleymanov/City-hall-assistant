@@ -47,18 +47,6 @@
       "avatar": null,
       "token": "c1HPYyB4wTDq5iXHkEMCnhIwiozV4cxg6QFzy0PoHMvpzMm85w",
       "id": 4
-    },
-    {
-      "firstName": "Зайнаб",
-      "lastName": "Шазбанова",
-      "email": "zainab@mail.ru",
-      "login": "zainab",
-      "password": "zainab",
-      "address": null,
-      "roles": "Пользователь",
-      "avatar": null,
-      "token": "VXbjyAKWOZkMnM30BYJKlIsPbhhWxIyCIbuvLDjkVKhc7IgqPq",
-      "id": 5
     }
   ],
   "streets": [
@@ -147,69 +135,13 @@
       "appeal": "Всё очень красиво.",
       "status": "выполнено",
       "date": "07.07.2021"
-    },
-    {
-      "appeal": "asd",
-      "streetId": 5,
-      "status": "Выполняется",
-      "date": "17.07.2021",
-      "id": 8
     }
   ],
-  "appraisals": [
-    {
-      "appealId": 1,
-      "like": "",
-      "dislike": 1,
-      "userId": 1,
-      "login": "admin",
-      "id": 1
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
-      "id": 2
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
-      "id": 3
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
-      "id": 4
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
-      "id": 5
-    },
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 1,
-      "login": "admin",
-      "id": 6
-    }
-  ],
+  "appraisals": [],
   "ratings": [
     {
       "streetId": 1,
-      "rating": 3,
+      "rating": 1,
       "id": 1
     },
     {
@@ -219,7 +151,7 @@
     },
     {
       "streetId": 3,
-      "rating": 1,
+      "rating": 3,
       "id": 3
     },
     {
