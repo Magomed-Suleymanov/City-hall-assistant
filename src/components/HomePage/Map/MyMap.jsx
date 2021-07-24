@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import ReactMapGL, {GeolocateControl, Marker, NavigationControl, Popup, ScaleControl} from 'react-map-gl';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import RoomIcon from '@material-ui/icons/Room';
 import { useDispatch, useSelector } from 'react-redux';
 import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import {loadingDefaultImg, loadList} from '../../../redux/actions/application';
-import { Link, useParams } from 'react-router-dom';
+import {
+  loadingDefaultImg,
+  loadList,
+} from '../../../redux/actions/application';
+import { Link } from 'react-router-dom';
 
 function MyMap() {
   const [viewport, setViewport] = useState({
@@ -18,7 +21,6 @@ function MyMap() {
     zoom: 12,
   });
   const streets = useSelector((state) => state.streets.items);
-  const list = useSelector((state) => state.application.items);
   const defaultImg = useSelector((state) => state.application.defaultImg);
   const loading = useSelector((state) => state.streets.loading);
   const user = useSelector((state) => state.auth.user);
@@ -52,7 +54,7 @@ function MyMap() {
 
   useEffect(() => {
     dispatch(loadStreets());
-    dispatch(loadList())
+    dispatch(loadList());
   }, [dispatch]);
 
   useEffect(() => {
