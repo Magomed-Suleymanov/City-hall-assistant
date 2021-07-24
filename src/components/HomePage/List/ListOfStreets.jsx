@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,8 +18,7 @@ import {
 } from '../../../redux/actions/application';
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
 import { loadingRatings } from '../../../redux/actions/rating';
-import { useHistory } from 'react-router-dom';
-import {streets} from "../../../redux/reducers/streets";
+import { useHistory, useParams } from 'react-router-dom';
 import {loadStreets} from "../../../redux/actions/streets";
 
 const useStyle = makeStyles(() => ({
@@ -56,7 +55,8 @@ const useStyle = makeStyles(() => ({
 function ListOfStreets() {
   const list = useSelector((state) => state.application.items);
   const defaultImg = useSelector((state) => state.application.defaultImg);
-  const streets = useSelector(state => state.streets.items)
+
+  const {id} = useParams();
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -72,12 +72,6 @@ function ListOfStreets() {
 
 
   const classes = useStyle();
-
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-      setExpanded(isExpanded ? panel : false);
-    };
 
   return (
     <Box>
@@ -139,10 +133,9 @@ function ListOfStreets() {
                   <div style={{ width: '100%' }}>
                     <Accordion
                       onClick={() => {
-                        history.push(`/list/id/${items.id}`);
+                        history.push(`/list/${items.id}`);
                       }}
-                      expanded={expanded}
-                      onChange={handleChange(items.id)}
+                      expanded={parseInt(id) === parseInt(items.id)}
                     >
                       <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}

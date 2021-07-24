@@ -101,7 +101,7 @@ function MyMap() {
                 anchor="left"
               >
                 <Box style={{ marginBottom: '10px', fontSize: '20px' }}>
-                  <Link to={`/list/id/${parseInt(street.id)}`}>
+                  <Link to={`/list/${parseInt(street.id)}`}>
                     <Box width="250px">{street.address}</Box>
                   </Link>
                 </Box>

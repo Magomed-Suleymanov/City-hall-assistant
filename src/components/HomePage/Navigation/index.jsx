@@ -1,10 +1,9 @@
 import React from 'react';
 import { Box, Grid } from '@material-ui/core';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import MapIcon from '@material-ui/icons/Map';
 import ReorderIcon from '@material-ui/icons/Reorder';
-import {NavLink, useHistory} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Navigation() {
   return (
@@ -14,17 +13,21 @@ function Navigation() {
         direction="row"
         justify="space-between"
         alignItems="center"
-        >
-          <BottomNavigationAction
-            label="Карта"
-            icon={<MapIcon />}
-            component={NavLink} activeStyle={{color: '#1976d2'}} to='/'
-          />
-          <BottomNavigationAction
-            label="Список"
-            icon={<ReorderIcon />}
-            component={NavLink} activeStyle={{color: '#1976d2'}} to='/list'
-          />
+      >
+        <BottomNavigationAction
+          label="Карта"
+          icon={<MapIcon />}
+          component={NavLink}
+          activeStyle={{ color: '#1976d2' }}
+          to="/"
+        />
+        <BottomNavigationAction
+          label="Список"
+          icon={<ReorderIcon />}
+          component={NavLink}
+          activeStyle={{ color: '#1976d2' }}
+          to="/list"
+        />
       </Grid>
     </Box>
   );
