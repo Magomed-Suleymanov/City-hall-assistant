@@ -206,7 +206,7 @@ export default function Registration() {
             Зарегистрироваться
           </Button>
 
-          <NavLink to="/auth/login" variant="body2">
+          <NavLink to="/auth" variant="body2">
             У вас уже есть аккаунт? Войдите в него
           </NavLink>
         </form>

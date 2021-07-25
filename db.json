@@ -207,6 +207,16 @@
       "streetId": 1,
       "rating": 1,
       "id": 12
+    },
+    {
+      "streetId": 1,
+      "rating": 4,
+      "id": 13
+    },
+    {
+      "streetId": 1,
+      "rating": 1,
+      "id": 14
     }
   ],
   "defaultImg": [
