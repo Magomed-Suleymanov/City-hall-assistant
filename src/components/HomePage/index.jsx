@@ -13,12 +13,12 @@ function HomePage() {
 
   return (
     <Box>
-      {!user.token ? (
+      {!user.token &&
         <Switch>
           <Route exact path="/auth" component={Login} />
           <Route path="/registration" component={Registration} />
         </Switch>
-      ) : null}
+      }
       <Header />
       <Switch>
         <Route exact path="/" component={MyMap} />
