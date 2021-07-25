@@ -7,8 +7,7 @@ import { addStreet, loadStreets } from '../../../redux/actions/streets';
 import { Box, TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import {
-  loadingDefaultImg,
-  loadList,
+  loadingDefaultImg
 } from '../../../redux/actions/application';
 import { Link } from 'react-router-dom';
 
@@ -54,12 +53,9 @@ function MyMap() {
 
   useEffect(() => {
     dispatch(loadStreets());
-    dispatch(loadList());
-  }, [dispatch]);
-
-  useEffect(() => {
     dispatch(loadingDefaultImg());
   }, [dispatch]);
+
 
   const MAP_TOKEN =
     'pk.eyJ1IjoidGltdXJrYWV2IiwiYSI6ImNrcjlxMW53cDBveWUyd3A4dnE1bnpsZGgifQ.xcTxyr6TROZra6x1TFTqTw';

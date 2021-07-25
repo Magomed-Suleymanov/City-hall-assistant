@@ -11,13 +11,11 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Appeals from './Appeals';
 import { loadingAppeals } from '../../../redux/actions/appeals';
 import {
-  loadingDefaultImg,
   loadList,
 } from '../../../redux/actions/application';
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
 import { loadingRatings } from '../../../redux/actions/rating';
 import { useHistory, useParams } from 'react-router-dom';
-import { loadStreets } from '../../../redux/actions/streets';
 import InfoStreets from './InfoStreets';
 
 const useStyle = makeStyles(() => ({
@@ -56,9 +54,7 @@ function ListOfStreets() {
     dispatch(loadingAppeals());
     dispatch(loadingAppraisals());
     dispatch(loadingRatings());
-    dispatch(loadingDefaultImg());
     dispatch(loadList());
-    dispatch(loadStreets());
   }, [dispatch]);
 
   const classes = useStyle();
