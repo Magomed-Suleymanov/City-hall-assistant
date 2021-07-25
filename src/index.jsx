@@ -14,6 +14,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'),
 );
-//npx json-server --watch db.json --port 8000
-//node server.js
-//npm start

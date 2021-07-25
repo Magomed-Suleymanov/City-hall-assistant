@@ -47,16 +47,17 @@ const useStyle = makeStyles(() => ({
 }));
 
 function Appeals({ id }) {
-  const dispatch = useDispatch();
   const appeals = useSelector((state) => state.appeals.appeals);
   const user = useSelector((state) => state.auth.user);
+
+  const dispatch = useDispatch();
+
+  const [appeal, setAppeal] = useState('');
+  const streetId = id;
+
   const modalListItems = useSelector(
     (state) => state.application.modalListItems,
   );
-
-  const [appeal, setAppeal] = useState('');
-
-  const streetId = id;
 
   const handleAddAppeal = () => {
     let status = 'Выполняется';

@@ -71,8 +71,9 @@ const useStyle = makeStyles({
 });
 
 function ButtonForAuth() {
-  const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
+
+  const dispatch = useDispatch();
   const classes = useStyle();
 
   const [anchorEl, setAnchorEl] = useState(null);

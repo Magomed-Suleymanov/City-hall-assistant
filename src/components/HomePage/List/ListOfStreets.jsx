@@ -10,9 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Appeals from './Appeals';
 import { loadingAppeals } from '../../../redux/actions/appeals';
-import {
-  loadList,
-} from '../../../redux/actions/application';
+import { loadList } from '../../../redux/actions/application';
 import { loadingAppraisals } from '../../../redux/actions/appraisals';
 import { loadingRatings } from '../../../redux/actions/rating';
 import { useHistory, useParams } from 'react-router-dom';
@@ -46,10 +44,10 @@ const useStyle = makeStyles(() => ({
 function ListOfStreets() {
   const list = useSelector((state) => state.application.items);
 
-  const { id } = useParams();
-
   const dispatch = useDispatch();
   const history = useHistory();
+  const { id } = useParams();
+
   useEffect(() => {
     dispatch(loadingAppeals());
     dispatch(loadingAppraisals());

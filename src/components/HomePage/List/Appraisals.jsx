@@ -17,10 +17,11 @@ const useStyle = makeStyles(() => ({
 }));
 
 function Appraisals({ item }) {
-  const dispatch = useDispatch();
-  const classes = useStyle();
   const appraisals = useSelector((state) => state.appraisals.appraisals);
   const user = useSelector((state) => state.auth.user);
+
+  const dispatch = useDispatch();
+  const classes = useStyle();
 
   const [activeLike, setActiveLike] = useState(false);
   const [activeDislike, setActiveDislike] = useState(false);

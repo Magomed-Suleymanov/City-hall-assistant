@@ -17,8 +17,6 @@ const useStyle = makeStyles(() => ({
 }));
 
 function Ratings({ itemStreet }) {
-  const classes = useStyle();
-  const dispatch = useDispatch();
   const ratings = useSelector((state) => {
     const items = state.rating.rating.filter(
       (item) => item.streetId === itemStreet,
@@ -29,6 +27,10 @@ function Ratings({ itemStreet }) {
       }, 0) / items.length
     );
   });
+
+  const classes = useStyle();
+  const dispatch = useDispatch();
+
   const fixed = ratings.toFixed(1);
 
   const handleAddRating = (rating) => {

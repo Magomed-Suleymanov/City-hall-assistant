@@ -63,10 +63,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Registration() {
-  const classes = useStyles();
-
   const loading = useSelector((state) => state.auth.loadingRegistration);
   const error = useSelector((state) => state.auth.error);
+
+  const classes = useStyles();
   const dispatch = useDispatch();
 
   const [firstName, setFirstName] = useState('');

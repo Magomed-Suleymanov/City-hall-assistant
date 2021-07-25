@@ -30,13 +30,14 @@ const useStyle = makeStyles(() => ({
 }));
 
 function Appeal({ item }) {
+  const user = useSelector((state) => state.auth.user);
+
   const classes = useStyle();
   const dispatch = useDispatch();
 
   const handleDeleteAppeals = () => {
     dispatch(deleteAppeals(item.id));
   };
-  const user = useSelector((state) => state.auth.user);
 
   const handleChangeOfStatus = () => {
     let status = 'Выполнено';
