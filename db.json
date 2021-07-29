@@ -138,86 +138,9 @@
     }
   ],
   "appraisals": [
-    {
-      "appealId": 1,
-      "like": 1,
-      "dislike": "",
-      "userId": 2,
-      "login": "admin2",
-      "id": 1
-    }
+    
   ],
   "ratings": [
-    {
-      "streetId": 1,
-      "rating": 1,
-      "id": 1
-    },
-    {
-      "streetId": 2,
-      "rating": 2,
-      "id": 2
-    },
-    {
-      "streetId": 3,
-      "rating": 3,
-      "id": 3
-    },
-    {
-      "streetId": 4,
-      "rating": 4,
-      "id": 4
-    },
-    {
-      "streetId": 5,
-      "rating": 5,
-      "id": 5
-    },
-    {
-      "streetId": 6,
-      "rating": 4,
-      "id": 6
-    },
-    {
-      "streetId": 1,
-      "rating": 3,
-      "id": 7
-    },
-    {
-      "streetId": 1,
-      "rating": 4,
-      "id": 8
-    },
-    {
-      "streetId": 1,
-      "rating": 4,
-      "id": 9
-    },
-    {
-      "streetId": 1,
-      "rating": 1,
-      "id": 10
-    },
-    {
-      "streetId": 1,
-      "rating": 1,
-      "id": 11
-    },
-    {
-      "streetId": 1,
-      "rating": 1,
-      "id": 12
-    },
-    {
-      "streetId": 1,
-      "rating": 4,
-      "id": 13
-    },
-    {
-      "streetId": 1,
-      "rating": 1,
-      "id": 14
-    }
   ],
   "defaultImg": [
     {
