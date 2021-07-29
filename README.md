@@ -20,10 +20,10 @@
 | ------------- |:-------------:| -----:|
 | POST /auth     | Авторизация  | login(string) password(string) |
 | POST /checkIn      | Регистрация      |   login(string) password(string) name(string) surname(string) email(string) |
-| GET /users         | Получение оценок прользователей|
+| GET /users         | Получение оценок пользователей|
 | GET /rating        | Получение списка пожеланий     |
 | POST /rating/:id       | Добавление рейтинга       | userId(number))| 
-|DELETE /users/id | удаление ползователя по ID|
+|DELETE /users/id | Удаление пользователя по ID|
 |GET /street | Получение списка улиц |
 |GET /appeals | Получение пожеланий | 
-|DELETE /appeals/id | удаление пожеланий по ID|
+|DELETE /appeals/id | Удаление пожеланий по ID|
