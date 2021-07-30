@@ -44,7 +44,6 @@
 - Redux-logger
 - JS
 - NodeJs
-- REST API 
 - Prop-types
 - Mapbox-gl
 - json-server
@@ -53,7 +52,6 @@
 - Git
 - GitHub
 - Heroku
-
 
 ### Проект можно посмотреть:
 
