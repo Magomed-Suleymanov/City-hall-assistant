@@ -98,14 +98,14 @@
       "id": 1,
       "streetId": 1,
       "appeal": "Много машин, пожалуйста уменьшите трафик на дороге.",
-      "status": "Выполнено",
+      "status": "Рассмотрение",
       "date": "05.07.2021"
     },
     {
       "id": 2,
       "streetId": 2,
       "appeal": "Очень много зелени, но все же увеличить бы её)",
-      "status": "Выполнено",
+      "status": "Выполняется",
       "date": "25.07.2021"
     },
     {
@@ -119,29 +119,115 @@
       "id": 4,
       "streetId": 4,
       "appeal": "Никаких претензий нет, спасибо тем кто проложил тут шикарную дорогу и поставил этот мемориал дружбе.",
-      "status": "выполнено",
+      "status": "Рассмотрение",
       "date": "11.07.2021"
     },
     {
       "id": 5,
       "streetId": 5,
       "appeal": "Шикарные качели, но очень мало. Срочно добавьте.",
-      "status": "выполнено",
+      "status": "Выполнено",
       "date": "09.07.2021"
     },
     {
       "id": 6,
       "streetId": 6,
       "appeal": "Всё очень красиво.",
-      "status": "выполнено",
+      "status": "Выполнено",
       "date": "07.07.2021"
     }
   ],
   "appraisals": [
-  
+    {
+      "appealId": 1,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 1
+    },
+    {
+      "appealId": 2,
+      "like": "",
+      "dislike": 1,
+      "userId": 2,
+      "login": "admin2",
+      "id": 2
+    },
+    {
+      "appealId": 3,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 3
+    },
+    {
+      "appealId": 4,
+      "like": "",
+      "dislike": 1,
+      "userId": 2,
+      "login": "admin2",
+      "id": 4
+    },
+    {
+      "appealId": 5,
+      "like": 1,
+      "dislike": "",
+      "userId": 2,
+      "login": "admin2",
+      "id": 5
+    },
+    {
+      "appealId": 6,
+      "like": "",
+      "dislike": 1,
+      "userId": 2,
+      "login": "admin2",
+      "id": 6
+    }
   ],
   "ratings": [
-   
+    {
+      "streetId": 1,
+      "rating": 2,
+      "id": 1
+    },
+    {
+      "streetId": 1,
+      "rating": 1,
+      "id": 2
+    },
+    {
+      "streetId": 1,
+      "rating": 3,
+      "id": 3
+    },
+    {
+      "streetId": 1,
+      "rating": 3,
+      "id": 4
+    },
+    {
+      "streetId": 2,
+      "rating": 3,
+      "id": 5
+    },
+    {
+      "streetId": 3,
+      "rating": 1,
+      "id": 6
+    },
+    {
+      "streetId": 5,
+      "rating": 5,
+      "id": 7
+    },
+    {
+      "streetId": 6,
+      "rating": 5,
+      "id": 8
+    }
   ],
   "defaultImg": [
     {

@@ -60,7 +60,7 @@ function Appeals({ id }) {
   );
 
   const handleAddAppeal = () => {
-    let status = 'Выполняется';
+    let status = 'Рассмотрение';
     if (appeal.length === 0) return;
     dispatch(addAppeal(appeal, streetId, status));
     setAppeal('');
