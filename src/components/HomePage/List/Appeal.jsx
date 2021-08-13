@@ -175,11 +175,11 @@ function Appeal({ item }) {
                   Изменить статус пожелания
                 </Box>
                 <select
-                  defaultValue={'DEFAULT'}
+                  defaultValue={"default"}
                   className={classes.select}
                   onChange={(e) => setTarget(e.target.value)}
                 >
-                  <option value="DEFAULT" disabled>
+                  <option value="default" disabled>
                     Выберите статус
                   </option>
                   <option color={'primary'} value={'Рассмотрение'}>
