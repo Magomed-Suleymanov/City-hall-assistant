@@ -15,6 +15,7 @@ import { loadingAppraisals } from '../../../redux/actions/appraisals';
 import { loadingRatings } from '../../../redux/actions/rating';
 import { useHistory, useParams } from 'react-router-dom';
 import InfoStreets from './InfoStreets';
+import LoadingSkeleton from './LoadingSkeleton';
 
 const useStyle = makeStyles(() => ({
   wrapList: {
@@ -57,6 +58,8 @@ function ListOfStreets() {
 
   const classes = useStyle();
 
+  const loadingItems = useSelector((state) => state.application.loadingItems);
+
   return (
     <Box>
       <Grid container>
@@ -72,30 +75,36 @@ function ListOfStreets() {
                   justifyContent="space-around"
                   padding="10px 10px"
                 >
-                  <InfoStreets items={items} />
-                  <Box style={{ width: '100%' }}>
-                    <Accordion
-                      onClick={() => {
-                        history.push(`/list/${items.id}`);
-                      }}
-                      expanded={parseInt(id) === parseInt(items.id)}
-                    >
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                      >
-                        <Typography
-                          style={{ fontSize: '20px', paddingLeft: '10px' }}
+                  {loadingItems ? (
+                    <LoadingSkeleton/>
+                  ) : (
+                    <Box>
+                      <InfoStreets items={items}/>
+                      <Box style={{ width: '100%' }}>
+                        <Accordion
+                          onClick={() => {
+                            history.push(`/list/${items.id}`);
+                          }}
+                          expanded={parseInt(id) === parseInt(items.id)}
                         >
-                          Отзывы
-                        </Typography>
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <Appeals id={items.id} />
-                      </AccordionDetails>
-                    </Accordion>
-                  </Box>
+                          <AccordionSummary
+                            expandIcon={<ExpandMoreIcon/>}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                          >
+                            <Typography
+                              style={{ fontSize: '20px', paddingLeft: '10px' }}
+                            >
+                              Отзывы
+                            </Typography>
+                          </AccordionSummary>
+                          <AccordionDetails>
+                            <Appeals id={items.id}/>
+                          </AccordionDetails>
+                        </Accordion>
+                      </Box>
+                    </Box>
+                  )}
                 </Box>
               );
             })}

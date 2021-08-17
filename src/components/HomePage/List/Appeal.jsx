@@ -73,7 +73,7 @@ function Appeal({ item }) {
     setSelectedValue(value);
   };
 
-  const handleChangeOfStatus = (e) => {
+  const handleChangeOfStatus = () => {
     dispatch(changeOfStatus(item.id, target));
     handleClose();
     dispatch(loadingAppeals());
@@ -175,7 +175,7 @@ function Appeal({ item }) {
                   Изменить статус пожелания
                 </Box>
                 <select
-                  defaultValue={"default"}
+                  defaultValue={'default'}
                   className={classes.select}
                   onChange={(e) => setTarget(e.target.value)}
                 >

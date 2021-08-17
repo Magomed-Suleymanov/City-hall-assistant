@@ -3,7 +3,6 @@ const initialState = {
   defaultImg: [],
   loadingItems: false,
   toggleBlockDashBoard: false,
-  loading: false,
 };
 
 export const application = (state = initialState, action) => {
@@ -29,7 +28,6 @@ export const application = (state = initialState, action) => {
     case 'street/delete/success':
       return {
         ...state,
-        loading: false,
         items: state.items.filter((street) => street.id !== action.payload),
       };
 
