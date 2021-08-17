@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 
 function DeleteStreets({ streetId }) {
   const user = useSelector((state) => state.auth.user);
+
   const dispatch = useDispatch();
   const handleClickDelete = () => {
     dispatch(deleteStreet(streetId));

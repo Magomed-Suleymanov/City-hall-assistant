@@ -49,15 +49,14 @@ const useStyle = makeStyles(() => ({
 function Appeals({ id }) {
   const appeals = useSelector((state) => state.appeals.appeals);
   const user = useSelector((state) => state.auth.user);
+  const modalListItems = useSelector(
+    (state) => state.application.modalListItems,
+  );
 
   const dispatch = useDispatch();
 
   const [appeal, setAppeal] = useState('');
   const streetId = id;
-
-  const modalListItems = useSelector(
-    (state) => state.application.modalListItems,
-  );
 
   const handleAddAppeal = () => {
     let status = 'Рассмотрение';
